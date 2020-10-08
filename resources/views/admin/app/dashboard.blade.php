@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('admin/layouts.app')
 
-@section('title', 'Admin Dashboard')
+@section('title', 'Secovi Dashboard')
 
 @section('content')
   <section class="section">

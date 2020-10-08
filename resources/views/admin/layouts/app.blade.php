@@ -1,13 +1,13 @@
-@extends('layouts.skeleton')
+@extends('admin/layouts.skeleton')
 
 @section('app')
   <div class="main-wrapper">
     <div class="navbar-bg"></div>
     <nav class="navbar navbar-expand-lg main-navbar">
-      @include('partials.topnav')
+      @include('admin/partials.topnav')
     </nav>
     <div class="main-sidebar">
-      @include('partials.sidebar')
+      @include('admin/partials.sidebar')
     </div>
 
     <!-- Main Content -->
@@ -15,7 +15,7 @@
       @yield('content')
     </div>
     <footer class="main-footer">
-      @include('partials.footer')
+      @include('admin/partials.footer')
     </footer>
   </div>
 @endsection

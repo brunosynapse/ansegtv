@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('site/pages/teste');
 });
 
 Route::get('/table', function () {
-    return view('app/table');
+    return view('admin/app/table');
 });
 
 Route::group([
@@ -16,7 +16,9 @@ Route::group([
    'namespace' => 'Admin',
    'as' => 'admin.'
 ], function(){
-    Route::get('/', function () {
-        return view('app/dashboard');
-    });
+    Route::resource('/', 'Dashboard\DashboardController');
+    Route::resource('/posts', 'Post\PostController');
+    Route::resource('/tags', 'Tag\TagController');
+    Route::resource('/comments', 'Comment\CommentController');
+    Route::resource('/categories', 'Category\CategoryController');
 });
