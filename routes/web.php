@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/table', function () {
-    return view('admin/app/table');
+    return view('admin/pages/table');
 });
 
 Route::group([

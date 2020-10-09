@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Comment;
 
+use App\Models\Comment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        return 'comment page';
+        return view('admin/pages/comments/index');
     }
 
     /**
