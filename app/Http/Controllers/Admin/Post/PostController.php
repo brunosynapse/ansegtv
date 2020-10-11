@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return 'post page';
+        return view('admin/pages/posts/index');
     }
 
     /**
@@ -24,7 +24,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/pages/posts/create-edit');
     }
 
     /**
@@ -35,7 +35,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

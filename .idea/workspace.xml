@@ -27,25 +27,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72b23355-fc38-4e62-a432-227eee15c3af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/categories/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/comments/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/tags/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/categories/create-edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/posts/create-edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/posts/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/tags/create-edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoryController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Comment/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Comment/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Dashboard/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Tag/TagController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_08_183303_create_tags_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_08_183335_create_categories_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/app/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/app/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Tag/TagController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Tag/TagController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_07_210404_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_07_210404_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/tags/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/tags/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/teste.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/teste.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +206,9 @@
       <workItem from="1602163663021" duration="3522000" />
       <workItem from="1602167975284" duration="12688000" />
       <workItem from="1602190572501" duration="7783000" />
-      <workItem from="1602247562293" duration="7461000" />
+      <workItem from="1602247562293" duration="16901000" />
+      <workItem from="1602265761485" duration="1185000" />
+      <workItem from="1602452131726" duration="7527000" />
     </task>
     <servers />
   </component>
@@ -256,10 +252,10 @@
       <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.0.1366.741@0.0.1366.741" timestamp="1602247838093" />
-    <state x="344" y="164" key="run.anything.popup" timestamp="1602198787832">
+    <state x="344" y="164" key="run.anything.popup" timestamp="1602454382126">
       <screen x="0" y="0" width="1366" height="741" />
     </state>
-    <state x="344" y="164" key="run.anything.popup/0.0.1366.741@0.0.1366.741" timestamp="1602198787832" />
+    <state x="344" y="164" key="run.anything.popup/0.0.1366.741@0.0.1366.741" timestamp="1602454382126" />
     <state x="346" y="62" width="672" height="678" key="search.everywhere.popup" timestamp="1602179425669">
       <screen x="0" y="0" width="1366" height="741" />
     </state>

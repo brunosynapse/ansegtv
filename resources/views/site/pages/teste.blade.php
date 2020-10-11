@@ -3,7 +3,7 @@
 @section('content')
     <div>
         <h1>
-            Home Page Test
+            Home Page
         </h1>
     </div>
 @endsection

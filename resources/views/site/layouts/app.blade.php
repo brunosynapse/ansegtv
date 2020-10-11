@@ -9,9 +9,7 @@
 
 <body>
 <div id="app">
-    header aqui -> a add por partials include
     @yield('content')
-    footer aqui -> a add por partials include
 </div>
 </body>
 </html>
