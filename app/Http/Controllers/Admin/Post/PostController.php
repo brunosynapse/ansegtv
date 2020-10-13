@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -15,9 +15,21 @@ class PostController extends Controller
      */
     public function index()
     {
+        /*
+        $publishedPostsCount = Post::where('status', 'Publicado')->get()->count();
+        $draftPostsCount = Post::where('status', 'Rascunho')->get()->count();
+        $peddingPostsCount = Post::where('status', 'Pendente')->get()->count();
+        $postsCount = Post::all()->count();
         $posts = Post::paginate(15);
 
-        return view('admin/pages/posts/index', compact('posts'));
+        return view(
+            'admin/pages/posts/index',
+            compact('posts', 'publishedPostsCount', 'draftPostsCount', 'peddingPostsCount', 'postsCount')
+        );
+        */
+        $posts = Post::find(1);
+        dd($posts->Tags);
+
     }
 
     /**
@@ -41,7 +53,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $response = Post::create($data);
+        Post::create($data);
 
         return redirect()->route('admin.posts.index');
     }
@@ -102,7 +114,12 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        Post::where('id', $id)->delete();
+        $post = Category::find($id);
+
+        if(!$post)
+            abort(404);
+
+        $post->delete();
 
         return redirect()->route('admin.posts.index');
     }

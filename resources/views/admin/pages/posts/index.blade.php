@@ -14,16 +14,16 @@
                         <div class="card-body">
                             <ul class="nav nav-pills">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">Todos<span class="badge badge-white">5</span></a>
+                                    <a class="nav-link active" href="#">Todos<span class="badge badge-white">{{ $postsCount }}</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Rascunho<span class="badge badge-primary">1</span></a>
+                                    <a class="nav-link" href="#">Rascunho<span class="badge badge-primary">{{ $draftPostsCount }}</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Pendentes<span class="badge badge-primary">1</span></a>
+                                    <a class="nav-link" href="#">Pendentes<span class="badge badge-primary">{{ $peddingPostsCount }}</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Publicados<span class="badge badge-primary">0</span></a>
+                                    <a class="nav-link" href="#">Publicados<span class="badge badge-primary">{{ $publishedPostsCount }}</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -51,34 +51,36 @@
                                             <th>Status</th>
                                         </tr>
                                         @foreach($posts as $post)
-                                        <tr>
-                                            <td>{{$post->page_title}}
-                                                <div class="table-links">
-                                                    <a href="{{route('admin.posts.edit', $post->id)}}">Editar</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#" class="text-danger" data-toggle="modal" data-target="#exampleModal">Deletar</a>
-                                                    <form action="{{route('admin.posts.destroy', $post->id)}}"  method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit">Apagar</button>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="#">{{$post->category}}</a>
-                                            </td>
-                                            <td>
-                                                {{$post->tag}}
-                                            </td>
-                                            <td>{{$post->updated_at}}</td>
-                                            <td><div class="badge badge-primary">{{$post->status}}</div></td>
-                                        </tr>
+
+                                            <tr>
+                                                <td>{{$post->page_title}}
+                                                    <div class="table-links">
+                                                        <a href="{{route('admin.posts.edit', $post->id)}}">Editar</a>
+                                                        <div class="bullet"></div>
+                                                        <a href="#" class="text-danger" data-toggle="modal" data-target="#exampleModal">Deletar</a>
+                                                        <form action="{{route('admin.posts.destroy', $post->id)}}"  method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit">Apagar</button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#">{{$post->category}}</a>
+                                                </td>
+                                                <td>
+                                                    {{$post->tag}}
+                                                </td>
+                                                <td>{{$post->updated_at}}</td>
+                                                <td><div class="badge badge-primary">{{$post->status}}</div></td>
+                                            </tr>
+
                                         @endforeach
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="float-right">
-                                {!! $posts->links() !!}
+                                <div class="d-flex justify-content-end">
+                                    {!! $posts->links() !!}
+                                </div>
                             </div>
                          </div>
                     </div>

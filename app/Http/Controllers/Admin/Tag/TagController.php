@@ -15,7 +15,9 @@ class TagController extends Controller
      */
     public function index()
     {
-        return view('admin/pages/tags/index');
+        $tags = Tag::paginate(15);
+
+        return view('admin/pages/tags/index', compact('tags'));
     }
 
     /**
@@ -25,7 +27,9 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view('admin/pages/tags/create-edit');
+        $edition = false;
+
+        return view('admin/pages/tags/create-edit', compact('edition'));
     }
 
     /**
@@ -36,16 +40,19 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Tag::create($data);
+
+        return redirect()->route('admin.tags.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tag  $tag
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
+    public function show($id)
     {
         //
     }
@@ -53,34 +60,55 @@ class TagController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Tag  $tag
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $tag)
+    public function edit($id)
     {
-        //
+        $edition = true;
+        $tag = Tag::find($id);
+
+        if(!$tag)
+            return abort(404);
+
+        return view('admin/pages/tags/create-edit', compact('tag', 'edition'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tag  $tag
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(Request $request, $id)
     {
-        //
+        $datas = $request->all();
+        $tag = Tag::find($id);
+
+        if(!$tag)
+            return abort(404);
+
+        $tag->update($datas);
+
+        return redirect()->route('admin.tags.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tag  $tag
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
+    public function destroy($id)
     {
-        //
+        $tag = Tag::find($id);
+
+        if(!$tag)
+            abort(404);
+
+        $tag->delete();
+
+        return redirect()->route('admin.tags.index');
     }
 }

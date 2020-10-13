@@ -15,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin/pages/categories/index');
+        $categories = Category::paginate(15);
+
+        return view('admin/pages/categories/index', compact('categories'));
     }
 
     /**
@@ -25,7 +27,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin/pages/categories/create-edit');
+        $edition = false;
+
+        return view('admin/pages/categories/create-edit', compact('edition'));
     }
 
     /**
@@ -36,7 +40,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $response = Category::create($data);
+
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -58,7 +65,13 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edition = true;
+        $category = Category::find($id);
+
+        if(!$category)
+            return abort(404);
+
+        return view('admin/pages/categories/create-edit', compact('category', 'edition'));
     }
 
     /**
@@ -70,7 +83,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datas = $request->all();
+        $category = Category::find($id);
+
+        if(!$category)
+            return abort(404);
+
+        $category->update($datas);
+
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -81,6 +102,13 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+
+        if(!$category)
+            abort(404);
+
+        $category->delete();
+
+        return redirect()->route('admin.categories.index');
     }
 }

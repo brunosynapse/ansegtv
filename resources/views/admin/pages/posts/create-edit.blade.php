@@ -66,9 +66,9 @@
                                     <div class="col-sm-12 col-md-7">
                                         <select class="custom-select" name="category">
                                             <option disabled selected hidden>Selecione uma opção</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option value="uma categoria qualquer">One</option>
+                                            <option value="uma categoria qualquer">Two</option>
+                                            <option value="uma categoria qualquer">Three</option>
                                         </select>
                                     </div>
                                 </div>
@@ -77,9 +77,9 @@
                                     <div class="col-sm-12 col-md-7">
                                         <select class="custom-select" name="tag">
                                             <option disabled selected hidden> Selecione uma ou mais opções</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option value="umaTagQualquer">One</option>
+                                            <option value="umaTagQualquer">Two</option>
+                                            <option value="umaTagQualquer">Three</option>
                                         </select>
                                     </div>
                                 </div>
@@ -107,16 +107,27 @@
             </div>
         </div>
     </section>
+
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('ckeditor/translations/pt-br.js') }}"></script>
+    <script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
+
+    <style>.ck-editor__editable {min-height: 300px;}</style>
+    {{--    Add to global css --}}
+
     <script>
+        CKFinder.config( { connectorPath: '/ckfinder/connector' } );
         ClassicEditor
             .create( document.querySelector( '#editor' ),
                 {
-                language: 'pt-br'
+                language: 'pt-br',
+                    ckfinder: {
+                        uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+                    },
+                    toolbar: [ 'ckfinder', 'video', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo' ]
                 }
             ).then( editor => {
-                console.log( editor );
+                editor.ui.view.editable.element.style.height = '300px';
             })
              .catch( error => {
                 console.error( error );

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -16,4 +16,9 @@ class Post extends Model
         'tag',
         'status'
     ];
+
+    public function Tags()
+    {
+        return $this->belongsToMany(Tag::class, 'tag_post');
+    }
 }

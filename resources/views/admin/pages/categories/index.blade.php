@@ -48,24 +48,23 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Nome da Categoria</td>
-                                        <td>/nomedocaminhoaqui</td>
+                                    @foreach($categories as $category)
+
+                                        <tr>
+                                        <td>{{ $category->name }}</td>
+                                        <td>/{{ $category->path }}</td>
                                         <td>
                                             <div class="dropdown d-inline mr-2">
                                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Ações
                                                 </button>
                                                 <div class="dropdown-menu">
-{{--                                                    @if($routeEdit != '')--}}
-{{--                                                        <a class="dropdown-item" href="{{ $routeEdit }}"><i class="fas fa-pen"></i> Editar</a>--}}
-{{--                                                    @endif--}}
-                                                    <a class="dropdown-item" href="#"><i class="fas fa-pen"></i> Editar</a>
-
-                                                    <form action="#" id="fa" method="post">
+                                                    <a class="dropdown-item" href="{{ route('admin.categories.edit', $category->id) }}"><i class="fas fa-pen"></i> Editar</a>
+                                                    <form action="{{ route('admin.categories.destroy', $category->id) }}" id="deleteCategoryForm" method="post">
                                                         @csrf
+                                                        @method('DELETE')
                                                     </form>
-                                                    <a class="dropdown-item" href="javascript:;" onclick="$('#fa').submit()">
+                                                    <a class="dropdown-item" href="javascript:;" onclick="$('#deleteCategoryForm').submit()">
                                                         <i class="fas fa-trash"></i>
                                                         Excluir
                                                     </a>
@@ -73,11 +72,12 @@
                                             </div>
                                         </td>
                                     </tr>
+
+                                    @endforeach
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-end">
-                                {{--                                {{ $finalities->appends(request()->query())->links() }}--}}
-
+                                {!! $categories->links() !!}
                             </div>
                         </div>
                     </div>

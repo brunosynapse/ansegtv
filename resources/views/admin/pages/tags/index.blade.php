@@ -7,7 +7,6 @@
         <div class="section-header">
             <h1>Tags</h1>
         </div>
-
         <div class="section-body">
             <div class="row">
                 <div class="col-12">
@@ -47,35 +46,36 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Nome da Tag</td>
-                                    <td>
-                                        <div class="dropdown d-inline mr-2">
-                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Ações
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                {{--                                                    @if($routeEdit != '')--}}
-                                                {{--                                                        <a class="dropdown-item" href="{{ $routeEdit }}"><i class="fas fa-pen"></i> Editar</a>--}}
-                                                {{--                                                    @endif--}}
-                                                <a class="dropdown-item" href="#"><i class="fas fa-pen"></i> Editar</a>
+                                    @foreach($tags as $tag)
 
-                                                <form action="#" id="fa" method="post">
-                                                    @csrf
-                                                </form>
-                                                <a class="dropdown-item" href="javascript:;" onclick="$('#fa').submit()">
-                                                    <i class="fas fa-trash"></i>
-                                                    Excluir
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        <tr>
+                                            <td>{{ $tag->name }}</td>
+                                            <td>
+                                                <div class="dropdown d-inline mr-2">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Ações
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="{{route('admin.tags.edit', $tag->id)}}"><i class="fas fa-pen"></i> Editar</a>
+
+                                                        <form action="{{ route('admin.tags.destroy', $tag->id) }}" id="deleteTagForm" method="post">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                        </form>
+                                                        <a class="dropdown-item" href="javascript:;" onclick="$('#deleteTagForm').submit()">
+                                                            <i class="fas fa-trash"></i>
+                                                            Excluir
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    @endforeach
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-end">
-                                {{--                                {{ $finalities->appends(request()->query())->links() }}--}}
-
+                                {!! $tags->links() !!}
                             </div>
                         </div>
                     </div>
