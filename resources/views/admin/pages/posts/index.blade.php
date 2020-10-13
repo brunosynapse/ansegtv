@@ -50,54 +50,37 @@
                                             <th>Ultima Atualização</th>
                                             <th>Status</th>
                                         </tr>
+                                        @foreach($posts as $post)
                                         <tr>
-                                            <td>Uma postagem qualquer
+                                            <td>{{$post->page_title}}
                                                 <div class="table-links">
+                                                    <a href="{{route('admin.posts.edit', $post->id)}}">Editar</a>
                                                     <div class="bullet"></div>
-                                                    <a href="#">Editar</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#" class="text-danger">Excluir</a>
+                                                    <a href="#" class="text-danger" data-toggle="modal" data-target="#exampleModal">Deletar</a>
+                                                    <form action="{{route('admin.posts.destroy', $post->id)}}"  method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit">Apagar</button>
+                                                    </form>
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="#">Tutorial</a>
+                                                <a href="#">{{$post->category}}</a>
                                             </td>
                                             <td>
-                                               mundo, curiosidade
+                                                {{$post->tag}}
                                             </td>
-                                            <td>20-01-2020</td>
-                                            <td><div class="badge badge-primary">Publicado</div></td>
+                                            <td>{{$post->updated_at}}</td>
+                                            <td><div class="badge badge-primary">{{$post->status}}</div></td>
                                         </tr>
-                                    </tbody></table>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                             <div class="float-right">
-                                <nav>
-                                    <ul class="pagination">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true">«</span>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">2</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">3</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true">»</span>
-                                                <span class="sr-only">Next</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                                {!! $posts->links() !!}
                             </div>
-                        </div>
+                         </div>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,7 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('admin/pages/posts/index');
+        $posts = Post::paginate(15);
+
+        return view('admin/pages/posts/index', compact('posts'));
     }
 
     /**
@@ -24,7 +27,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin/pages/posts/create-edit');
+        $edition = false;
+
+        return view('admin/pages/posts/create-edit', compact('edition'));
     }
 
     /**
@@ -35,7 +40,10 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $data = $request->all();
+        $response = Post::create($data);
+
+        return redirect()->route('admin.posts.index');
     }
 
     /**
@@ -57,7 +65,13 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edition = true;
+        $post = Post::find($id);
+
+        if(!$post)
+            return abort(404);
+
+        return view('admin/pages/posts/create-edit', compact('post', 'edition'));
     }
 
     /**
@@ -69,7 +83,15 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datas = $request->all();
+        $post = Post::find($id);
+
+        if(!$post)
+            return abort(404);
+
+        $post->update($datas);
+
+        return redirect()->route('admin.posts.index');
     }
 
     /**
@@ -80,6 +102,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Post::where('id', $id)->delete();
+
+        return redirect()->route('admin.posts.index');
     }
 }
