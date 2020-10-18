@@ -124,6 +124,5 @@
 
     <style>.ck-editor__editable {min-height: 300px;}</style>
     {{--    Add to global css --}}
-
 @endsection
 

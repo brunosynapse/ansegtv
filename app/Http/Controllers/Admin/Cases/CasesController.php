@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Cases;
 
 use App\Models\Cases;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class CasesController extends Controller
@@ -15,7 +16,9 @@ class CasesController extends Controller
      */
     public function index()
     {
-        dd('index view');
+        $cases = Cases::paginate(15);
+
+        return view('admin/pages/cases/index', compact('cases'));
     }
 
     /**
@@ -44,7 +47,8 @@ class CasesController extends Controller
         }
 
         Cases::create($data);
-        dd('enviado com sucesso...');
+
+        dd($data);
     }
     /**
      * Display the specified resource.
@@ -54,7 +58,12 @@ class CasesController extends Controller
      */
     public function show($id)
     {
-        //
+        $case = Cases::find($id);
+
+        if($case)
+            return view('admin/pages/cases/show', compact('case'));
+
+        abort(404);
     }
 
     /**
@@ -88,6 +97,39 @@ class CasesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $case = Cases::find($id);
+
+        if(!$case)
+            abort(404);
+
+        $case->delete();
+
+        return redirect()->route('admin.cases.index');
     }
+
+    /**
+     * Download the specified resource from storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function downloadFile(Request $request)
+    {
+        if(!$request->attachment)
+            abort(404);
+
+        $path = $request->attachment;
+
+        if(!$path)
+            abort(404);
+
+        $exists = Storage::disk('')->has($path);
+
+        if(!$exists)
+            abort(404);
+
+        redirect()->back();
+
+        return response()->download(storage_path('app/'. $path));
+    }
+
 }
