@@ -20,17 +20,12 @@ class CreatePostsTable extends Migration
             $table->text('content')->nullable();
             $table->text('keyword')->nullable();
             $table->text('description')->nullable();
-<<<<<<< HEAD
-            $table->string('category')->nullable();
-//            $table->string('path')->unique();
-=======
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')
                 ->onDelete('set null');
             $table->string('path')->unique();
->>>>>>> master
             $table->string('tag')->nullable();
             $table->string('status');
             $table->timestamps();

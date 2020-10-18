@@ -5,8 +5,6 @@
         <h1>
             Home Page
         </h1>
-<<<<<<< HEAD
-=======
 
     </div>
     <div>
@@ -23,6 +21,5 @@
             <input type="file" name="attachment">
             <input type="submit">
         </form>
->>>>>>> master
     </div>
 @endsection

@@ -1,7 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["/js/app"],{
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/select2/css/select2.min.css":
 /*!**********************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/select2/css/select2.min.css ***!
@@ -21,7 +19,6 @@ exports.push([module.i, ".select2-container{box-sizing:border-box;display:inline
 
 /***/ }),
 
->>>>>>> master
 /***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
 /*!**************************************************!*\
   !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
@@ -365,15 +362,12 @@ __webpack_require__(/*! ./stisla/stisla */ "./resources/js/stisla/stisla.js");
 __webpack_require__(/*! ./stisla/scripts */ "./resources/js/stisla/scripts.js");
 
 __webpack_require__(/*! ./stisla/custom */ "./resources/js/stisla/custom.js");
-<<<<<<< HEAD
-=======
 
 __webpack_require__(/*! ./ckeditor/custom */ "./resources/js/ckeditor/custom.js");
 
 __webpack_require__(/*! ./select2/css/select2.min.css */ "./resources/js/select2/css/select2.min.css");
 
 __webpack_require__(/*! ./select2/js/select2.min.js */ "./resources/js/select2/js/select2.min.js");
->>>>>>> master
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -404,8 +398,6 @@ if (token) {
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./resources/js/ckeditor/custom.js":
 /*!*****************************************!*\
   !*** ./resources/js/ckeditor/custom.js ***!
@@ -3281,7 +3273,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
->>>>>>> master
 /***/ "./resources/js/stisla/custom.js":
 /*!***************************************!*\
   !*** ./resources/js/stisla/custom.js ***!

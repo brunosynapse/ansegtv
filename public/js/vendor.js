@@ -6233,8 +6233,6 @@ module.exports = {
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/css-loader/lib/css-base.js":
 /*!*************************************************!*\
   !*** ./node_modules/css-loader/lib/css-base.js ***!
@@ -6322,7 +6320,6 @@ function toComment(sourceMap) {
 
 /***/ }),
 
->>>>>>> master
 /***/ "./node_modules/jquery.nicescroll/jquery.nicescroll.js":
 /*!*************************************************************!*\
   !*** ./node_modules/jquery.nicescroll/jquery.nicescroll.js ***!
@@ -62193,8 +62190,6 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -62704,7 +62699,6 @@ module.exports = function (css) {
 
 /***/ }),
 
->>>>>>> master
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!

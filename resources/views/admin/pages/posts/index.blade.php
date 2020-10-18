@@ -17,15 +17,6 @@
                                     <a class="nav-link active" href="#">Todos<span class="badge badge-white">{{ $postsCount }}</span></a>
                                 </li>
                                 <li class="nav-item">
-<<<<<<< HEAD
-                                    <a class="nav-link" href="#">Rascunho<span class="badge badge-primary">{{ $draftPostsCount }}</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Pendentes<span class="badge badge-primary">{{ $peddingPostsCount }}</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Publicados<span class="badge badge-primary">{{ $publishedPostsCount }}</span></a>
-=======
                                     <a class="nav-link" href="#">Rascunho<span class="badge badge-primary"> </span></a>
                                 </li>
                                 <li class="nav-item">
@@ -33,7 +24,6 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Publicados<span class="badge badge-primary"> </span></a>
->>>>>>> master
                                 </li>
                             </ul>
                         </div>
@@ -64,21 +54,6 @@
 
                                             <tr>
                                                 <td>{{$post->page_title}}
-<<<<<<< HEAD
-                                                    <div class="table-links">
-                                                        <a href="{{route('admin.posts.edit', $post->id)}}">Editar</a>
-                                                        <div class="bullet"></div>
-                                                        <a href="#" class="text-danger" data-toggle="modal" data-target="#exampleModal">Deletar</a>
-                                                        <form action="{{route('admin.posts.destroy', $post->id)}}"  method="post">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit">Apagar</button>
-                                                        </form>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <a href="#">{{$post->category}}</a>
-=======
                                                     <div class="table-links row ml-1">
                                                         <a href="{{route('admin.posts.edit', $post->id)}}">Editar</a>
                                                         <div class="bullet"></div>
@@ -98,7 +73,6 @@
                                                             {{ $category->id == $post->category_id ? $category->name : '' }}>
                                                         @endforeach
                                                     </a>
->>>>>>> master
                                                 </td>
                                                 <td>
                                                     {{$post->tag}}
