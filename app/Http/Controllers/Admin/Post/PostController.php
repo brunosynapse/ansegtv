@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+=======
+use App\Models\Category;
+>>>>>>> master
 use App\Models\Post;
 
 class PostController extends Controller
@@ -15,6 +19,7 @@ class PostController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         /*
         $publishedPostsCount = Post::where('status', 'Publicado')->get()->count();
         $draftPostsCount = Post::where('status', 'Rascunho')->get()->count();
@@ -30,6 +35,16 @@ class PostController extends Controller
         $posts = Post::find(1);
         dd($posts->Tags);
 
+=======
+        $postsCount = Post::all()->count();
+        $posts = Post::paginate(15);
+        $categories = Category::all();
+
+        return view(
+            'admin/pages/posts/index',
+            compact('posts', 'categories', 'postsCount')
+        );
+>>>>>>> master
     }
 
     /**
@@ -39,9 +54,16 @@ class PostController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         $edition = false;
 
         return view('admin/pages/posts/create-edit', compact('edition'));
+=======
+        $categories = Category::all();
+        $edition = false;
+
+        return view('admin/pages/posts/create-edit', compact('edition','categories'));
+>>>>>>> master
     }
 
     /**
@@ -53,6 +75,10 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+<<<<<<< HEAD
+=======
+        dd($data);
+>>>>>>> master
         Post::create($data);
 
         return redirect()->route('admin.posts.index');
@@ -77,13 +103,23 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
         $edition = true;
         $post = Post::find($id);
+=======
+        $categories = Category::all();
+        $post = Post::find($id);
+        $edition = true;
+>>>>>>> master
 
         if(!$post)
             return abort(404);
 
+<<<<<<< HEAD
         return view('admin/pages/posts/create-edit', compact('post', 'edition'));
+=======
+        return view('admin/pages/posts/create-edit', compact('post', 'edition', 'categories'));
+>>>>>>> master
     }
 
     /**
@@ -114,7 +150,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+<<<<<<< HEAD
         $post = Category::find($id);
+=======
+        $post = Post::find($id);
+>>>>>>> master
 
         if(!$post)
             abort(404);

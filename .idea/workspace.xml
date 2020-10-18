@@ -27,6 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72b23355-fc38-4e62-a432-227eee15c3af" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/config/ckfinder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/secovi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/secovi.iml" afterDir="false" />
@@ -49,6 +50,11 @@
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/tags/create-edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/tags/create-edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/tags/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/tags/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/cases/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/cases/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+>>>>>>> master
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +197,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -201,11 +208,30 @@
       <recent name="$PROJECT_DIR$/resources/views/admin/partials" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alesson\Documents\laravel\secovi\app\Models" />
+>>>>>>> master
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin/Tag" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/resources/views/site" />
     </key>
+<<<<<<< HEAD
+=======
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alesson\Documents\laravel\secovi\resources\js" />
+      <recent name="$PROJECT_DIR$/resources/views/admin" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/layouts" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/partials" />
+    </key>
+>>>>>>> master
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -231,6 +257,18 @@
       <workItem from="1602540929092" duration="8103000" />
       <workItem from="1602590744068" duration="6444000" />
       <workItem from="1602598750409" duration="23735000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1602752913043" duration="1215000" />
+      <workItem from="1602757471975" duration="8930000" />
+      <workItem from="1602768306427" duration="11416000" />
+      <workItem from="1602850547184" duration="8935000" />
+      <workItem from="1602892230706" duration="130000" />
+      <workItem from="1602903913804" duration="29000" />
+      <workItem from="1602963206225" duration="5000" />
+      <workItem from="1603027808253" duration="288000" />
+      <workItem from="1603030206958" duration="207000" />
+>>>>>>> master
     </task>
     <servers />
   </component>
@@ -262,6 +300,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="452" y="66" width="454" height="605" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602251964082">
       <screen x="0" y="0" width="1366" height="741" />
     </state>
@@ -270,10 +309,37 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="416" y="143" width="530" height="481" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1602612424817" />
+=======
+    <state x="452" y="65" width="454" height="605" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602853766148">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="452" y="65" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1602853766148" />
+    <state x="452" y="66" width="454" height="605" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.741@0.0.1366.741" timestamp="1602251964082" />
+    <state x="416" y="136" width="530" height="481" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602767428494">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="416" y="136" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1602767428494" />
+    <state x="416" y="143" width="530" height="481" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1602612424817" />
+    <state x="263" y="107" key="IDE.errors.dialog" timestamp="1603030416837">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="263" y="107" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1603030416837" />
+    <state x="184" y="8" key="SettingsEditor" timestamp="1602753150826">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602753150826" />
+>>>>>>> master
     <state x="491" y="289" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602180149779">
       <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state x="491" y="289" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.741@0.0.1366.741" timestamp="1602180149779" />
+<<<<<<< HEAD
+=======
+    <state x="463" y="77" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603030367815">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="77" key="git4idea.branch.GitSmartOperationDialog/0.0.1366.728@0.0.1366.728" timestamp="1603030367815" />
+>>>>>>> master
     <state width="600" height="428" key="javadoc.popup" timestamp="1602247838093">
       <screen x="0" y="0" width="1366" height="741" />
     </state>
@@ -283,9 +349,16 @@
     </state>
     <state x="344" y="164" key="run.anything.popup/0.0.1366.741@0.0.1366.741" timestamp="1602454382126" />
     <state x="344" y="170" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1602623009447" />
+<<<<<<< HEAD
     <state x="26" y="136" width="672" height="703" key="search.everywhere.popup" timestamp="1602617493375">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
+=======
+    <state x="551" y="151" width="672" height="667" key="search.everywhere.popup" timestamp="1602778826922">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="551" y="151" width="672" height="667" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602778826922" />
+>>>>>>> master
     <state x="346" y="62" width="672" height="678" key="search.everywhere.popup/0.0.1366.741@0.0.1366.741" timestamp="1602179425669" />
     <state x="26" y="136" width="672" height="703" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1602617493375" />
     <state x="468" y="351" width="546" height="167" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1602600575443">
@@ -294,4 +367,18 @@
     <state x="468" y="339" width="546" height="167" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.741@0.0.1366.741" timestamp="1602252681513" />
     <state x="468" y="351" width="546" height="167" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.768@0.0.1366.768" timestamp="1602600575443" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/database/migrations/2020_10_09_141628_create_comments_table.php</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+>>>>>>> master
 </project>

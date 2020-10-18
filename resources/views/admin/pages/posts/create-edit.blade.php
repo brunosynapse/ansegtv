@@ -55,7 +55,11 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">URL Amigável</label>
                                     <div class="col-sm-12 col-md-7">
+<<<<<<< HEAD
                                         <input type="text" class="form-control">
+=======
+                                        <input type="text" class="form-control" name="path">
+>>>>>>> master
                                         <small class="form-text text-danger">
                                             Escreva em minúsculo. Não pode conter acentos, espaços ou caracteres especiais!
                                         </small>
@@ -65,21 +69,46 @@
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Categorias</label>
                                     <div class="col-sm-12 col-md-7">
                                         <select class="custom-select" name="category">
+<<<<<<< HEAD
                                             <option disabled selected hidden>Selecione uma opção</option>
                                             <option value="uma categoria qualquer">One</option>
                                             <option value="uma categoria qualquer">Two</option>
                                             <option value="uma categoria qualquer">Three</option>
+=======
+
+                                            @if($edition)
+                                                    @foreach($categories as $category)
+                                                        <option
+                                                            value="{{ $category->id }}" {{ $category->id == $post->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
+                                                    @endforeach
+                                            @else
+                                                    @foreach($categories as $category)
+                                                        <option disabled selected hidden> Selecione uma opção </option>
+                                                        <option
+                                                            value="{{ $category->id }}" {{ old('category') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                                                    @endforeach
+                                            @endif
+
+>>>>>>> master
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tags</label>
                                     <div class="col-sm-12 col-md-7">
+<<<<<<< HEAD
                                         <select class="custom-select" name="tag">
                                             <option disabled selected hidden> Selecione uma ou mais opções</option>
                                             <option value="umaTagQualquer">One</option>
                                             <option value="umaTagQualquer">Two</option>
                                             <option value="umaTagQualquer">Three</option>
+=======
+                                        <select class="custom-select js-example-basic-multiple" name="tag">
+                                            <option disabled selected hidden> Selecione uma ou mais opções</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+>>>>>>> master
                                         </select>
                                     </div>
                                 </div>
@@ -110,11 +139,16 @@
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('ckeditor/translations/pt-br.js') }}"></script>
+<<<<<<< HEAD
     <script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
+=======
+    <script type="text/javascript" src="{{ asset('js/ckfinder/ckfinder.js') }}"></script>
+>>>>>>> master
 
     <style>.ck-editor__editable {min-height: 300px;}</style>
     {{--    Add to global css --}}
 
+<<<<<<< HEAD
     <script>
         CKFinder.config( { connectorPath: '/ckfinder/connector' } );
         ClassicEditor
@@ -133,5 +167,7 @@
                 console.error( error );
             });
     </script>
+=======
+>>>>>>> master
 @endsection
 

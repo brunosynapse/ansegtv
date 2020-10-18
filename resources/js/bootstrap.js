@@ -22,6 +22,14 @@ require('./stisla/stisla');
 require('./stisla/scripts');
 require('./stisla/custom');
 
+<<<<<<< HEAD
+=======
+require('./ckeditor/custom');
+
+require('./select2/css/select2.min.css');
+require('./select2/js/select2.min.js');
+
+>>>>>>> master
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
