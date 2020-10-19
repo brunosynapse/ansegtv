@@ -35,14 +35,14 @@ $('[data-confirm]').each(function() {
     body: me_data[1],
     buttons: [
       {
-        text: me.data('confirm-text-yes') || 'Yes',
+        text: me.data('confirm-text-yes') || 'Confirmar',
         class: 'btn btn-danger btn-shadow',
         handler: function() {
           eval(me.data('confirm-yes'));
         }
       },
       {
-        text: me.data('confirm-text-cancel') || 'Cancel',
+        text: me.data('confirm-text-cancel') || 'Cancelar',
         class: 'btn btn-secondary',
         handler: function(modal) {
           $.destroyModal(modal);
@@ -94,23 +94,23 @@ $(function() {
         if(me.parent().hasClass("active")){
           active = true;
         }
-        
+
         $('.main-sidebar .sidebar-menu li.active > .dropdown-menu').slideUp(500, function() {
-          update_sidebar_nicescroll();          
+          update_sidebar_nicescroll();
           return false;
         });
-        
+
         $('.main-sidebar .sidebar-menu li.active').removeClass('active');
 
         if(active==true) {
-          me.parent().removeClass('active');          
-          me.parent().find('> .dropdown-menu').slideUp(500, function() {            
+          me.parent().removeClass('active');
+          me.parent().find('> .dropdown-menu').slideUp(500, function() {
             update_sidebar_nicescroll();
             return false;
           });
         }else{
-          me.parent().addClass('active');          
-          me.parent().find('> .dropdown-menu').slideDown(500, function() {            
+          me.parent().addClass('active');
+          me.parent().find('> .dropdown-menu').slideDown(500, function() {
             update_sidebar_nicescroll();
             return false;
           });
@@ -120,7 +120,7 @@ $(function() {
       });
 
       $('.main-sidebar .sidebar-menu li.active > .dropdown-menu').slideDown(500, function() {
-        update_sidebar_nicescroll();        
+        update_sidebar_nicescroll();
         return false;
       });
     }

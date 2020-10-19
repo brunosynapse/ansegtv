@@ -64,7 +64,7 @@
                                                         @csrf
                                                         @method('DELETE')
                                                     </form>
-                                                    <a class="dropdown-item" href="javascript:;" onclick="$('#deleteCategoryForm').submit()">
+                                                    <a class="dropdown-item" href="javascript:;" data-confirm="Certeza? | Não apague se essa categoria estiver vinculada à alguma postagem!" data-confirm-yes="$('#deleteCategoryForm').submit()">
                                                         <i class="fas fa-trash"></i>
                                                         Excluir
                                                     </a>

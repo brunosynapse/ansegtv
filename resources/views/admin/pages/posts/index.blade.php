@@ -61,8 +61,7 @@
                                                             @csrf
                                                             @method('DELETE')
                                                         </form>
-
-                                                        <a class="text-danger" href="javascript:;" onclick="$('#deletePostForm').submit()">
+                                                        <a class="text-danger" href="javascript:;" data-confirm="Certeza? | Se excluir, você não poderá recuperá-lo!" data-confirm-yes="$('#deletePostForm').submit()">
                                                             Excluir
                                                         </a>
                                                     </div>

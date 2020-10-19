@@ -42,7 +42,7 @@
                                                         @csrf
                                                         @method('DELETE')
                                                     </form>
-                                                    <a class="dropdown-item" href="javascript:;" onclick="$('#deleteCasesForm').submit()">
+                                                    <a class="dropdown-item" href="javascript:;" data-confirm="Certeza? | Se excluir, você não poderá recuperá-lo!" data-confirm-yes="$('#deleteCasesForm').submit()">
                                                         <i class="fas fa-trash"></i> Excluir
                                                     </a>
                                                 </div>

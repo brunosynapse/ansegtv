@@ -32,7 +32,7 @@
                                 <div class="form-group row mb-4 ">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Conteúdo</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea id="editor" name="content">
+                                        <textarea id="content" name="content" rows="10" cols="80">
                                            {{ $edition ? $post->content : old('content') }}
                                         </textarea>
                                     </div>
@@ -118,11 +118,12 @@
         </div>
     </section>
 
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script src="{{ asset('ckeditor/translations/pt-br.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/ckfinder/ckfinder.js') }}"></script>
-
-    <style>.ck-editor__editable {min-height: 300px;}</style>
-    {{--    Add to global css --}}
+    <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace( 'content',{
+            filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        } );
+    </script>
 @endsection
 

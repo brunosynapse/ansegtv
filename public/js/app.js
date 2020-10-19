@@ -405,20 +405,7 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-CKFinder.config({
-  connectorPath: '/ckfinder/connector'
-});
-ClassicEditor.create(document.querySelector('#editor'), {
-  language: 'pt-br',
-  ckfinder: {
-    uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
-  },
-  toolbar: ['ckfinder', 'video', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo']
-}).then(function (editor) {
-  editor.ui.view.editable.element.style.height = '300px';
-})["catch"](function (error) {
-  console.error(error);
-});
+
 
 /***/ }),
 
@@ -3333,13 +3320,13 @@ $('[data-confirm]').each(function () {
     title: me_data[0],
     body: me_data[1],
     buttons: [{
-      text: me.data('confirm-text-yes') || 'Yes',
+      text: me.data('confirm-text-yes') || 'Confirmar',
       "class": 'btn btn-danger btn-shadow',
       handler: function handler() {
         eval(me.data('confirm-yes'));
       }
     }, {
-      text: me.data('confirm-text-cancel') || 'Cancel',
+      text: me.data('confirm-text-cancel') || 'Cancelar',
       "class": 'btn btn-secondary',
       handler: function handler(modal) {
         $.destroyModal(modal);
