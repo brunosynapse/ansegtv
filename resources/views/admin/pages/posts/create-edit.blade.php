@@ -46,7 +46,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Palavras Chaves</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea class="form-control h-50" draggable="false" name="keyword">{{ $edition ? $post->keyword : old('keyword') }}</textarea>
+                                        <textarea class="form-control h-30" draggable="false" name="keyword">{{ $edition ? $post->keyword : old('keyword') }}</textarea>
                                         <small class="form-text text-danger">
                                             Separadas por vírgula!
                                         </small>
@@ -55,7 +55,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">URL Amigável</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="path">
+                                        <input type="text" class="form-control" name="path" value="{{ $edition ? $post->path : old('path') }}">
                                         <small class="form-text text-danger">
                                             Escreva em minúsculo. Não pode conter acentos, espaços ou caracteres especiais!
                                         </small>
@@ -64,7 +64,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Categorias</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <select class="custom-select" name="category">
+                                        <select class="custom-select" name="category_id">
 
                                             @if($edition)
                                                     @foreach($categories as $category)
@@ -85,12 +85,10 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tags</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <select class="custom-select js-example-basic-multiple" name="tag">
-                                            <option disabled selected hidden> Selecione uma ou mais opções</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                        <textarea class="form-control h-30" draggable="false" name="tag">{{ $edition ? $post->tag : old('tag') }}</textarea>
+                                        <small class="form-text text-danger">
+                                            Separadas por vírgula!
+                                        </small>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">

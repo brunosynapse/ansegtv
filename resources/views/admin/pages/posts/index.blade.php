@@ -69,15 +69,30 @@
                                                 <td>
                                                     <a href="#">
                                                         @foreach($categories as $category)
-                                                            {{ $category->id == $post->category_id ? $category->name : '' }}>
+                                                            {{ $category->id == $post->category_id ? $category->name : '' }}
                                                         @endforeach
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    {{$post->tag}}
+                                                    @foreach(explode(',', $post->tag) as $string)
+                                                        <a href="#" class="badge badge-light">{{ $string }}</a>
+                                                    @endforeach
+                                                        <form action="" id="deletePostForm" method="GET">
+                                                            @csrf
+                                                            <input type="hidden" value="tag1" name="tag">
+                                                            <input type="submit">
+                                                        </form>
                                                 </td>
                                                 <td>{{$post->updated_at}}</td>
-                                                <td><div class="badge badge-primary">{{$post->status}}</div></td>
+                                                <td>
+                                                    @if($post->status == 'Publicado')
+                                                        <div class="badge badge-success">{{$post->status}}</div>
+                                                    @elseif($post->status == 'Pendente')
+                                                        <div class="badge badge-warning">{{$post->status}}</div>
+                                                    @else
+                                                        <div class="badge badge-dark">{{$post->status}}</div>
+                                                    @endif
+                                                </td>
                                             </tr>
 
                                         @endforeach

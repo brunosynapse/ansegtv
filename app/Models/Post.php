@@ -11,9 +11,9 @@ class Post extends Model
         'content',
         'keyword',
         'description',
-        'category',
-        'tag',
+        'category_id',
         'status',
+        'tag',
         'path'
     ];
 

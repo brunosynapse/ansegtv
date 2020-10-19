@@ -92,6 +92,9 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $datas = $request->all();
+//        if($datas['tag'])
+//            $datas['tag'] = explode(",", $datas['tag']);
+
         $post = Post::find($id);
 
         if(!$post)

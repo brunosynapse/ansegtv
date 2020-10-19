@@ -17,7 +17,7 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">Nome</th>
-                                    <th scope="col">Postagem</th>
+                                    <th scope="col">Email</th>
                                     <th scope="col">Página</th>
                                     <th scope="col">Data</th>
                                     <th scope="col">Ações</th>

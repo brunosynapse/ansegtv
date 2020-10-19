@@ -32,6 +32,7 @@
             @csrf
             <input name="name" placeholder="name">
             <input type="email" name="email" placeholder="email">
+            <input type="number" name="email" placeholder="id da postagem">
             <textarea name="content">
 
             </textarea>
