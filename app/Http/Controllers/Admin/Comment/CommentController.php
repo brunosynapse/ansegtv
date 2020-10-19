@@ -15,7 +15,9 @@ class CommentController extends Controller
      */
     public function index()
     {
-        return view('admin/pages/comments/index');
+        $comments = Comment::paginate(15);
+
+        return view('admin/pages/comments/index', compact('comments'));
     }
 
     /**
@@ -36,7 +38,10 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Comment::create($data);
+
+        return redirect()->route('admin.comments.index');
     }
 
     /**
@@ -47,7 +52,12 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        $comment = Comment::find($id);
+
+        if($comment)
+            return view('admin/pages/comments/show', compact('comment'));
+
+        abort(404);
     }
 
     /**
@@ -81,6 +91,13 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comment = Comment::find($id);
+
+        if(!$comment)
+            abort(404);
+
+        $comment->delete();
+
+        return redirect()->route('admin.comments.index');
     }
 }

@@ -22,4 +22,21 @@
             <input type="submit">
         </form>
     </div>
+
+    <hr/>
+    <h1>
+        Form para teste de comentarios
+    </h1>
+    <div>
+        <form action="{{route('admin.comments.store')}}" method="post">
+            @csrf
+            <input name="name" placeholder="name">
+            <input type="email" name="email" placeholder="email">
+            <textarea name="content">
+
+            </textarea>
+            <input type="submit">
+        </form>
+    </div>
+
 @endsection
