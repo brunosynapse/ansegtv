@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Cases e Denuncias</h1>
+            <h1>Comentários</h1>
         </div>
 
         <div class="section-body">
@@ -29,8 +29,9 @@
                                     <tr>
                                         <td>{{ $comment-> name }}</td>
                                         <td>{{ $comment-> email }}</td>
-                                        <td>aqui vai o titulo da pagina...</td>
-                                        <th scope="col">{{ $comment->created_at }}</th>
+                                        <td>{{ $comment->post['post_title'] }}</td>
+                                        <td scope="col">{{date('d/m/Y', strtotime( $comment->created_at))}}</td>
+
                                         <td>
                                             <div class="dropdown d-inline mr-2">
                                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

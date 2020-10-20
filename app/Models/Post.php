@@ -1,10 +1,16 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
+use EloquentFilter\Filterable;
+use App\Models\Comment;
+use App\ModelFilters\PostFilter;
 
 class Post extends Model
 {
+    use Filterable;
+
     protected $fillable = [
         'page_title',
         'post_title',
@@ -17,8 +23,18 @@ class Post extends Model
         'path'
     ];
 
-    public function Category()
+    public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->HasOne(Category::class, 'id');
+    }
+
+    public function modelFilter()
+    {
+        return $this->provideFilter(PostFilter::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

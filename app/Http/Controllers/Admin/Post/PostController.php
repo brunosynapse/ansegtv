@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Post;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -14,15 +13,14 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $postsCount = Post::all()->count();
-        $posts = Post::paginate(15);
-        $categories = Category::all();
+        $posts = Post::filter($request->all())->paginateFilter(15);
 
         return view(
             'admin/pages/posts/index',
-            compact('posts', 'categories', 'postsCount')
+            compact('posts', 'postsCount')
         );
     }
 
@@ -92,8 +90,6 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $datas = $request->all();
-//        if($datas['tag'])
-//            $datas['tag'] = explode(",", $datas['tag']);
 
         $post = Post::find($id);
 
