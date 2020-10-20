@@ -13,9 +13,9 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $comments = Comment::paginate(15);
+        $comments = Comment::filter($request->all())->paginateFilter(10);
 
         return view('admin/pages/comments/index', compact('comments'));
     }

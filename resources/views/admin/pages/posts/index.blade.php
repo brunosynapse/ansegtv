@@ -4,8 +4,18 @@
 
 @section('content')
     <section class="section">
-        <div class="section-header">
-            <h1>Postagens</h1>
+        <div class="section-header d-flex justify-content-between">
+            <div>
+                <h1>Postagens</h1>
+            </div>
+            <div>
+                <form>
+                    <div class="row">
+                        <input class="form-control col-md-10 col-lg-9" type="search" placeholder="Titulo da postagem" aria-label="Search">
+                        <button class="btn col-md-2 col-lg-3" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="section-body">
             <div class="row">
@@ -17,15 +27,16 @@
                                     <a class="nav-link active" href="#">Todos<span class="badge badge-white">{{ $postsCount }}</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Rascunho<span class="badge badge-primary"> </span></a>
+                                    <a class="nav-link" href="#">Rascunho<span class="badge badge-primary"> {{$draftPosts}} </span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Pendentes<span class="badge badge-primary"> </span></a>
+                                    <a class="nav-link" href="#">Pendentes<span class="badge badge-primary"> {{$peddingPosts}} </span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Publicados<span class="badge badge-primary"> </span></a>
+                                    <a class="nav-link" href="#">Publicados<span class="badge badge-primary">{{ $publishedPosts }}</span></a>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                 </div>
@@ -33,16 +44,17 @@
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body">
-                            <div class="clearfix mb-3"></div>
+                        <div class="card-header d-flex justify-content-end">
+                            <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">
+                                Criar Postagem
+                            </a>
+                        </div>
+
+                        <div class="card-body  p-0">
                             <div class="table-responsive">
-                                <div class="card-header d-flex justify-content-end">
-                                    <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">
-                                        Criar Postagem
-                                    </a>
-                                </div>
-                                <table class="table table-striped">
-                                    <tbody>
+
+                                <table class="table">
+                                    <thead>
                                         <tr>
                                             <th>Título da Postagem</th>
                                             <th>Categoria</th>
@@ -50,6 +62,9 @@
                                             <th>Ultima Atualização</th>
                                             <th>Status</th>
                                         </tr>
+                                    </thead>
+                                    <tbody>
+
                                         @foreach($posts as $post)
 
                                             <tr>
@@ -94,6 +109,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div>
                                     {{ $posts->appends(request()->query())->links() }}
                                 </div>
                             </div>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Comment;
 
 class DashboardController extends Controller
 {
@@ -14,7 +16,15 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin/pages/dashboard');
+        $comments = Comment::all()->take(5);
+        $publishedPosts = Post::where('status', 'Publicado' )->count();
+        $peddingPosts = Post::where('status', 'Pendente')->count();
+        $draftPosts = Post::where('status', 'Rascunho')->count();
+
+
+
+        return view('admin/pages/dashboard',
+            compact('comments', 'publishedPosts', 'peddingPosts', 'draftPosts'));
     }
 
     /**

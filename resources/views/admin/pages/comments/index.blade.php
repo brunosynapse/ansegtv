@@ -4,8 +4,18 @@
 
 @section('content')
     <section class="section">
-        <div class="section-header">
-            <h1>Comentários</h1>
+        <div class="section-header d-flex justify-content-between">
+            <div>
+                <h1>Comentários</h1>
+            </div>
+            <div>
+                <form>
+                    <div class="row">
+                        <input class="form-control col-md-10 col-lg-9" name="nameOrEmail" type="search" placeholder="Nome ou email" aria-label="Search">
+                        <button class="btn col-md-2 col-lg-3" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div class="section-body">
@@ -38,7 +48,7 @@
                                                     Ações
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{ route('admin.comments.show', $comment->id) }}"><i class="fas fa-eyes"></i> Ver</a>
+                                                    <a class="dropdown-item" href="{{ route('admin.comments.show', $comment->id) }}"><i class="fas fa-eye"></i> Exibir</a>
                                                     <form action="{{ route('admin.comments.destroy', $comment->id) }}" id="deleteCommentForm" method="post">
                                                         @csrf
                                                         @method('DELETE')
@@ -55,7 +65,7 @@
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-end">
-                                {!! $comments->links() !!}
+                                {{ $comments->appends(request()->query())->links() }}
                             </div>
                         </div>
                     </div>

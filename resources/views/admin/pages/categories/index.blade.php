@@ -4,34 +4,23 @@
 
 @section('content')
     <section class="section">
-        <div class="section-header">
-            <h1>Categorias</h1>
+        <div class="section-header d-flex justify-content-between">
+            <div>
+                <h1>Categorias</h1>
+            </div>
+            <div>
+                <form>
+                    <div class="row">
+                        <input class="form-control col-md-10 col-lg-9" name="nameOrEmail" type="search" placeholder="Nome da Categoria" aria-label="Search">
+                        <button class="btn col-md-2 col-lg-3" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div class="section-body">
             <div class="row">
                 <div class="col-12">
-                    <div class="collapse" id="placeCollapse">
-                        <div class="card card-body">
-                            <form action="" method="GET">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Código" name="id" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Finalidade de imóvel" name="name" value="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-end">
-                                    <button type="submit" class="pl-5 pr-5 btn btn-primary">Buscar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                     <div class="card">
                         <div class="card-header d-flex justify-content-end">
                             <a href="{{ route('admin.categories.create') }}" class="btn btn-primary no-shadow">
@@ -77,7 +66,7 @@
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-end">
-                                {!! $categories->links() !!}
+                                {{ $categories->appends(request()->query())->links() }}
                             </div>
                         </div>
                     </div>

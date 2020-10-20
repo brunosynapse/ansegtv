@@ -14,9 +14,9 @@ class CasesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $cases = Cases::paginate(15);
+        $cases = Cases::filter($request->all())->paginateFilter(15);
 
         return view('admin/pages/cases/index', compact('cases'));
     }

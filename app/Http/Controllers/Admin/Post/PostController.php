@@ -15,12 +15,16 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
+
         $postsCount = Post::all()->count();
+        $publishedPosts = Post::where('status', 'Publicado' )->count();
+        $peddingPosts = Post::where('status', 'Pendente')->count();
+        $draftPosts = Post::where('status', 'Rascunho')->count();
         $posts = Post::filter($request->all())->paginateFilter(15);
 
         return view(
             'admin/pages/posts/index',
-            compact('posts', 'postsCount')
+            compact('posts', 'postsCount', 'publishedPosts', 'peddingPosts', 'draftPosts')
         );
     }
 

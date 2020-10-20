@@ -41,7 +41,7 @@
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Data:</label>
                                 <div class="col-sm-12 col-md-7">
                                     <p class="col-form-label">
-                                        {{$comment->created_at}}
+                                        {{date('d/m/Y', strtotime( $comment->created_at ))}}
                                     </p>
                                 </div>
                             </div>
