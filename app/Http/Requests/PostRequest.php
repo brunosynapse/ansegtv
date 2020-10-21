@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class PostRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class PostRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,14 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'page_title'=>'required|min:8|max:255',
+            'post_title'=>'required|min:8|max:255',
+            'content'=> 'nullable',
+            'keyword'=> 'nullable',
+            'description'=> 'nullable',
+            'category_id'=> 'nullable',
+            'path'=> "required|min:3|max:255|unique:posts,path,{$this->id}",
+            'tag'=>'nullable'
         ];
     }
 }

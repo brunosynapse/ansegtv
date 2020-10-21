@@ -12,10 +12,25 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                            @if(isset($errors) && count($errors)>0)
+                                <div class="pb-2">
+                                    @foreach($errors->all() as $erro)
+                                        <div class="alert alert-danger alert-dismissible show fade">
+                                            <div class="alert-body">
+                                                <button class="close" data-dismiss="alert">
+                                                    <span>×</span>
+                                                </button>
+                                                <i class="far fa-lightbulb"></i> {{$erro}}
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
                             <form action="{{ $edition ? route('admin.categories.update', $category->id) : route('admin.categories.store')}}" method="post">
                                 @csrf
                                 @if($edition)
                                     @method('PUT')
+                                    <input type="hidden" value="{{$category->id}}" name="id">
                                 @endif
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nome da Categoria</label>

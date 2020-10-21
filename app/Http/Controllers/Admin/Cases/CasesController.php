@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Cases;
 
 use App\Models\Cases;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CasesRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
@@ -34,10 +35,10 @@ class CasesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\CasesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CasesRequest $request)
     {
         $data = $request->all();
 

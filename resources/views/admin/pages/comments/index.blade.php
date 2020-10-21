@@ -40,7 +40,13 @@
                                     <tr>
                                         <td>{{ $comment-> name }}</td>
                                         <td>{{ $comment-> email }}</td>
-                                        <td>{{ $comment->post['post_title'] }}</td>
+                                        <td>
+                                            @if($comment->post['post_title'])
+                                                {{ $comment->post['post_title'] }}
+                                            @else
+                                                <span class="text-danger">Postagem Inexistente</span></td>
+                                            @endif
+
                                         <td scope="col">{{date('d/m/Y', strtotime( $comment->created_at))}}</td>
 
                                         <td>

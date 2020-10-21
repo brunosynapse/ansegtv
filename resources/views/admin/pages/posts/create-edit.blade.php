@@ -12,10 +12,25 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                            @if(isset($errors) && count($errors)>0)
+                                <div class="pb-2">
+                                    @foreach($errors->all() as $erro)
+                                        <div class="alert alert-danger alert-dismissible show fade">
+                                            <div class="alert-body">
+                                                <button class="close" data-dismiss="alert">
+                                                    <span>×</span>
+                                                </button>
+                                                <i class="far fa-lightbulb"></i> {{$erro}}
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
                             <form action="{{ $edition ? route('admin.posts.update', $post->id) : route('admin.posts.store')}}" method="post">
                                 @csrf
                                 @if($edition)
                                     @method('PUT')
+                                    <input type="hidden" value="{{$post->id}}" name="id">
                                 @endif
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Título da Página</label>
@@ -65,7 +80,6 @@
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Categorias</label>
                                     <div class="col-sm-12 col-md-7">
                                         <select class="custom-select" name="category_id">
-
                                             @if($edition)
                                                     @foreach($categories as $category)
                                                         <option
@@ -78,7 +92,6 @@
                                                             value="{{ $category->id }}" {{ old('category') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                                                     @endforeach
                                             @endif
-
                                         </select>
                                     </div>
                                 </div>
@@ -124,4 +137,3 @@
         } );
     </script>
 @endsection
-

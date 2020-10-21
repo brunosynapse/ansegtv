@@ -13,7 +13,7 @@ class CategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required|min:3|max:255',
+            'path'=> "required|min:3|max:255|regex:/^\S{6,}\z/|unique:categories,path,{$this->id}"
         ];
     }
 }
