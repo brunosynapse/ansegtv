@@ -11,7 +11,8 @@
             <div>
                 <form>
                     <div class="row">
-                        <input class="form-control col-md-10 col-lg-9" name="nameOrEmail" type="search" placeholder="Nome ou email" aria-label="Search">
+                        <input class="form-control col-md-10 col-lg-9" name="nameOrEmail" minlength="4" maxlength="40"
+                               type="search" placeholder="Nome ou email" aria-label="Search">
                         <button class="btn col-md-2 col-lg-3" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </form>

@@ -16,12 +16,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $comments = Comment::all()->take(5);
+        $comments = Comment::all()->sortByDesc('created_at')->take(4);
         $publishedPosts = Post::where('status', 'Publicado' )->count();
         $peddingPosts = Post::where('status', 'Pendente')->count();
         $draftPosts = Post::where('status', 'Rascunho')->count();
-
-
 
         return view('admin/pages/dashboard',
             compact('comments', 'publishedPosts', 'peddingPosts', 'draftPosts'));

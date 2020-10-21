@@ -121,7 +121,9 @@
                                 <li class="media">
                                     <img class="mr-3 rounded-circle" src="{{asset('images/avatar/avatar.png')}}" alt="avatar" width="50">
                                     <div class="media-body">
-                                        <div class="float-right">12m</div>
+                                        <div class="float-right">
+                                            <a href="{{route('admin.comments.show', $comment->id)}}"><i class="fa fa-eye"></i></a>
+                                        </div>
                                         <div class="media-title">{{$comment->name}}</div>
                                         <span class="text-small text-muted">{{$comment->content}}</span>
                                     </div>

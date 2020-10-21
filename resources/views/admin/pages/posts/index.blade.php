@@ -11,7 +11,8 @@
             <div>
                 <form>
                     <div class="row">
-                        <input class="form-control col-md-10 col-lg-9" type="search" placeholder="Titulo da postagem" aria-label="Search">
+                        <input class="form-control col-md-10 col-lg-9" type="search" placeholder="Titulo da postagem"
+                               name="title" aria-label="Search" minlength="4" maxlength="40">
                         <button class="btn col-md-2 col-lg-3" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
@@ -58,7 +59,6 @@
                                         <tr>
                                             <th>Título da Postagem</th>
                                             <th>Categoria</th>
-                                            <th>Tags</th>
                                             <th>Ultima Atualização</th>
                                             <th>Status</th>
                                         </tr>
@@ -88,11 +88,6 @@
                                                     <a href="javascript:;" onclick="$('#searchByCategory{{$post->category['id']}}').submit()">
                                                         {{$post->category['name']}}
                                                     </a>
-                                                </td>
-                                                <td>
-                                                    @foreach(explode(',', $post->tag) as $tag)
-                                                        <a href="javascript:;" class="badge badge-light">{{ $tag }}</a>
-                                                    @endforeach
                                                 </td>
                                                 <td>{{date('d/m/Y', strtotime( $post->updated_at ))}}</td>
                                                 <td>
