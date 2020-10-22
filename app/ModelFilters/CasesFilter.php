@@ -22,4 +22,10 @@ class CasesFilter extends ModelFilter
                 ->orWhere('email', 'LIKE', "%$string%");
         });
     }
+
+    public function status ($status)
+    {
+        return $this->where('status', $status);
+    }
+
 }

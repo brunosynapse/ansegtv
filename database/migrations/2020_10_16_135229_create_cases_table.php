@@ -19,6 +19,7 @@ class CreateCasesTable extends Migration
             $table->string('email');
             $table->text('message');
             $table->string('attachment')->nullable();
+            $table->string('status')->default('unpublished');
             $table->timestamps();
         });
     }

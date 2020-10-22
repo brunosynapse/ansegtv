@@ -31,7 +31,7 @@ class PostRequest extends FormRequest
             'keyword'=> 'nullable',
             'description'=> 'nullable',
             'category_id'=> 'nullable',
-            'path'=> "required|min:3|max:255|unique:posts,path,{$this->id}",
+            'path' => "required|min:3|max:255|unique:posts,path,{$this->id}",
             'tag'=>'nullable'
         ];
     }

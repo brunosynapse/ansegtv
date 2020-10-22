@@ -17,9 +17,14 @@ class CasesController extends Controller
      */
     public function index(Request $request)
     {
+        $casesCount = Cases::all()->count();
+        $casesPublishedCount = Cases::where('status', 'published')->count();
+        $casesUnPublishedCount = Cases::where('status', 'unpublished')->count();
+
         $cases = Cases::filter($request->all())->paginateFilter(15);
 
-        return view('admin/pages/cases/index', compact('cases'));
+        return view('admin/pages/cases/index',
+            compact('cases', 'casesCount', 'casesPublishedCount', 'casesUnPublishedCount'));
     }
 
     /**
@@ -43,7 +48,7 @@ class CasesController extends Controller
         $data = $request->all();
 
         if($request->hasFile('attachment') && $request->file('attachment')->isValid()){
-            $path = Storage::putFile('casesFile', $request->file('attachment'));
+            $path = Storage::putFile('public/images/cases', $request->file('attachment'));
             $data['attachment'] = $path;
         }
 
@@ -87,7 +92,17 @@ class CasesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->only('status');
+
+        $case = Cases::find($id);
+
+        if(!$case)
+            return abort(404);
+
+        $case->status = $data['status'];
+        $case->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -105,7 +120,7 @@ class CasesController extends Controller
 
         $case->delete();
 
-        return redirect()->route('admin.cases.index');
+        return redirect()->back();
     }
 
     /**

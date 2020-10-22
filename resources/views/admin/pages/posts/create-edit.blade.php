@@ -132,8 +132,12 @@
     <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
     <script>
         CKEDITOR.replace( 'content',{
-            filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form'
+            {{--filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",--}}
+            {{--filebrowserUploadMethod: 'form'--}}
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
         } );
     </script>
 @endsection

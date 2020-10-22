@@ -99,6 +99,6 @@ class CommentController extends Controller
 
         $comment->delete();
 
-        return redirect()->route('admin.comments.index');
+        return redirect()->back();
     }
 }

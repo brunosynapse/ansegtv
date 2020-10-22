@@ -1,6 +1,6 @@
 @extends('admin/layouts.app')
 
-@section('title', 'Comments')
+@section('title', 'Comenários')
 
 @section('content')
     <section class="section">
@@ -47,7 +47,7 @@
                                                 <span class="text-danger">Postagem Inexistente</span></td>
                                             @endif
 
-                                        <td scope="col">{{date('d/m/Y', strtotime( $comment->created_at))}}</td>
+                                        <td scope="col">{{date('d/m - H:i', strtotime( $comment->created_at))}}</td>
 
                                         <td>
                                             <div class="dropdown d-inline mr-2">

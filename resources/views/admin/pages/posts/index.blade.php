@@ -24,25 +24,39 @@
                     <div class="card mb-0">
                         <div class="card-body">
                             <ul class="nav nav-pills">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">Todos<span class="badge badge-white">{{ $postsCount }}</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Rascunho<span class="badge badge-primary"> {{$draftPosts}} </span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Pendentes<span class="badge badge-primary"> {{$peddingPosts}} </span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Publicados<span class="badge badge-primary">{{ $publishedPosts }}</span></a>
-                                </li>
-                            </ul>
+                                <form action="" method="GET" class="pr-2 pl-2">
+                                    <input type="hidden" name="" value="">
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn {{!request()->get('status') ? 'btn-primary' : 'btn-outline-primary'}} ">Todos <span class="badge badge-white">{{ $postsCount }}</span></button>
+                                    </div>
+                                </form>
+                                
+                                <form action="" method="GET" class="pr-2 pl-2">
+                                    <input type="hidden" name="status" value="publicado">
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn {{request()->get('status') == 'publicado'? 'btn-primary' : 'btn-outline-primary'}} ">Publicados <span class="badge badge-white">{{ $publishedPosts }}</span></button>
+                                    </div>
+                                </form>
 
+                                <form action="" method="GET" class="pr-2 pl-2">
+                                    <input type="hidden" name="status" value="pendente">
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn {{request()->get('status') == 'pendente'? 'btn-primary' : 'btn-outline-primary'}} ">Pendentes <span class="badge badge-white">{{ $peddingPosts }}</span></button>
+                                    </div>
+                                </form>
+
+                                <form action="" method="GET" class="pr-2 pl-2">
+                                    <input type="hidden" name="status" value="rascunho">
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn {{request()->get('status') == 'rascunho'? 'btn-primary' : 'btn-outline-primary'}} ">Rascunhos <span class="badge badge-white">{{ $draftPosts }}</span></button>
+                                    </div>
+                                </form>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
+            <div class="row mt-2">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-end">
