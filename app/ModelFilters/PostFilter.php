@@ -16,19 +16,18 @@ class PostFilter extends ModelFilter
 
     public function title($title)
     {
-        return $this->where('post_title', 'LIKE', "%$title%");
+        return $this->where('title', 'LIKE', "%$title%");
     }
 
-    public function tag($name)
+    public function category($id)
     {
-        return $this->where('tag', 'LIKE', "%$name%");
-    }
-
-    public function category($name)
-    {
-        $this->related('category', function($query) use ($name) {
-            return $query->where('name', 'LIKE', "%$name%");
+        $this->related('category', function($query) use ($id) {
+            return $query->where('category_id', $id);
         });
+
+//        $this->related('category', function($query) use ($name) {
+//            return $query->where('name', 'LIKE', "%$name%");
+//        });
     }
 
     public function status($status)

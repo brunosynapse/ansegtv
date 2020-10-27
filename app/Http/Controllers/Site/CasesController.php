@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Dashboard;
+namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Http\Requests\CasesRequest;
+use App\Models\Cases;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
-class DashboardController extends Controller
+class CasesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +17,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $publishedPosts = Post::where('status', 'Publicado' )->count();
-        $peddingPosts = Post::where('status', 'Pendente')->count();
-        $draftPosts = Post::where('status', 'Rascunho')->count();
-
-        return view('admin/pages/dashboard',
-            compact('publishedPosts', 'peddingPosts', 'draftPosts'));
+        return view('site.pages.cases');
     }
 
     /**
@@ -36,13 +33,24 @@ class DashboardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\CasesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CasesRequest $request)
     {
-        //
+        $data = $request->all();
+
+        if($request->hasFile('attachment') && $request->file('attachment')->isValid()){
+            $path = Storage::putFile('public/images/cases', $request->file('attachment'));
+            $data['attachment'] = $path;
+        }
+
+        Cases::create($data);
+        $sent = true;
+
+        return view ('site.pages.cases', compact('sent'));
     }
+
     /**
      * Display the specified resource.
      *

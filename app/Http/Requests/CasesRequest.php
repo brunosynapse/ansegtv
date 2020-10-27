@@ -27,7 +27,8 @@ class CasesRequest extends FormRequest
             'name'=>'required|min:3|max:255',
             'email'=>'required|min:8|max:255|email:rfc,dns',
             'message'=> 'required',
-            'attachment' => 'nullable|mimes:jpeg,jpg,png,gif,webp|max:2024'
+            'type' => 'required',
+            'attachment' => 'nullable|mimes:jpeg,jpg,png,gif,bmp|max:2024'
         ];
     }
 
@@ -42,6 +43,7 @@ class CasesRequest extends FormRequest
             'email.email'=> 'Por favor, forneça um e-mail válido',
             'email.required' => 'Seu e-mail é obrigatório para entrarmos em contato',
             'message.required'  => "Por favor, deixe sua mensagem no campo 'Mensagem'",
+            'type.required' => 'Classifique o motivo do seu contato',
             'attachment.mimes' => 'Esse formato de arquivo não é suportado',
             'attachment.max' => "Certifique-se de que o arquivo enviado seja menor que 2MB (2024 KB)"
         ];

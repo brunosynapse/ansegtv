@@ -11,9 +11,9 @@
             <div>
                 <form>
                     <div class="row">
-                        <input class="form-control col-md-10 col-lg-9" name="nameOrEmail"
+                        <input class="form-control col-md-10 col-lg-9" name="name"
                                type="search" placeholder="Nome da Categoria" minlength="4" maxlength="40"
-                               value="{{ request()->get('nameOrEmail')}}">
+                               value="{{ request()->get('name')}}">
                         <button class="btn col-md-2 col-lg-3" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </form>

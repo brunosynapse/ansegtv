@@ -15,10 +15,9 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->text('page_title');
-            $table->text('post_title');
+            $table->text('title');
+            $table->text('image')->nullable();
             $table->text('content')->nullable();
-            $table->text('keyword')->nullable();
             $table->text('description')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')
@@ -26,8 +25,7 @@ class CreatePostsTable extends Migration
                 ->on('categories')
                 ->onDelete('set null');
             $table->string('path')->unique();
-            $table->string('tag')->nullable();
-            $table->string('status');
+            $table->string('status')->default('Publicado');
             $table->timestamps();
         });
     }

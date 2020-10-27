@@ -17,9 +17,10 @@ class CreateCasesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->text('type');
             $table->text('message');
             $table->string('attachment')->nullable();
-            $table->string('status')->default('unpublished');
+            $table->string('status')->default('Privado');
             $table->timestamps();
         });
     }

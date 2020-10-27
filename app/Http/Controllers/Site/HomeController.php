@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Dashboard;
+namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
-class DashboardController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $publishedPosts = Post::where('status', 'Publicado' )->count();
-        $peddingPosts = Post::where('status', 'Pendente')->count();
-        $draftPosts = Post::where('status', 'Rascunho')->count();
+        $posts = Post::all()->sortByDesc('created_at')->take(6);
 
-        return view('admin/pages/dashboard',
-            compact('publishedPosts', 'peddingPosts', 'draftPosts'));
+        return view('site.pages.home', compact('posts'));
     }
 
     /**
@@ -43,6 +40,7 @@ class DashboardController extends Controller
     {
         //
     }
+
     /**
      * Display the specified resource.
      *
@@ -51,7 +49,7 @@ class DashboardController extends Controller
      */
     public function show($id)
     {
-        //
+        dd('show home controller');
     }
 
     /**
@@ -74,7 +72,7 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

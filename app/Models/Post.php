@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use EloquentFilter\Filterable;
-use App\Models\Comment;
+use App\Models\Category;
 use App\ModelFilters\PostFilter;
 
 class Post extends Model
@@ -12,20 +12,28 @@ class Post extends Model
     use Filterable;
 
     protected $fillable = [
-        'page_title',
-        'post_title',
+        'title',
         'content',
-        'keyword',
         'description',
         'category_id',
         'status',
-        'tag',
+        'image',
         'path'
     ];
 
     public function category()
     {
-        return $this->HasOne(Category::class, 'id');
+        return $this->belongsTo(Category::class);
+    }
+
+    public function getMonthUpdatedAtAttribute() // month_updated_at
+    {
+        return $this->getAttribute('updated_at')->translatedFormat('F');
+    }
+
+    public function getDayUpdatedAtAttribute() // day_updated_at
+    {
+        return $this->getAttribute('updated_at')->translatedFormat('d');
     }
 
     public function modelFilter()
@@ -33,9 +41,5 @@ class Post extends Model
         return $this->provideFilter(PostFilter::class);
     }
 
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
 
 }

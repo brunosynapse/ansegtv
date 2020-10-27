@@ -29,6 +29,14 @@
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tipo:</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <p class="col-form-label">
+                                        {{$case->type}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Mensagem:</label>
                                 <div class="col-sm-12 col-md-7">
                                     <p class="col-form-label">
@@ -40,7 +48,7 @@
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Data:</label>
                                 <div class="col-sm-12 col-md-7">
                                     <p class="col-form-label">
-                                        {{$case->created_at}}
+                                    {{$case->updated_at->translatedFormat('d/m/Y \à\s H:i\h')}}
                                     </p>
                                 </div>
                             </div>
@@ -52,13 +60,20 @@
                                         @csrf
                                         <input type="hidden" name="attachment" value="{{$case->attachment}}">
                                     </form>
-                                    <p class="col-form-label">
-                                        <a class="text-danger" href="javascript:;" data-toggle="tooltip"
-                                           data-placement="right" onclick="$('#downloadAttachment').submit()"
-                                           title="Recomendamos analisar minuciosamente os arquivos baixados">
-                                            <i class="fas fa-paperclip"></i> BAIXAR
-                                        </a>
-                                    </p>
+
+                                    @if($case->attachment)
+                                        <p class="col-form-label">
+                                            <a class="text-danger" href="javascript:;" data-toggle="tooltip"
+                                               data-placement="right" onclick="$('#downloadAttachment').submit()"
+                                               title="Recomendamos analisar minuciosamente os arquivos baixados">
+                                                <i class="fas fa-paperclip"></i> BAIXAR
+                                            </a>
+                                        </p>
+                                    @else
+                                        <p class="text-danger">
+                                            Nenhum anexo enviado
+                                        </p>
+                                    @endif
                                 </div>
                             </div>
                         </div>

@@ -14,7 +14,7 @@ class CategoryFilter extends ModelFilter
     */
     public $relations = [];
 
-    public function nameOrEmail($string)
+    public function name($string)
     {
         return $this->where('name', 'LIKE', "%$string%");
     }

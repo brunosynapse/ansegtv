@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Dashboard;
+namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
-class DashboardController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $publishedPosts = Post::where('status', 'Publicado' )->count();
-        $peddingPosts = Post::where('status', 'Pendente')->count();
-        $draftPosts = Post::where('status', 'Rascunho')->count();
-
-        return view('admin/pages/dashboard',
-            compact('publishedPosts', 'peddingPosts', 'draftPosts'));
+        $posts = Post::all()->sortByDesc('created_at')->take(2);
+        return redirect()->back();
+        return view('site.pages.posts', compact('posts'));
     }
 
     /**
@@ -43,15 +40,24 @@ class DashboardController extends Controller
     {
         //
     }
+
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $path
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($path)
     {
-        //
+        $result = Post::where('path', $path)->get();
+        if ($result->isEmpty()) {
+            dd('vaziooo');
+        }
+
+        if($result)
+            return view('site.pages.posts', compact('result'));
+
+        abort(404);
     }
 
     /**

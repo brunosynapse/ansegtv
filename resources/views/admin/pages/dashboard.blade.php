@@ -113,30 +113,27 @@
             <div class="col-lg-4 col-md-12 col-12 col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Últimos Comentários</h4>
+                        <h4>Últimos Cases</h4>
                     </div>
                     <div class="card-body">
-                        @forelse($comments as $comment)
                             <ul class="list-unstyled list-unstyled-border">
                                 <li class="media">
                                     <img class="mr-3 rounded-circle" src="{{asset('images/avatar/avatar.png')}}" alt="avatar" width="50">
                                     <div class="media-body">
                                         <div class="float-right">
-                                            <a href="{{route('admin.comments.show', $comment->id)}}"><i class="fa fa-eye"></i></a>
+                                            <a href="#"><i class="fa fa-eye"></i></a>
                                         </div>
-                                        <div class="media-title">{{$comment->name}}</div>
-                                        <span class="text-small text-muted">{{$comment->content}}</span>
+                                        <div class="media-title"> nome </div>
+                                        <span class="text-small text-muted"> mensagem ...</span>
                                     </div>
                                 </li>
-                        @empty
-                            <h5>Você não tem comentários recentes</h5>
-                            <span>Para inciar criando uma postagem, basta você <a href="{{route('admin.posts.create')}}">clicar aqui.</a></span>
-                        @endforelse
+                            <h5>Você não tem cases recentes</h5>
+                            <span>Para entreter seu público, recomendamos <a href="{{route('admin.posts.create')}}">criar uma postagem.</a></span>
 
 
                         </ul>
                         <div class="text-center pt-4 pb-1">
-                            <a href="{{route('admin.comments.index')}}" class="btn btn-primary btn-lg btn-round">
+                            <a href="{{route('admin.cases.index')}}" class="btn btn-primary btn-lg btn-round">
                                 Ver todos
                             </a>
                         </div>

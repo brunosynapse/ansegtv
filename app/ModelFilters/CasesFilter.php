@@ -28,4 +28,9 @@ class CasesFilter extends ModelFilter
         return $this->where('status', $status);
     }
 
+    public function type ($status)
+    {
+        return $this->where('type', $status);
+    }
+
 }

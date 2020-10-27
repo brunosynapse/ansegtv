@@ -14,8 +14,10 @@ class Cases extends Model
     protected $fillable = [
         'name',
         'email',
+        'status',
         'message',
         'attachment',
+        'type'
     ];
 
     public function modelFilter()

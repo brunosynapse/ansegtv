@@ -30,7 +30,7 @@
                                         <button type="submit" class="btn {{!request()->get('status') ? 'btn-primary' : 'btn-outline-primary'}} ">Todos <span class="badge badge-white">{{ $postsCount }}</span></button>
                                     </div>
                                 </form>
-                                
+
                                 <form action="" method="GET" class="pr-2 pl-2">
                                     <input type="hidden" name="status" value="publicado">
                                     <div class="d-flex justify-content-end">
@@ -82,7 +82,7 @@
                                         @foreach($posts as $post)
 
                                             <tr>
-                                                <td>{{$post->post_title}}
+                                                <td>{{$post->title}}
                                                     <div class="table-links row ml-1">
                                                         <a href="{{route('admin.posts.edit', $post->id)}}">Editar</a>
                                                         <div class="bullet"></div>
@@ -103,7 +103,7 @@
                                                         {{$post->category['name']}}
                                                     </a>
                                                 </td>
-                                                <td>{{date('d/m/Y', strtotime( $post->updated_at ))}}</td>
+                                                <td>{{$post->updated_at->translatedFormat('d/m/Y')}}</td>
                                                 <td>
                                                     @if($post->status == 'Publicado')
                                                         <div class="badge badge-success">{{$post->status}}</div>

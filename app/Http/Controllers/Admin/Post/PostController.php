@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Post;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
+        $post = Post::find(1);
 
         $postsCount = Post::all()->count();
         $publishedPosts = Post::where('status', 'Publicado' )->count();
@@ -51,6 +53,15 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $data = $request->all();
+
+        if($request->hasFile('image')){
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $data['image'] = $filename.'_'.time().'.'.$extension;
+            $request->file('image')->storeAs('public/images/posts', $data['image']);
+        }
+
         Post::create($data);
 
         return redirect()->route('admin.posts.index');
@@ -94,14 +105,30 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, $id)
     {
-        $datas = $request->all();
-
         $post = Post::find($id);
 
         if(!$post)
             return abort(404);
 
-        $post->update($datas);
+        $data = $request->all();
+
+        if($request->hasFile('image'))
+        {
+            if(Storage::disk('public')->exists('images/posts/'.$data['image']->getClientOriginalName()))
+            {
+                Storage::disk('public')->delete('images/posts/'.$data['image']->getClientOriginalName());
+            }
+
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $data['image'] = $filename.'_'.time().'.'.$extension;
+            $request->file('image')->storeAs('public/images/posts', $data['image']);
+        }else{
+            $data['image'] = $post->image;
+        }
+
+        $post->update($data);
 
         return redirect()->route('admin.posts.index');
     }

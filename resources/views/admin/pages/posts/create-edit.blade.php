@@ -26,22 +26,22 @@
                                     @endforeach
                                 </div>
                             @endif
-                            <form action="{{ $edition ? route('admin.posts.update', $post->id) : route('admin.posts.store')}}" method="post">
+                            <form action="{{ $edition ? route('admin.posts.update', $post->id) : route('admin.posts.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @if($edition)
                                     @method('PUT')
                                     <input type="hidden" value="{{$post->id}}" name="id">
                                 @endif
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Título da Página</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="page_title" value="{{ $edition ? $post->page_title : old('page_title') }}">
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Título da Postagem</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="post_title" value="{{ $edition ? $post->post_title : old('post_title') }}">
+                                        <input type="text" class="form-control" name="title" value="{{ $edition ? $post->title : old('title') }}">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4 ">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Imagem Principal</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input type="file" name="image" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4 ">
@@ -56,15 +56,6 @@
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Descrição</label>
                                     <div class="col-sm-12 col-md-7">
                                         <textarea class="form-control h-100" draggable="false" name="description">{{ $edition ? $post->description : old('description') }}</textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Palavras Chaves</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <textarea class="form-control h-30" draggable="false" name="keyword">{{ $edition ? $post->keyword : old('keyword') }}</textarea>
-                                        <small class="form-text text-danger">
-                                            Separadas por vírgula!
-                                        </small>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
@@ -96,19 +87,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tags</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <textarea class="form-control h-30" draggable="false" name="tag">{{ $edition ? $post->tag : old('tag') }}</textarea>
-                                        <small class="form-text text-danger">
-                                            Separadas por vírgula!
-                                        </small>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Estado</label>
                                     <div class="col-sm-12 col-md-7">
                                         <select class="custom-select" name="status">
-                                            <option disabled selected hidden> Selecione uma opção</option>
+                                            <option disabled selected hidden value="Publicado"> Selecione uma opção</option>
                                             <option value="Publicado">Publicado</option>
                                             <option value="Pendente">Pendente</option>
                                             <option value="Rascunho">Rascunho</option>
@@ -131,13 +113,14 @@
 
     <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
     <script>
+
         CKEDITOR.replace( 'content',{
             {{--filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",--}}
-            {{--filebrowserUploadMethod: 'form'--}}
+            {{--filebrowserUploadMethod: 'form',--}}
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
             filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
             filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
             filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-        } );
+        } )
     </script>
 @endsection

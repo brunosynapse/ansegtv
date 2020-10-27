@@ -34,16 +34,16 @@
                                 </form>
 
                                 <form action="" method="GET" class="pr-2 pl-2">
-                                    <input type="hidden" name="status" value="published">
+                                    <input type="hidden" name="status" value="Publicado">
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn {{request()->get('status') == 'published'? 'btn-primary' : 'btn-outline-primary'}} ">Publicados <span class="badge badge-white">{{ $casesPublishedCount }}</span></button>
+                                        <button type="submit" class="btn {{request()->get('status') == 'Publicado'? 'btn-primary' : 'btn-outline-primary'}} ">Publicados <span class="badge badge-white">{{ $casesPublishedCount }}</span></button>
                                     </div>
                                 </form>
 
                                 <form action="" method="GET" class="pr-2 pl-2">
-                                    <input type="hidden" name="status" value="unpublished">
+                                    <input type="hidden" name="status" value="Privado">
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn {{request()->get('status') == 'unpublished'? 'btn-primary' : 'btn-outline-primary'}} ">Não Publicados <span class="badge badge-white">{{ $casesUnPublishedCount }}</span></button>
+                                        <button type="submit" class="btn {{request()->get('status') == 'Privado'? 'btn-primary' : 'btn-outline-primary'}} ">Não Publicados <span class="badge badge-white">{{ $casesPrivateCount }}</span></button>
                                     </div>
                                 </form>
                             </ul>
@@ -71,9 +71,9 @@
                                     <tr>
                                         <td>{{ $case-> name }}</td>
                                         <td>{{ $case-> email }}</td>
-                                        <td>{{ $case-> message }}</td>
+                                        <td>{{ mb_strimwidth($case-> message, 0, 50, "...") }}</td>
                                         <td scope="col">
-                                            @if($case->status == 'published')
+                                            @if($case->status == 'Publicado')
                                                 <div class="badge badge-success">Publicado</div>
                                             @else
                                                 <div class="badge badge-warning">Não Publicado</div>
@@ -83,15 +83,15 @@
                                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Ações
                                                 </button>
-                                                <div class="dropdown-menu">
+                                                <div class="dropdown-menu dropdown-menu-right">
                                                     <a class="dropdown-item" href="{{ route('admin.cases.show', $case->id) }}"><i class="fas fa-eye"></i> Exibir</a>
                                                     <form action="{{ route('admin.cases.update', $case->id) }}" id="statusCasesForm" method="post">
                                                         @csrf
                                                         @method('PUT')
-                                                        <input type="hidden" name="status" value="{{$case->status == 'published' ? 'unpublished' : 'published' }}" class="badge badge-success">
+                                                        <input type="hidden" name="status" value="{{$case->status == 'Publicado' ? 'Privado' : 'Publicado' }}" class="badge badge-success">
                                                     </form>
                                                     <a class="dropdown-item" href="javascript:;" onclick="$('#statusCasesForm').submit()">
-                                                        <i class="fas fa-copy"></i> {{$case->status ==  'published' ? 'Despublicar' : 'Publicar'}}
+                                                        <i class="fas fa-copy"></i> {{$case->status ==  'Publicado' ? 'Privar' : 'Publicar'}}
                                                     </a>
                                                     <form action="{{ route('admin.cases.destroy', $case->id) }}" id="deleteCasesForm" method="post">
                                                         @csrf

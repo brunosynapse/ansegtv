@@ -25,14 +25,13 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'page_title'=>'required|min:8|max:255',
-            'post_title'=>'required|min:8|max:255',
+            'title'=>'required|min:8|max:255',
             'content'=> 'nullable',
             'keyword'=> 'nullable',
             'description'=> 'nullable',
             'category_id'=> 'nullable',
             'path' => "required|min:3|max:255|unique:posts,path,{$this->id}",
-            'tag'=>'nullable'
+            'image' => 'mimes:jpeg,jpg,png,gif,webp|max:2024'
         ];
     }
 }
