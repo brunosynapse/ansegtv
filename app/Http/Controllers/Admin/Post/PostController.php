@@ -141,7 +141,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Category::find($id);
         $post = Post::find($id);
 
         if(!$post)

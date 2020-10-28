@@ -15,7 +15,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all()->sortByDesc('created_at')->take(2);
         return redirect()->back();
         return view('site.pages.posts', compact('posts'));
     }

@@ -1,7 +1,8 @@
 @extends('site/layouts.app')
 
 {{--@section('title', 'Secovi Dashboard')--}}
-@section('banner', asset('assets/img/header_top3.png'))
+
+@section('class', 'participe')
 
 @section('content')
 

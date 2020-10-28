@@ -2,6 +2,7 @@
 
 @section('title', 'Plataforma Cidades e Meio Ambiente ')
 
+@section('banner', asset('assets/img/header_top.png'))
 @section('content')
 
 

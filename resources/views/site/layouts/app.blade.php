@@ -32,7 +32,7 @@
 
 <!-- Navigation Top -->
 <section id="navigation-top" class="">
-    <div class="background-wrap"><img src="@yield('banner', asset('assets/img/header_top.png'))" alt="" class="img-fluid"></div>
+    <div class="background-wrap @yield('class' ,'')"><img src="@yield('banner', '')" alt="" class="img-fluid"></div>
     <div class="container-fluid">
         <div class="row">
             <div class="col px-0">
