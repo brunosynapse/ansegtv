@@ -122,50 +122,7 @@ p, a, span, em {font-weight: 300;}
     border-radius: 2px;}
 
 /*Categorias*/
-#noticias span.categoria-01 {
-    background-color: #185556;
-    color: white;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    text-transform: uppercase;
-}
-#noticias span.categoria-02 {
-    background-color: #327887;
-    color: white;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    text-transform: uppercase;
-}
-#noticias span.categoria-03 {
-    background-color: #547D31;
-    color: white;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    text-transform: uppercase;
-}
-#noticias span.categoria-04 {
-    background-color: #71A33F;
-    color: white;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    text-transform: uppercase;
-}
-#noticias span.categoria-05 {
-    background-color: #CF865D;
-    color: white;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    text-transform: uppercase;
-}
-#noticias span.categoria-06 {
-    background-color: #185556;
-    color: white;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    text-transform: uppercase;
-}
-#noticias span.categoria-07 {
-    background-color: #185556;
+#noticias span.categoria{
     color: white;
     font-size: 0.7rem;
     padding: 2px 6px;

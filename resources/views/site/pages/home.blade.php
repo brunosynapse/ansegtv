@@ -69,7 +69,7 @@
                             <img src="{{asset("storage/images/posts/".$post->image)}}" alt="" class="img-fluid">
 
                         @if($post->category['name'])
-                                <span class="h4 categoria-01">{{$post->category['name']}}</span>
+                                <span class="h4 categoria" style="background-color: {{$post->category['color']}}">{{$post->category['name']}}</span>
                             @endif
                             <h3 class="titulo">{{$post->title}}</h3>
                             <p class="desc">{{$post->description}}</p></a>

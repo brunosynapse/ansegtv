@@ -17,15 +17,6 @@
               <li><a class="nav-link" href="{{ route('admin.posts.create') }}">Criar Nova Postagens</a></li>
           </ul>
       </li>
-
-      <li class="dropdown {{ request()->is('categories') ? 'active' : '' }}">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-list-alt"></i> <span>Categorias</span></a>
-          <ul class="dropdown-menu" style="display: none;">
-              <li><a class="active" href="{{ route('admin.categories.index') }}">Todas as Categorias</a></li>
-              <li><a class="nav-link" href="{{ route('admin.categories.create') }}">Criar Nova Categoria</a></li>
-          </ul>
-      </li>
-
       <li class="{{ request()->is('cases') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.cases.index') }}"><i class="fas fa-user-check"></i> <span>Cases e Denúncias</span></a></li>
       <li class="menu-header">Mais Opções</li>
     <li><a class="nav-link" href=""><i class="fas fa-users"></i> <span>Usuários</span></a></li>

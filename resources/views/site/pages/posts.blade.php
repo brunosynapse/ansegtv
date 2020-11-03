@@ -30,7 +30,7 @@
                     </div>
                     <div class="cabecalho">
                         @if($post->category['name'])
-                            <span class="h4 categoria-01">{{$post->category['name']}}</span>
+                            <span class="h4 categoria" style=""">{{$post->category['name']}}</span>
                         @endif
                         <h3 class="titulo">{{$post->title}}</h3>
                     </div>

@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/img/mosaico-programa.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CommentRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CategoryFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_06_132400_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_06_132400_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/StatusTableSeeder.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/cases.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/cases.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/pages/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/posts.blade.php" afterDir="false" />
     </list>
@@ -218,6 +221,7 @@
       <workItem from="1603809904735" duration="9968000" />
       <workItem from="1603821457497" duration="8769000" />
       <workItem from="1603894398765" duration="4437000" />
+      <workItem from="1604068261290" duration="4625000" />
     </task>
     <servers />
   </component>
@@ -241,9 +245,9 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="344" y="162" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1603730115793" />
-    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1603734328011">
+    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1604070453372">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1603734328011" />
+    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1604070453372" />
   </component>
 </project>
