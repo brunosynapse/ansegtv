@@ -1,4 +1,4 @@
-@extends('site/layouts.app')
+@extends('site.layouts.app')
 
 @foreach($result as $post)
     @section('title', "{$post->title} | Plataforma Cidades e Meio Ambiente")
@@ -66,7 +66,7 @@
                         })();
                     </script>
                     <noscript>Ative o JavaScript para ver os <a href="https://disqus.com/?ref_noscript">comentários dessa postagem.</a></noscript>
-                    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f908c715eadfb0013785df7&product=inline-share-buttons' async='async'></script>
+                    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5fa2d8f73b1cfe00120b7395&product=sticky-share-buttons' async='async'></script>
 
                 </div>
             </div>
