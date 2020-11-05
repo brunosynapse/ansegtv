@@ -5,9 +5,8 @@
     @section('description', $post->description)
     @section('ogDescription', $post->description)
     @section('ogUrl', route('site.postagens.show', $post->path))
+    @section('ogImage', asset("storage/images/posts/".$post->image))
 
-{{--    <meta property="og:image" content="https://www.cidadesemeioambiente.com.br/img/noticia-2.jpg">--}}
-{{--    <meta name="image" property="og:image" content="https://www.cidadesemeioambiente.com.br/img/noticia-2.jpg">--}}
     @section('articlePublishedTime', date('Y-m-d', strtotime( $post->updated_at )))
 @endforeach
 
@@ -30,7 +29,7 @@
                     </div>
                     <div class="cabecalho">
                         @if($post->category['name'])
-                            <span class="h4 categoria" style=""">{{$post->category['name']}}</span>
+                            <span class="h4 categoria" style="background-color: {{$post->category['color']}}">{{$post->category['name']}}</span>
                         @endif
                         <h3 class="titulo">{{$post->title}}</h3>
                     </div>
@@ -38,7 +37,7 @@
                     <hr class="divisor">
                     <div class="conteudo">
 
-                        <img src="{{asset("storage/images/posts/".$post->image)}}" alt="Cidade de São Paulo" class="img-fluid pull-left my-3">
+                        <img src="{{asset("storage/images/posts/".$post->image)}}" alt="Imagem da postagem {{$post->title}}" class="img-fluid pull-left my-3">
 
                         {!! $post->content !!}
 
@@ -48,17 +47,7 @@
                 <div class="comentarios my-5">
                     <div id="disqus_thread"></div>
                     <script>
-
-                        /**
-                         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                        /*
-                        var disqus_config = function () {
-                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                        };
-                        */
-                        (function() { // DON'T EDIT BELOW THIS LINE
+                        (function() {
                             var d = document, s = d.createElement('script');
                             s.src = 'https://cidades-e-meio-ambiente.disqus.com/embed.js';
                             s.setAttribute('data-timestamp', +new Date());

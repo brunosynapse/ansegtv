@@ -30,8 +30,15 @@ class PostRequest extends FormRequest
             'keyword'=> 'nullable',
             'description'=> 'nullable',
             'category_id'=> 'nullable',
-            'path' => "required|min:3|max:255|unique:posts,path,{$this->id}",
+            'path' => "unique:posts,path,{$this->id}",
             'image' => 'mimes:jpeg,jpg,png,gif,webp|max:2024'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'path.unique' => 'Não foi possivel criar uma URL a partir desse título. Por favor, altere o título!'
         ];
     }
 }

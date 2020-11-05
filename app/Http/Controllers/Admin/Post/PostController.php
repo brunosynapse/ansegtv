@@ -7,6 +7,7 @@ use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -53,6 +54,8 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $data = $request->all();
+
+        $data['path'] = Str::slug($data['title'], '-');
 
         if($request->hasFile('image')){
             $filenameWithExt = $request->file('image')->getClientOriginalName();
@@ -111,6 +114,8 @@ class PostController extends Controller
             return abort(404);
 
         $data = $request->all();
+
+        $data['path'] = Str::slug($data['title'], '-');
 
         if($request->hasFile('image'))
         {

@@ -59,15 +59,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">URL Amigável</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="path" value="{{ $edition ? $post->path : old('path') }}">
-                                        <small class="form-text text-danger">
-                                            Escreva em minúsculo. Não pode conter acentos, espaços ou caracteres especiais!
-                                        </small>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Categorias</label>
                                     <div class="col-sm-12 col-md-7">
                                         <select class="custom-select" name="category_id">

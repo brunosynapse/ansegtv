@@ -15,9 +15,8 @@
           content="@yield('ogDescription', 'A plataforma Cidades e Meio Ambiente tem o objetivo de trazer informação, desmistificar e criar mobilização inteligente em torno destes temas.')">
     <meta property="og:site_name" content="Cidades e Meio Ambiente">
     <meta property="og:url" content="@yield('ogUrl', route('site.index'))">
-    <meta property="og:image" content="https://www.cidadesemeioambiente.com.br/img/uploads/social-share.png">
-    <meta name="image" property="og:image"
-          content="https://www.cidadesemeioambiente.com.br/img/uploads/social-share.png">
+    <meta property="og:image" content="@yield('orImage','')">
+    <meta name="image" property="og:image" content="https://www.cidadesemeioambiente.com.br/img/uploads/social-share.png">
     <meta property="article:published_time" content="@yield('articlePublishedTime', '2020-10-22')">
     <meta property="article:author" content="https://www.cidadesemeioambiente.com.br/">
 

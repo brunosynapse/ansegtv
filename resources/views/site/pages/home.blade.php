@@ -85,15 +85,16 @@
 
                     <div class="col-12 col-md-6 my-4 item-noticia">
                         <a href="{{route('site.postagens.show', $post->path)}}" class="noticia">
-                            {{--                            <img src="{{asset(str_replace('public', 'storage', $post->image))}}" alt="Cidade de São Paulo, vista de cima" class="img-fluid">--}}
-                            <img src="{{asset("storage/images/posts/".$post->image)}}" alt="" class="img-fluid">
+                            <img src="{{asset("storage/images/posts/".$post->image)}}" alt="Imagem da postagem {{$post->title}}" class="img-fluid">
 
                             @if($post->category['name'])
                                 <span class="h4 categoria"
                                       style="background-color: {{$post->category['color']}}">{{$post->category['name']}}</span>
                             @endif
                             <h3 class="titulo">{{$post->title}}</h3>
-                            <p class="desc">{{$post->description}}</p></a>
+                            <p class="desc">{{ mb_strimwidth($post->description, 0, 100, "...") }}</p>
+                        </a>
+
                         <a href="{{route('site.postagens.show', $post->path)}}" class="leiamais">Leia mais</a>
                     </div>
 
@@ -101,23 +102,6 @@
             </div>
         </div>
     </section>
-
-    <!-- <section id="footer-logos">
-        <div class="container">
-          <div class="row">
-            <div class="col text-center">
-                 <a href="#fsb">
-                   <img src="./img/fsb-logo.png" alt="FSB Comunicação" class="img-fluid mx-3 my-3">
-                  </a>
-                  <a href="#giusti">
-                    <img src="./img/giusti-logo.png" alt="Giusti Comunicação" class="img-fluid mx-3 my-3">
-                  </a>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-
 
 @endsection
 

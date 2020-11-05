@@ -86,11 +86,11 @@
                                                     <div class="table-links row ml-1">
                                                         <a href="{{route('admin.posts.edit', $post->id)}}">Editar</a>
                                                         <div class="bullet"></div>
-                                                        <form action="{{route('admin.posts.destroy', $post->id)}}" id="deletePostForm" method="post">
+                                                        <form action="{{route('admin.posts.destroy', $post->id)}}" id="deletePostForm{{$post->id}}" method="post">
                                                             @csrf
                                                             @method('DELETE')
                                                         </form>
-                                                        <a class="text-danger" href="javascript:;" data-confirm="Certeza? | Se excluir, você não poderá recuperá-lo!" data-confirm-yes="$('#deletePostForm').submit()">
+                                                        <a class="text-danger" href="javascript:;" data-confirm="Certeza? | Se excluir, você não poderá recuperá-lo!" data-confirm-yes="$('#deletePostForm{{$post->id}}').submit()">
                                                             Excluir
                                                         </a>
                                                     </div>
