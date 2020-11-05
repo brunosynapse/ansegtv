@@ -37,7 +37,7 @@
                     <hr class="divisor">
                     <div class="conteudo">
 
-                        <img src="{{asset("storage/images/posts/".$post->image)}}" alt="Imagem da postagem {{$post->title}}" class="img-fluid pull-left my-3">
+                        <img src="{{asset("storage/".$post->image)}}" alt="Imagem da postagem {{$post->title}}" class="img-fluid pull-left my-3">
 
                         {!! $post->content !!}
 

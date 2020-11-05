@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Post;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Arr;
+use App\Services\UploadService;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -18,10 +19,10 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $post = Post::find(1);
+        $postsCount = Post::count();
 
-        $postsCount = Post::all()->count();
         $publishedPosts = Post::where('status', 'Publicado' )->count();
+
         $peddingPosts = Post::where('status', 'Pendente')->count();
         $draftPosts = Post::where('status', 'Rascunho')->count();
         $posts = Post::filter($request->all())->paginateFilter(15);
@@ -53,17 +54,21 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
+        $upload = new UploadService();
+
         $data = $request->all();
 
-        $data['path'] = Str::slug($data['title'], '-');
+        if($request->hasFile('image'))
+        {
+            $originalImageName = $request->image->getClientOriginalName();
 
-        if($request->hasFile('image')){
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('image')->getClientOriginalExtension();
-            $data['image'] = $filename.'_'.time().'.'.$extension;
-            $request->file('image')->storeAs('public/images/posts', $data['image']);
+            $data['image'] = $upload
+                ->setKey('image')
+                ->setFolder('images/posts')
+                ->single($request, $originalImageName)['path'];
         }
+
+        $data['path'] = Str::slug($data['title'], '-');
 
         Post::create($data);
 
@@ -106,7 +111,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PostRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $post = Post::find($id);
 
@@ -119,18 +124,17 @@ class PostController extends Controller
 
         if($request->hasFile('image'))
         {
-            if(Storage::disk('public')->exists('images/posts/'.$data['image']->getClientOriginalName()))
-            {
-                Storage::disk('public')->delete('images/posts/'.$data['image']->getClientOriginalName());
-            }
+            $upload = new UploadService();
 
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('image')->getClientOriginalExtension();
-            $data['image'] = $filename.'_'.time().'.'.$extension;
-            $request->file('image')->storeAs('public/images/posts', $data['image']);
-        }else{
-            $data['image'] = $post->image;
+            $originalImageName = $request->image->getClientOriginalName();
+
+            $upload
+                ->removeFilePah($post->image);
+
+            $data['image'] = $upload
+                ->setKey('image')
+                ->setFolder('images/posts')
+                ->single($request, $originalImageName)['path'];
         }
 
         $post->update($data);
@@ -174,6 +178,5 @@ class PostController extends Controller
             @header('Content-type: text/html; charset=utf-8');
             echo $response;
         }
-
     }
 }

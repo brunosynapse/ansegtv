@@ -28,7 +28,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <form action="{{route('admin.posts.index')}}" id="publishedPostsCard">
-                        <input type="hidden" name="status" value="Publicadas">
+                        <input type="hidden" name="status" value="Publicado">
                     </form>
                     <a href="javascript:;" onclick="$('#publishedPostsCard').submit()">
                         <div class="card-icon bg-success">

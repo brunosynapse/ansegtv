@@ -85,7 +85,7 @@
 
                     <div class="col-12 col-md-6 my-4 item-noticia">
                         <a href="{{route('site.postagens.show', $post->path)}}" class="noticia">
-                            <img src="{{asset("storage/images/posts/".$post->image)}}" alt="Imagem da postagem {{$post->title}}" class="img-fluid">
+                            <img src="{{asset("storage/".$post->image)}}" alt="Imagem da postagem {{$post->title}}" class="img-fluid">
 
                             @if($post->category['name'])
                                 <span class="h4 categoria"

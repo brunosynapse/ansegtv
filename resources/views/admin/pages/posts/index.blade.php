@@ -32,21 +32,21 @@
                                 </form>
 
                                 <form action="" method="GET" class="pr-2 pl-2">
-                                    <input type="hidden" name="status" value="publicado">
+                                    <input type="hidden" name="status" value="Publicado">
                                     <div class="d-flex justify-content-end">
                                         <button type="submit" class="btn {{request()->get('status') == 'publicado'? 'btn-primary' : 'btn-outline-primary'}} ">Publicados <span class="badge badge-white">{{ $publishedPosts }}</span></button>
                                     </div>
                                 </form>
 
                                 <form action="" method="GET" class="pr-2 pl-2">
-                                    <input type="hidden" name="status" value="pendente">
+                                    <input type="hidden" name="status" value="Pendente">
                                     <div class="d-flex justify-content-end">
                                         <button type="submit" class="btn {{request()->get('status') == 'pendente'? 'btn-primary' : 'btn-outline-primary'}} ">Pendentes <span class="badge badge-white">{{ $peddingPosts }}</span></button>
                                     </div>
                                 </form>
 
                                 <form action="" method="GET" class="pr-2 pl-2">
-                                    <input type="hidden" name="status" value="rascunho">
+                                    <input type="hidden" name="status" value="Rascunho">
                                     <div class="d-flex justify-content-end">
                                         <button type="submit" class="btn {{request()->get('status') == 'rascunho'? 'btn-primary' : 'btn-outline-primary'}} ">Rascunhos <span class="badge badge-white">{{ $draftPosts }}</span></button>
                                     </div>

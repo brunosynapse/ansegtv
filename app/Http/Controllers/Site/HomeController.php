@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::all()->sortByDesc('updated_at')->take(6);
+        $posts = Post::all()->where('status', 'Publicado')->sortByDesc('updated_at')->take(8);
         return view('site.pages.home', compact('posts'));
     }
 

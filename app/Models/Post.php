@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use EloquentFilter\Filterable;
-use App\Models\Category;
 use App\ModelFilters\PostFilter;
 
 class Post extends Model
@@ -40,6 +39,5 @@ class Post extends Model
     {
         return $this->provideFilter(PostFilter::class);
     }
-
 
 }
