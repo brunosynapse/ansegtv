@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin\Cases;
 
-use App\Models\Cases;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CasesRequest;
-use Illuminate\Support\Facades\Storage;
+use App\Services\UploadService;
 use Illuminate\Http\Request;
+use App\Models\Cases;
 
 class CasesController extends Controller
 {
@@ -17,7 +18,7 @@ class CasesController extends Controller
      */
     public function index(Request $request)
     {
-        $casesCount = Cases::all()->count();
+        $casesCount = Cases::count();
         $casesPublishedCount = Cases::where('status', 'Publicado')->count();
         $casesPrivateCount = Cases::where('status', 'Privado')->count();
 
@@ -104,10 +105,15 @@ class CasesController extends Controller
      */
     public function destroy($id)
     {
+        $upload = new UploadService();
+
         $case = Cases::find($id);
 
         if(!$case)
             abort(404);
+
+        if($case->attachment)
+            $upload->removeFilePah($case->attachment);
 
         $case->delete();
 
@@ -129,14 +135,12 @@ class CasesController extends Controller
         if(!$path)
             abort(404);
 
-        $exists = Storage::disk('')->has($path);
+        $exists = Storage::disk('public')->has($path);
 
         if(!$exists)
             abort(404);
 
-        redirect()->back();
-
-        return response()->download(storage_path('app/'. $path));
+        return response()->download(storage_path('app/public/'. $path));
     }
 
 }

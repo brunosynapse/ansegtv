@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CasesRequest;
+use App\Services\UploadService;
 use App\Models\Cases;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -38,11 +39,18 @@ class CasesController extends Controller
      */
     public function store(CasesRequest $request)
     {
+        $upload = new UploadService();
+
         $data = $request->all();
 
-        if($request->hasFile('attachment') && $request->file('attachment')->isValid()){
-            $path = Storage::putFile('public/images/cases', $request->file('attachment'));
-            $data['attachment'] = $path;
+        if($request->hasFile('attachment'))
+        {
+            $originalAttachmentName = $request->attachment->getClientOriginalName();
+
+            $data['attachment'] = $upload
+                ->setKey('attachment')
+                ->setFolder('images/cases')
+                ->single($request, $originalAttachmentName)['path'];
         }
 
         Cases::create($data);

@@ -78,7 +78,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Finalizando...
+                        <object data="{{asset('assets/pdf/cidade-e-meio-ambiente-politica-e-privacidade.pdf')}}"style="width: 100%; height: 500px;" type="application/pdf">
+                            <embed src="{{asset('assets/pdf/cidade-e-meio-ambiente-politica-e-privacidade.pdf')}}" type="application/pdf"/>
+                        </object>
                     </div>
                 </div>
             </div>

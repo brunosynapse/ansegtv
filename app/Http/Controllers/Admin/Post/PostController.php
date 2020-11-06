@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin\Post;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Arr;
 use App\Services\UploadService;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
@@ -165,7 +164,7 @@ class PostController extends Controller
         if($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
-            $extension = $request->file('upload')->getClientOriginalExtension();
+            $extension = $request->file('upload')->getClientOriginalExtenorar();
             $fileName = $fileName.'_'.time().'.'.$extension;
 
             $request->file('upload')->move(public_path('images'), $fileName);
