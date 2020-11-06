@@ -5,7 +5,7 @@
 @section('content')
   <section class="section">
     <div class="section-header">
-      <h1>Bem Vindo(a) -  [nome do usuario] </h1>
+      <h1>Bem Vindo(a) - {{Auth::User()->name}} </h1>
     </div>
 
     <div class="section-body">

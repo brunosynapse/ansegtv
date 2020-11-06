@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
 
         User::create([
             'name' => 'secovi',
-            'email' => 'changeme@secovi.com',
+            'email' => 'changeme@cidadesemeioambiente.com.br',
             'password' => bcrypt('123456'),
         ]);
     }

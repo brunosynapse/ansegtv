@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group([
-    'middleware'=> [],
-    'prefix' => '',
     'namespace' => 'Site',
     'as' => 'site.'
 ], function(){
@@ -13,13 +11,8 @@ Route::group([
     Route::resource('/participe', 'CasesController');
 });
 
-Route::get('/noticia-teste', function () {
-    return view('site/pages/posts');
-});
-
-
 Route::group([
-   'middleware'=> [],
+   'middleware'=> ['auth'],
    'prefix' => 'admin',
    'namespace' => 'Admin',
    'as' => 'admin.'
@@ -35,7 +28,11 @@ Route::group([
 
 Route::group([
     'prefix' => 'laravel-filemanager',
-    'middleware' => ['web']
+    'middleware' => ['auth']
 ],function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes(['register' => false]);
 });
