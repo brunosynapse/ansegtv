@@ -15,6 +15,7 @@ class Cases extends Model
         'name',
         'email',
         'status',
+        'linkVideo',
         'message',
         'attachment',
         'type'

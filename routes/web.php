@@ -19,11 +19,13 @@ Route::group([
 ], function(){
     Route::resource('/', 'Dashboard\DashboardController');
     Route::resource('/posts', 'Post\PostController');
-    Route::post('/posts/ckeditor/upload', 'Post\PostController@imageUpload')
-        ->name('ckeditor.image-upload');
+    Route::resource('/users', 'User\UserController');
     Route::resource('/categories', 'Category\CategoryController');
     Route::resource('/cases', 'Cases\CasesController');
-    Route::post('/cases-downloads', 'Cases\CasesController@downloadFile')->name('cases.downloads');
+    Route::post('/cases-downloads', 'Cases\CasesController@downloadFile')
+        ->name('cases.downloads');
+    Route::post('/posts/ckeditor/upload', 'Post\PostController@imageUpload')
+        ->name('ckeditor.image-upload');
 });
 
 Route::group([
@@ -34,5 +36,5 @@ Route::group([
 });
 
 Route::group(['prefix' => 'admin'], function () {
-    Auth::routes(['register' => false]);
+    Auth::routes();
 });

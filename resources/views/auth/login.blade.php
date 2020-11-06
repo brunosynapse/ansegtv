@@ -10,17 +10,23 @@
                 </div>
 
                 <div class="card card-primary">
-                    <div class="card-header"><h4>Entre com sua conta</h4></div>
-
+                    @if(isset($errors) && count($errors)>0)
+                        <div class="text-left mb-2 p-2 alert-danger mt-2">
+                            @foreach($errors->all() as $erro)
+                                <i class="fa fa-exclamation-circle"></i> {{$erro}}<br>
+                            @endforeach
+                        </div>
+                    @endif
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                             @csrf
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{old('email')}}" tabindex="1" required autofocus>
                                 <div class="invalid-feedback">
                                     Coloque seu email!
                                 </div>
+
                             </div>
 
                             <div class="form-group">

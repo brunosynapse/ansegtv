@@ -52,13 +52,16 @@
                         </div>
                         <!-- Limitar os arquivos aos formatos - mp4, avi, mov, mpeg, png, pdf, jpg, jpeg, bmp-->
                         <div class="form-group">
+                            <input class="form-control" id="linkVideo" type="text" name="linkVideo" value="{{old('linkVideo')}}" placeholder="Link de Video, precisa está hospedado em plataformas de videos (Youtube, Vimeo, etc..)">
+                        </div>
+                        <div class="form-group">
                             <textarea class="form-control" id="message" name="message" value="{{old('message')}}" placeholder="Escreva sua mensagem." rows="9" ></textarea>
                         </div>
 
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="termoaceite">
+                            <input type="checkbox" class="form-check-input" id="termoaceite" required>
                             <label class="form-check-label" for="termoaceite">Estou de acordo com os <a type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
-                                    <strong><u>termos e políticas da plataforma.</u> </strong>
+                                    <strong><u>termos e políticas da plataforma.</u></strong>
                                 </a></label>
                         </div>
                         <input class="enviar" type="submit" value="Enviar"/>

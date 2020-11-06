@@ -7,7 +7,7 @@
   <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
     <div class="d-sm-none d-lg-inline-block">Olá,  {{ Auth::user()->name }}</div></a>
     <div class="dropdown-menu dropdown-menu-right">
-      <a href="#" class="dropdown-item has-icon">
+      <a href="{{route('admin.users.edit', Auth::user()->id)}}" class="dropdown-item has-icon">
         <i class="far fa-user"></i> Configuração do Perfil
       </a>
       <div class="dropdown-divider"></div>
@@ -18,7 +18,6 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>
-
     </div>
   </li>
 </ul>

@@ -17,6 +17,7 @@ class CreateCasesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->string('linkVideo')->nullable();
             $table->text('type');
             $table->text('message');
             $table->string('attachment')->nullable();
