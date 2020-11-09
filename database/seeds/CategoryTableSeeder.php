@@ -44,7 +44,7 @@ class CategoryTableSeeder extends Seeder
 
         Category::create([
             'name' => 'Poluição Ambiental e Qualidade do Ar',
-            'path' => 'poluicao-ambientao-qualidade-ar',
+            'path' => 'poluicao-ambiental-qualidade-ar',
             'color' => '#cf865d'
         ]);
 

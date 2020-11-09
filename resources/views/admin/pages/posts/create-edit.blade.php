@@ -8,25 +8,14 @@
             <h1>{{ $edition ? 'Editar' : 'Criar' }} Postagem</h1>
         </div>
         <div class="section-body">
+            @foreach ($errors->all() as $error)
+                {{ $error }}<br/>
+            @endforeach
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            @if(isset($errors) && count($errors)>0)
-                                <div class="pb-2">
-                                    @foreach($errors->all() as $erro)
-                                        <div class="alert alert-danger alert-dismissible show fade">
-                                            <div class="alert-body">
-                                                <button class="close" data-dismiss="alert">
-                                                    <span>×</span>
-                                                </button>
-                                                <i class="far fa-lightbulb"></i> {{$erro}}
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            @endif
-                            <form action="{{ $edition ? route('admin.posts.update', $post->id) : route('admin.posts.store')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{ $edition ? route('admin.posts.update', $post->id) : route('admin.posts.store')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate="">
                                 @csrf
                                 @if($edition)
                                     @method('PUT')
@@ -35,13 +24,23 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Título da Postagem</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="title" value="{{ $edition ? $post->title : old('title') }}">
+                                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $edition ? $post->title : old('title') }}" autocomplete="title">
+                                        @error('title' | 'path')
+                                            <span class="invalid-feedback" role="alert">
+                                                {{ $message }}
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4 ">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Imagem Principal</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="file" name="image" class="form-control">
+                                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
+                                        @error('image')
+                                            <span class="invalid-feedback" role="alert">
+                                                {{ $message }}
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4 ">
@@ -55,7 +54,12 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Descrição</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea class="form-control h-100" draggable="false" name="description">{{ $edition ? $post->description : old('description') }}</textarea>
+                                        <textarea class="form-control h-100 @error('description') is-invalid @enderror" draggable="false" name="description">{{ $edition ? $post->description : old('description') }}</textarea>
+                                        @error('description')
+                                            <span class="invalid-feedback" role="alert">
+                                               {{ $message }}
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
@@ -104,8 +108,7 @@
 
     <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
     <script>
-
-        CKEDITOR.replace( 'content',{
+        CKEDITOR.replace( 'content', {
             {{--filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",--}}
             {{--filebrowserUploadMethod: 'form',--}}
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',

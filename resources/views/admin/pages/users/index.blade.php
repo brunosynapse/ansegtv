@@ -24,6 +24,14 @@
             <div class="row mt-2">
                 <div class="col-12">
                     <div class="card">
+                        @hasrole('admin')
+                            <div class="card-header d-flex justify-content-end">
+                                <a href="{{ route('admin.users.create') }}" class="btn btn-primary">
+                                    Criar Usuário
+                                </a>
+                            </div>
+                        @endhasrole
+
                         <div class="card-body  mt-2 p-0">
                             <table class="table">
                                 <thead>
@@ -40,24 +48,57 @@
                                     <tr>
                                         <td>{{ $user-> name }}</td>
                                         <td>{{ $user-> email }}</td>
-                                        <td>Ultimo login</td>
-                                        <td scope="col">Privilégio<td>
+                                        <td>
+                                            ultimo login
+                                        </td>
+                                        <td scope="col">
+                                            @if($user->hasrole('admin'))
+                                                <div class="badge badge-success">Administrador</div>
+                                            @else
+                                                <div class="badge badge-warning">Usuário</div>
+                                            @endif
+                                        </td>
+                                        <td>
                                             <div class="dropdown d-inline mr-2">
-                                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Ações
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="{{route('admin.users.edit', $user->id)}}" onclick="$('#statusCasesForm').submit()">
-                                                        <i class="fas fa-edit"></i> Editar
-                                                    </a>
-                                                    <form action="{{ route('admin.users.destroy', $user->id) }}" id="deleteUserForm{{$user->id}}" method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                    </form>
-                                                    <a class="dropdown-item" href="javascript:;" data-confirm="Certeza? | Se excluir, você não poderá recuperá-lo!" data-confirm-yes="$('#deleteUserForm{{$user->id}}').submit()">
-                                                        <i class="fas fa-trash"></i> Excluir
-                                                    </a>
-                                                </div>
+                                                @hasrole('admin')
+                                                    <button class="btn btn-primary dropdown-toggle hidden" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Ações
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a class="dropdown-item" href="{{route('admin.users.edit', $user->id)}}" onclick="$('#statusCasesForm').submit()">
+                                                            <i class="fas fa-edit"></i> Editar
+                                                        </a>
+                                                        <form action="{{ route('admin.users.destroy', $user->id) }}" id="deleteUserForm{{$user->id}}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                        </form>
+                                                        <a class="dropdown-item" href="javascript:;" data-confirm="Certeza? | Se excluir, você não poderá recuperá-lo!" data-confirm-yes="$('#deleteUserForm{{$user->id}}').submit()">
+                                                            <i class="fas fa-trash"></i> Excluir
+                                                        </a>
+                                                    </div>
+                                                @else
+                                                    @if($user->id == Auth::user()->id)
+                                                        <button class="btn btn-primary dropdown-toggle hidden" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Ações
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="{{route('admin.users.edit', $user->id)}}" onclick="$('#statusCasesForm').submit()">
+                                                                <i class="fas fa-edit"></i> Editar
+                                                            </a>
+                                                            <form action="{{ route('admin.users.destroy', $user->id) }}" id="deleteUserForm{{$user->id}}" method="post">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                            </form>
+                                                            <a class="dropdown-item" href="javascript:;" data-confirm="Certeza? | Se excluir, você não poderá recuperá-lo!" data-confirm-yes="$('#deleteUserForm{{$user->id}}').submit()">
+                                                                <i class="fas fa-trash"></i> Excluir
+                                                            </a>
+                                                        </div>
+                                                    @else
+                                                        <button class="btn btn-primary dropdown-toggle hidden disabled" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Ações
+                                                        </button>
+                                                    @endif
+                                                @endhasrole
                                             </div>
                                         </td>
                                     </tr>

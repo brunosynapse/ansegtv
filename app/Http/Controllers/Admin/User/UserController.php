@@ -4,11 +4,18 @@ namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('role:admin')->except('edit', 'index', 'destroy');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,18 +35,27 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        if (!Auth::user()->hasPermissionTo('create-user'))
+            abort(404);
+
+        $edition = false;
+        return view('admin.pages.users.create-edit', compact('edition'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\UserRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        $data = $request->all();
+
+        $data['password'] = bcrypt($data['password']);
+        User::create($data);
+
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -61,7 +77,12 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        if (!Auth::user()->hasPermissionTo('edit-user'))
+            if(Auth::user()->id != $user->id)
+                abort(404);
+
         $edition = true;
+
         return view('admin.pages.users.create-edit', compact('user', 'edition'));
     }
 
@@ -95,6 +116,12 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        if (!Auth::user()->hasPermissionTo('delete-user'))
+            if(Auth::user()->id != $user->id)
+                abort(404);
+
+        $user->delete();
+
+        return redirect()->route('admin.users.index');
     }
 }

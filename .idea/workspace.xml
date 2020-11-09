@@ -2,17 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/create-edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rituaali.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rituaali.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Cases.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Cases.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/User/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PostRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PostRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_16_135229_create_cases_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_16_135229_create_cases_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/topnav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/topnav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_07_210404_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_07_210404_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/posts/create-edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/posts/create-edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/users/create-edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/create-edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/cases.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/cases.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +161,7 @@
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
       <path value="$PROJECT_DIR$/vendor/unisharp/laravel-filemanager" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="ProjectId" id="1j4HVIhbRqQW8fRumyxKQrUexZu" />
@@ -226,6 +235,7 @@
       <workItem from="1604664009672" duration="3753000" />
       <workItem from="1604668424615" duration="575000" />
       <workItem from="1604685704647" duration="10553000" />
+      <workItem from="1604922869346" duration="18557000" />
     </task>
     <servers />
   </component>
@@ -242,11 +252,11 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="763" y="0" width="516" height="732" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.735@0.0.1366.735" timestamp="1603585359837" />
-    <state x="487" y="149" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604692600192">
+    <state x="487" y="149" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604932579464">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="416" y="127" width="530" height="481" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1603738253383" />
-    <state x="487" y="149" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1604692600192" />
+    <state x="487" y="149" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1604932579464" />
     <state width="500" height="449" key="SwitcherDM" timestamp="1604506965871">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -264,16 +274,9 @@
     </state>
     <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1604070453372" />
     <state x="542" y="90" width="788" height="794" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1604679048698" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/auth/login.blade.php</url>
-          <line>66</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="525" y="344" width="540" height="164" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604928240743">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="525" y="344" width="540" height="164" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1600.860@0.0.1600.860" timestamp="1604928240743" />
   </component>
 </project>

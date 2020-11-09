@@ -6,11 +6,16 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use EloquentFilter\Filterable;
+use Spatie\Permission\Traits\HasRoles;
+
 
 use App\ModelFilters\UserFilter;
 
 class User extends Authenticatable
 {
+
+    use HasRoles;
+
     use Notifiable;
 
     use Filterable;

@@ -10,30 +10,21 @@
                 </div>
 
                 <div class="card card-primary">
-                    @if(isset($errors) && count($errors)>0)
-                        <div class="text-left mb-2 p-2 alert-danger mt-2">
-                            @foreach($errors->all() as $erro)
-                                <i class="fa fa-exclamation-circle"></i> {{$erro}}<br>
-                            @endforeach
-                        </div>
-                    @endif
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                             @csrf
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input id="email" type="email" class="form-control" name="email" value="{{old('email')}}" tabindex="1" required autofocus>
-                                <div class="invalid-feedback">
-                                    Coloque seu email!
-                                </div>
-
+                                <input id="email" type="email" class="form-control" name="email" value="{{old('email')}}" tabindex="1" required>
+                                <span class="invalid-feedback" role="alert">
+                                    Forneça um e-mail valído
+                                </span>
                             </div>
 
                             <div class="form-group">
                                 <div class="d-block">
                                     <label for="password" class="control-label">Senha</label>
                                     <div class="float-right">
-
                                         @if (Route::has('password.request'))
                                             <a class="text-small" href="{{ route('password.request') }}">
                                                 {{ __('Esqueceu sua senha?') }}

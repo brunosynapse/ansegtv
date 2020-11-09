@@ -34,21 +34,21 @@
                                 <form action="" method="GET" class="pr-2 pl-2">
                                     <input type="hidden" name="status" value="Publicado">
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn {{request()->get('status') == 'publicado'? 'btn-primary' : 'btn-outline-primary'}} ">Publicados <span class="badge badge-white">{{ $publishedPosts }}</span></button>
+                                        <button type="submit" class="btn {{request()->get('status') == 'Publicado'? 'btn-primary' : 'btn-outline-primary'}} ">Publicados <span class="badge badge-white">{{ $publishedPosts }}</span></button>
                                     </div>
                                 </form>
 
                                 <form action="" method="GET" class="pr-2 pl-2">
                                     <input type="hidden" name="status" value="Pendente">
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn {{request()->get('status') == 'pendente'? 'btn-primary' : 'btn-outline-primary'}} ">Pendentes <span class="badge badge-white">{{ $peddingPosts }}</span></button>
+                                        <button type="submit" class="btn {{request()->get('status') == 'Pendente'? 'btn-primary' : 'btn-outline-primary'}} ">Pendentes <span class="badge badge-white">{{ $peddingPosts }}</span></button>
                                     </div>
                                 </form>
 
                                 <form action="" method="GET" class="pr-2 pl-2">
                                     <input type="hidden" name="status" value="Rascunho">
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn {{request()->get('status') == 'rascunho'? 'btn-primary' : 'btn-outline-primary'}} ">Rascunhos <span class="badge badge-white">{{ $draftPosts }}</span></button>
+                                        <button type="submit" class="btn {{request()->get('status') == 'Rascunho'? 'btn-primary' : 'btn-outline-primary'}} ">Rascunhos <span class="badge badge-white">{{ $draftPosts }}</span></button>
                                     </div>
                                 </form>
                             </ul>
@@ -64,10 +64,8 @@
                                 Criar Postagem
                             </a>
                         </div>
-
                         <div class="card-body  p-0">
                             <div class="table-responsive">
-
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -80,7 +78,6 @@
                                     <tbody>
 
                                         @foreach($posts as $post)
-
                                             <tr>
                                                 <td>{{$post->title}}
                                                     <div class="table-links row ml-1">
@@ -114,7 +111,6 @@
                                                     @endif
                                                 </td>
                                             </tr>
-
                                         @endforeach
                                     </tbody>
                                 </table>

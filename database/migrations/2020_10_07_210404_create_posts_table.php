@@ -17,8 +17,8 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->text('title');
             $table->text('image')->nullable();
-            $table->text('content')->nullable();
-            $table->text('description')->nullable();
+            $table->text('content');
+            $table->text('description');
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')
                 ->references('id')

@@ -2,6 +2,8 @@
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class UsersTableSeeder extends Seeder
 {
@@ -13,12 +15,10 @@ class UsersTableSeeder extends Seeder
 
     public function run()
     {
-//        factory(User::class, 10)-> create();
-
         User::create([
             'name' => 'secovi',
             'email' => 'changeme@cidadesemeioambiente.com.br',
             'password' => bcrypt('123456'),
-        ]);
+        ])->assignRole('admin');
     }
 }
