@@ -19,15 +19,17 @@ class PostFilter extends ModelFilter
         return $this->where('title', 'LIKE', "%$title%");
     }
 
-    public function category($id)
+    public function category($name)
     {
-        $this->related('category', function($query) use ($id) {
-            return $query->where('category_id', $id);
-        });
-
-//        $this->related('category', function($query) use ($name) {
-//            return $query->where('name', 'LIKE', "%$name%");
+        /*  Trocar ao implmentar o ENUM nas categorias */
+//        $this->related('category', function($query) use ($id) {
+//            return $query->where('category_id', $id);
 //        });
+
+
+        $this->related('category', function($query) use ($name) {
+            return $query->where('name', 'LIKE', "%$name%");
+        });
     }
 
     public function status($status)
