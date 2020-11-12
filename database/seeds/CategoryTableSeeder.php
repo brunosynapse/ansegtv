@@ -65,5 +65,11 @@ class CategoryTableSeeder extends Seeder
             'path' => 'lixo-residuos-solidos',
             'color' => '#5f4e3a'
         ]);
+
+        Category::create([
+            'name' => 'Entrevista',
+            'path' => 'entrevista',
+            'color' => '#999'
+        ]);
     }
 }
