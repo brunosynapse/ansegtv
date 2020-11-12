@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use EloquentFilter\Filterable;
+use App\Enums\PostStatus;
 use App\ModelFilters\PostFilter;
 
 class Post extends Model
@@ -38,6 +39,16 @@ class Post extends Model
     public function modelFilter()
     {
         return $this->provideFilter(PostFilter::class);
+    }
+
+    public function status($status = null)
+    {
+        $opStatus = PostStatus::getInstances();
+
+        if (!$status)
+            return $opStatus;
+
+        return $opStatus[$status];
     }
 
 }
