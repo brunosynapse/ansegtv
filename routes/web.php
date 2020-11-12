@@ -21,6 +21,7 @@ Route::group([
     Route::resource('/posts', 'Post\PostController');
     Route::resource('/users', 'User\UserController');
     Route::resource('/categories', 'Category\CategoryController');
+    Route::resource('/banner', 'Banner\BannerController');
     Route::resource('/cases', 'Cases\CasesController');
     Route::post('/cases-downloads', 'Cases\CasesController@downloadFile')
         ->name('cases.downloads');

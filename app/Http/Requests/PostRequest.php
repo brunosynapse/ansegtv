@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Enums\PostStatus;
+use App\Enums\Category;
 use BenSampo\Enum\Rules\EnumValue;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -27,8 +28,8 @@ class PostRequest extends FormRequest
     {
         return [
             'title'=>"required|min:8|max:255|unique:posts,path,{$this->id}",
-            'content'=> 'nullable',
             'image' => 'mimes:jpeg,jpg,png,gif,webp|max:2024',
+            'category_id' => ['required', new EnumValue(Category::class)],
             'status' => ['required', new EnumValue(PostStatus::class)]
         ];
     }
@@ -36,7 +37,8 @@ class PostRequest extends FormRequest
     public function messages()
     {
         return [
-            'path.unique' => 'Título já existente'
+            'category_id.required' => 'O campo categoria é obrigatório.',
+            'status.required' => 'Defina o estado da publicação.'
         ];
     }
 }

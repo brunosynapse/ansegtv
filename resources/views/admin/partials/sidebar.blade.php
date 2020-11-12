@@ -17,11 +17,9 @@
               <li><a class="nav-link" href="{{ route('admin.posts.create') }}">Criar Nova Postagens</a></li>
           </ul>
       </li>
+      <li class="{{ request()->is('banner') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.banner.edit', 1) }}"><i class="fas fa-file-image"></i> <span>Banner</span></a></li>
       <li class="{{ request()->is('cases') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.cases.index') }}"><i class="fas fa-comments"></i> <span>Cases e Denúncias</span></a></li>
       <li class="menu-header">Mais Opções</li>
       <li class="{{ request()->is('users') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.users.index') }}"><i class="fas fa-users"></i> <span>Usuários</span></a></li>
-
-
-
   </ul>
 </aside>
