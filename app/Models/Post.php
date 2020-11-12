@@ -26,6 +26,11 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function test()
+    {
+        return 'oi';
+    }
+
     public function getMonthUpdatedAtAttribute() // month_updated_at
     {
         return $this->getAttribute('updated_at')->translatedFormat('F');

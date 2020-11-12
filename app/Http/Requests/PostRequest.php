@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests;
 
-use App\Enums\PostStatus;
 use App\Enums\Category;
+use App\Enums\PostStatus;
 use BenSampo\Enum\Rules\EnumValue;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class PostRequest extends FormRequest
 {
@@ -29,8 +30,9 @@ class PostRequest extends FormRequest
         return [
             'title'=>"required|min:8|max:255|unique:posts,path,{$this->id}",
             'image' => 'mimes:jpeg,jpg,png,gif,webp|max:2024',
-            'category_id' => ['required', new EnumValue(Category::class)],
-            'status' => ['required', new EnumValue(PostStatus::class)]
+            'category_id' => ['required',  Rule::in(Category::getValues())],
+            'description' => 'required',
+            'status' => ['required', Rule::in(PostStatus::getValues())]
         ];
     }
 

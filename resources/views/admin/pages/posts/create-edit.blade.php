@@ -8,9 +8,6 @@
             <h1>{{ $edition ? 'Editar' : 'Criar' }} Postagem</h1>
         </div>
         <div class="section-body">
-            @foreach ($errors->all() as $error)
-                {{ $error }}<br/>
-            @endforeach
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -72,15 +69,15 @@
                                                             value="{{ $category->id }}" {{ $category->id == $post->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
                                                     @endforeach
                                             @else
+                                                <option disabled selected hidden> Selecione uma opção </option>
                                                     @foreach($categories as $category)
-                                                        <option disabled selected hidden> Selecione uma opção </option>
                                                         <option
-                                                            value="{{ $category->id }}" {{ old('category') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                                                            value="{{ $category->id }}">{{ $category->name }}</option>
                                                     @endforeach
                                             @endif
                                         </select>
                                         @error('category_id')
-                                        <span class="invalid-feedback" role="alert">
+                                            <span class="invalid-feedback" role="alert">
                                                {{ $message }}
                                             </span>
                                         @enderror
@@ -119,8 +116,6 @@
     <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
     <script>
         CKEDITOR.replace( 'content', {
-            {{--filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",--}}
-            {{--filebrowserUploadMethod: 'form',--}}
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
             filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
             filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
