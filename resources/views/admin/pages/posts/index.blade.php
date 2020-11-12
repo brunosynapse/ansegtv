@@ -94,7 +94,7 @@
                                                 </td>
                                                 <td>
                                                     <form action="" id="searchByCategory{{$post->category['id']}}" method="get">
-                                                        <input type="hidden" value="{{$post->category['name']}}" name="category">
+                                                        <input type="hidden" value="{{$post->category['id']}}" name="category">
                                                     </form>
                                                     <a href="javascript:;" onclick="$('#searchByCategory{{$post->category['id']}}').submit()">
                                                         {{$post->category['name']}}

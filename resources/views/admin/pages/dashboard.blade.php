@@ -86,7 +86,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-lg-8 col-md-12 col-12 col-sm-12">
                 <div class="card">
@@ -107,9 +106,6 @@
                     </div>
                 </div>
             </div>
-
-
-
             <div class="col-lg-4 col-md-12 col-12 col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -117,21 +113,22 @@
                     </div>
                     <div class="card-body">
                             <ul class="list-unstyled list-unstyled-border">
-                                <li class="media">
-                                    <img class="mr-3 rounded-circle" src="{{asset('images/avatar/avatar.png')}}" alt="avatar" width="50">
-                                    <div class="media-body">
-                                        <div class="float-right">
-                                            <a href="#"><i class="fa fa-eye"></i></a>
+                                @forelse($cases as $case)
+                                    <li class="media">
+                                        <img class="mr-3 rounded-circle" src="{{asset('images/avatar/avatar.png')}}" alt="avatar" width="50">
+                                        <div class="media-body">
+                                            <div class="float-right">
+                                                <a href="{{route('admin.cases.show', $case->id)}}"><i class="fa fa-eye"></i></a>
+                                            </div>
+                                            <div class="media-title"> {{$case->name}} </div>
+                                            <span class="text-small text-muted">{{ mb_strimwidth($case->message, 0, 40, "...") }}</span>
                                         </div>
-                                        <div class="media-title"> nome </div>
-                                        <span class="text-small text-muted"> mensagem ...</span>
-                                    </div>
-                                </li>
-                            <h5>Você não tem cases recentes</h5>
-                            <span>Para entreter seu público, recomendamos <a href="{{route('admin.posts.create')}}">criar uma postagem.</a></span>
-
-
-                        </ul>
+                                    </li>
+                                @empty
+                                    <h5>Você não tem cases recentes</h5>
+                                    <span>Para entreter seu público, recomendamos <a href="{{route('admin.posts.create')}}">criar uma postagem.</a></span>
+                                @endforelse
+                            </ul>
                         <div class="text-center pt-4 pb-1">
                             <a href="{{route('admin.cases.index')}}" class="btn btn-primary btn-lg btn-round">
                                 Ver todos
