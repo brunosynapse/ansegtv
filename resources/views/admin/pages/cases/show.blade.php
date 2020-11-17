@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Cases e Denúncias - {{$case->name}}</h1>
+            <h1>{{$case->type}} - {{$case->name}} </h1>
         </div>
         <div class="section-body">
             <div class="row">
@@ -25,14 +25,6 @@
                                 <div class="col-sm-12 col-md-7">
                                     <p class="col-form-label">
                                         {{$case->email}}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tipo:</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <p class="col-form-label">
-                                        {{$case->type}}
                                     </p>
                                 </div>
                             </div>
@@ -72,6 +64,24 @@
                                     @else
                                         <p class="text-danger">
                                             Nenhum anexo enviado
+                                        </p>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Link:</label>
+                                <div class="col-sm-12 col-md-7">
+                                    @if($case->linkVideo)
+                                        <p class="col-form-label">
+                                            <a href="{{$case->linkVideo}}">
+                                                {{mb_strimwidth($case->linkVideo, 0, 100, "...")}}
+
+                                            </a>
+                                        </p>
+                                        <iframe width="460" height="215" src="https://www.youtube.com/embed/{{ $case->link_video_formatted }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    @else
+                                        <p class="text-danger">
+                                            Nenhum link enviado
                                         </p>
                                     @endif
                                 </div>
