@@ -11,7 +11,7 @@ use BenSampo\Enum\Enum;
  */
 final class PostStatus extends Enum
 {
-    const published =   'Publicado';
+    const published = 'Publicado';
     const peding =   'Pendente';
     const draft = 'Rascunho';
 }

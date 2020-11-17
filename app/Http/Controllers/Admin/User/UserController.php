@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
 {
@@ -36,9 +38,10 @@ class UserController extends Controller
     public function create()
     {
         if (!Auth::user()->hasPermissionTo('create-user'))
-            abort(404);
+            abort(401);
 
         $edition = false;
+
         return view('admin.pages.users.create-edit', compact('edition'));
     }
 
@@ -68,6 +71,27 @@ class UserController extends Controller
     {
         //
     }
+    /**
+     * Define privilege the specified resource.
+     *
+     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function setPrivilege (Request $request, $id)
+    {
+        $user = User::find($id);
+
+        $privege = $request->only('privilege');
+
+        if (!Auth::user()->hasPermissionTo('edit-user'))
+            if(Auth::user()->id != $user->id)
+                abort(401);
+
+        $user->syncRoles($privege);
+
+        return redirect()->route('admin.users.index');
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -79,7 +103,7 @@ class UserController extends Controller
     {
         if (!Auth::user()->hasPermissionTo('edit-user'))
             if(Auth::user()->id != $user->id)
-                abort(404);
+                abort(401);
 
         $edition = true;
 
@@ -118,7 +142,7 @@ class UserController extends Controller
     {
         if (!Auth::user()->hasPermissionTo('delete-user'))
             if(Auth::user()->id != $user->id)
-                abort(404);
+                abort(401);
 
         $user->delete();
 

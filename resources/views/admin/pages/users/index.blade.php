@@ -68,6 +68,17 @@
                                                         <a class="dropdown-item" href="{{route('admin.users.edit', $user->id)}}" onclick="$('#statusCasesForm').submit()">
                                                             <i class="fas fa-edit"></i> Editar
                                                         </a>
+                                                        <form action="{{ route('admin.users.privilege', $user->id) }}" id="privilegeUserForm{{$user->id}}" method="post">
+                                                            @csrf
+                                                            <input name="privilege" type="hidden" value="{{$user->hasrole('admin')? 'user' : 'admin'}}">
+                                                        </form>
+                                                        <a class="dropdown-item" href="javascript:;" onclick="$('#privilegeUserForm{{$user->id}}').submit()">
+                                                            @if($user->hasrole('admin'))
+                                                                <i class="fas fa-user-shield"></i> Definir Usuário
+                                                            @else
+                                                                <i class="fas fa-user"></i> Definir Administrador
+                                                            @endif
+                                                        </a>
                                                         <form action="{{ route('admin.users.destroy', $user->id) }}" id="deleteUserForm{{$user->id}}" method="post">
                                                             @csrf
                                                             @method('DELETE')

@@ -15,8 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return redirect()->back();
-        return view('site.pages.posts', compact('posts'));
+        //
     }
 
     /**
@@ -49,14 +48,12 @@ class PostController extends Controller
     public function show($path)
     {
         $result = Post::where('path', $path)->get();
-        if ($result->isEmpty()) {
-            dd('vaziooo');
-        }
+
+        if (!$result or $result->isEmpty())
+            abort(404);
 
         if($result)
             return view('site.pages.posts', compact('result'));
-
-        abort(404);
     }
 
     /**

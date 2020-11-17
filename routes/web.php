@@ -20,6 +20,8 @@ Route::group([
     Route::resource('/', 'Dashboard\DashboardController');
     Route::resource('/posts', 'Post\PostController');
     Route::resource('/users', 'User\UserController');
+    Route::post('/users-privilege/{id}', 'User\UserController@setPrivilege')
+        ->name('users.privilege');
     Route::resource('/categories', 'Category\CategoryController');
     Route::resource('/banner', 'Banner\BannerController');
     Route::resource('/cases', 'Cases\CasesController');

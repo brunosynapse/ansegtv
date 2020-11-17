@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Enums\PostStatus;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -15,11 +16,12 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Post::filter($request->all())->paginateFilter(15)->sortByDesc('updated_at');
+        $posts = Post::filter($request->all())->where('status', '=', PostStatus::published)->paginateFilter(15)->sortByDesc('updated_at');
+
         return view('site.pages.home', compact('posts'));
     }
 
-    /**
+    /**m
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -48,7 +50,7 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        dd('show home controller');
+        //
     }
 
     /**
@@ -71,7 +73,7 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        //
     }
 
     /**

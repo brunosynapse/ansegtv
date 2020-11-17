@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\ModelFilters;
 
@@ -13,4 +13,13 @@ class UserFilter extends ModelFilter
     * @var array
     */
     public $relations = [];
+
+    public function nameOrEmail($string)
+    {
+        return $this->where(function($query) use ($string)
+        {
+            return $query->where('name', 'LIKE', "%$string%")
+                ->orWhere('email', 'LIKE', "%$string%");
+        });
+    }
 }
