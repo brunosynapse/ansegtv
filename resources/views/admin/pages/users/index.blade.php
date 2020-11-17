@@ -38,7 +38,7 @@
                                 <tr>
                                     <th scope="col">Nome</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Último Login</th>
+                                    <th scope="col">Data criação</th>
                                     <th scope="col">Privilégio</th>
                                     <th scope="col">Ações</th>
                                 </tr>
@@ -48,9 +48,7 @@
                                     <tr>
                                         <td>{{ $user-> name }}</td>
                                         <td>{{ $user-> email }}</td>
-                                        <td>
-                                            ultimo login
-                                        </td>
+                                        <td>{{$user->created_at->translatedFormat('d/m/Y')}}</td>
                                         <td scope="col">
                                             @if($user->hasrole('admin'))
                                                 <div class="badge badge-success">Administrador</div>
