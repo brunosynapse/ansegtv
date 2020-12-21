@@ -38,7 +38,9 @@ class UserController extends Controller
     public function create()
     {
         if (!Auth::user()->hasPermissionTo('create-user'))
+        {
             abort(401);
+        }
 
         $edition = false;
 
@@ -53,6 +55,10 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
+        if (!Auth::user()->hasPermissionTo('edit-user')){
+            abort(401);
+        }
+
         $data = $request->all();
 
         $data['password'] = bcrypt($data['password']);
@@ -84,9 +90,11 @@ class UserController extends Controller
 
         $privege = $request->only('privilege');
 
-        if (!Auth::user()->hasPermissionTo('edit-user'))
-            if(Auth::user()->id != $user->id)
+        if (!Auth::user()->hasPermissionTo('edit-user')){
+            if(Auth::user()->id != $user->id){
                 abort(401);
+            }
+        }
 
         $user->syncRoles($privege);
 
@@ -101,9 +109,11 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        if (!Auth::user()->hasPermissionTo('edit-user'))
-            if(Auth::user()->id != $user->id)
+        if (!Auth::user()->hasPermissionTo('edit-user')){
+            if(Auth::user()->id != $user->id){
                 abort(401);
+            }
+        }
 
         $edition = true;
 
@@ -119,6 +129,12 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        if (!Auth::user()->hasPermissionTo('edit-user')){
+            if(Auth::user()->id != $user->id){
+                abort(401);
+            }
+        }
+
         $data = $request->all();
 
         if(is_null($data['password'])){
@@ -140,9 +156,11 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        if (!Auth::user()->hasPermissionTo('delete-user'))
-            if(Auth::user()->id != $user->id)
+        if (!Auth::user()->hasPermissionTo('delete-user')){
+            if(Auth::user()->id != $user->id){
                 abort(401);
+            }
+        }
 
         $user->delete();
 

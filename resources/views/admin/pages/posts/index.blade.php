@@ -71,12 +71,11 @@
                                         <tr>
                                             <th>Título da Postagem</th>
                                             <th>Categoria</th>
-                                            <th>Ultima Atualização</th>
+                                            <th>Última Atualização</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                         @foreach($posts as $post)
                                             <tr>
                                                 <td>{{$post->title}}
