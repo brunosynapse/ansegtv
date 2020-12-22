@@ -25,4 +25,9 @@ class Cases extends Model
     {
         return $this->provideFilter(CasesFilter::class);
     }
+
+    public function getLinkVideoFormattedAttribute() // link_video_formatted
+    {
+        return explode('?v=', $this->getAttribute   ('linkVideo'))[1];
+    }
 }
