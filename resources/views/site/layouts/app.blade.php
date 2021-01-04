@@ -15,8 +15,8 @@
           content="@yield('ogDescription', 'A plataforma Cidades e Meio Ambiente tem o objetivo de trazer informação, desmistificar e criar mobilização inteligente em torno destes temas.')">
     <meta property="og:site_name" content="Cidades e Meio Ambiente">
     <meta property="og:url" content="@yield('ogUrl', route('site.index'))">
-    <meta property="og:image" content="@yield('orImage','')">
-    <meta name="image" property="og:image" content="https://www.cidadesemeioambiente.com.br/img/uploads/social-share.png">
+    <meta property="og:image" content="@yield('ogImage', asset('assets/img/header_top.png'))">
+    <meta name="image" property="og:image" content="@yield('ogImage', asset('assets/img/header_top.png'))">
     <meta property="article:published_time" content="@yield('articlePublishedTime', '2020-10-22')">
     <meta property="article:author" content="https://www.cidadesemeioambiente.com.br/">
 
@@ -122,7 +122,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <!-- Custom JS -->
+<script type="text/javascript" src="{{asset('js/load-more-news.js')}}"></script>
 </body>
 </html>

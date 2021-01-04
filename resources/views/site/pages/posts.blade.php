@@ -5,7 +5,7 @@
     @section('description', $post->description)
     @section('ogDescription', $post->description)
     @section('ogUrl', route('site.postagens.show', $post->path))
-    @section('ogImage', asset("storage/images/posts/".$post->image))
+    @section('ogImage', asset("storage/".$post->image))
 
     @section('articlePublishedTime', date('Y-m-d', strtotime( $post->updated_at )))
 @endforeach

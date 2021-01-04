@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Post;
+use App\Enums\PostStatus;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePostRequest;
 use App\Services\UploadService;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
@@ -52,7 +54,7 @@ class PostController extends Controller
      * @param  \App\Http\Requests\PostRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(StorePostRequest $request)
     {
         $upload = new UploadService();
 
@@ -92,14 +94,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
         $categories = Category::all();
-        $post = Post::find($id);
         $edition = true;
-
-        if(!$post)
-            return abort(404);
 
         return view('admin/pages/posts/create-edit', compact('post', 'edition', 'categories'));
     }
@@ -111,13 +109,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PostRequest $request, $id)
+    public function update(PostRequest $request, Post $post)
     {
-        $post = Post::find($id);
-
-        if(!$post)
-            return abort(404);
-
         $data = $request->all();
 
         $data['path'] = Str::slug($data['title'], '-');
@@ -148,13 +141,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        $post = Post::find($id);
-
-        if(!$post)
-            abort(404);
-
         $post->delete();
 
         return redirect()->route('admin.posts.index');

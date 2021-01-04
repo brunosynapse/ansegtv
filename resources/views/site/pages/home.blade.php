@@ -5,8 +5,6 @@
 @section('banner', asset('assets/img/header_top.png'))
 @section('content')
 
-
-
     <section id="intro">
         <div>
             <div class="container">
@@ -80,7 +78,6 @@
                     </h2>
                 </div>
 
-
                 @foreach($posts as $post)
 
                     <div class="col-12 col-md-6 my-4 item-noticia">
@@ -99,6 +96,12 @@
                     </div>
 
                 @endforeach
+                <div class="col-12 pt-3">
+                    <div class="col-md-auto text-center mt-3">
+                        <a id="load-more-news" href="http://secovi.test/postagens/what-is-lorem-ipsum-adasdadasdas" class="leiamais p-3 pl-5 pr-5">Carregar mais noticias</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

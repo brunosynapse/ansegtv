@@ -87,10 +87,16 @@
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Estado</label>
                                     <div class="col-sm-12 col-md-7">
                                         <select class="custom-select @error('status') is-invalid @enderror" name="status">
+                                            @if($edition)
+                                                <option value="Publicado" {{$post->status == "Publicado" ? 'selected' : ''}}>Publicado</option>
+                                                <option value="Pendente" {{$post->status == "Pendente" ? 'selected' : ''}}>Pendente</option>
+                                                <option value="Rascunho" {{$post->status == "Rascunho" ? 'selected' : ''}}>Rascunho</option>
+                                            @else
                                             <option disabled selected hidden> Selecione uma opção</option>
                                             <option value="Publicado">Publicado</option>
                                             <option value="Pendente">Pendente</option>
                                             <option value="Rascunho">Rascunho</option>
+                                            @endif
                                         </select>
                                         @error('status')
                                         <span class="invalid-feedback" role="alert">
