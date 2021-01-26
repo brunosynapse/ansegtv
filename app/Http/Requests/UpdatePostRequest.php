@@ -8,7 +8,7 @@ use BenSampo\Enum\Rules\EnumValue;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class PostRequest extends FormRequest
+class UpdatePostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -33,14 +33,6 @@ class PostRequest extends FormRequest
             'category_id' => ['required',  Rule::in(Category::getValues())],
             'description' => 'required',
             'status' => ['required', Rule::in(PostStatus::getValues())]
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'category_id.required' => 'O campo categoria é obrigatório.',
-            'status.required' => 'Defina o estado da publicação.'
         ];
     }
 }

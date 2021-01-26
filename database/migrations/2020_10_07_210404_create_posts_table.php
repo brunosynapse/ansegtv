@@ -24,9 +24,10 @@ class CreatePostsTable extends Migration
                 ->references('id')
                 ->on('categories')
                 ->onDelete('set null');
-            $table->string('path')->unique();
-            $table->string('status')->default('Publicado');
+            $table->string('slug')->unique();
+            $table->string('status')->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

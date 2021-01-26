@@ -5,7 +5,7 @@ use App\Enums\PostStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Services\UploadService;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Post;
@@ -15,7 +15,7 @@ class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -41,7 +41,6 @@ class PostController extends Controller
      */
     public function create()
     {
-
         $categories = Category::all();
         $edition = false;
 
@@ -51,7 +50,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\PostRequest  $request
+     * @param StorePostRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(StorePostRequest $request)
@@ -80,10 +79,10 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($post)
     {
         //
     }
@@ -91,7 +90,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Post  $post
      * @return \Illuminate\Http\Response
      */
     public function edit(Post $post)
@@ -105,11 +104,11 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\PostRequest
-     * @param  int  $id
+     * @param UpdatePostRequest $request
+     * @param  Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(PostRequest $request, Post $post)
+    public function update(UpdatePostRequest $request, Post $post)
     {
         $data = $request->all();
 
@@ -138,7 +137,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Post  $post
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)

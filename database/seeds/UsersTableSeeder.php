@@ -16,9 +16,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'secovi',
-            'email' => 'changeme@cidadesemeioambiente.com.br',
-            'password' => bcrypt('123456'),
+            'name' => 'Synapse Brasil',
+            'email' => 'synapse@ansegtv.com.br',
+            'password' => bcrypt('synapse@123'),
         ])->assignRole('admin');
     }
 }

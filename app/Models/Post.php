@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use EloquentFilter\Filterable;
 use App\Enums\PostStatus;
 use App\ModelFilters\PostFilter;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+    use SoftDeletes;
     use Filterable;
 
     protected $fillable = [
@@ -24,11 +26,6 @@ class Post extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
-    }
-
-    public function test()
-    {
-        return 'oi';
     }
 
     public function getMonthUpdatedAtAttribute() // month_updated_at
