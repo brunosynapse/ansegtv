@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Enums\PermissionType;
+use App\Enums\UserType;
 
 class RolesAndPermissionsSeeder extends Seeder
 {
@@ -13,17 +15,17 @@ class RolesAndPermissionsSeeder extends Seeder
      */
     public function run()
     {
-        // Reset cached roles and permissions
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        // create permissions
-        Permission::create(['name' => 'edit-user']);
-        Permission::create(['name' => 'create-user']);
-        Permission::create(['name' => 'delete-user']);
+        $permissions = PermissionType::getValues();
+
+        foreach ($permissions as $permission){
+            Permission::create(['name' => $permission]);
+        }
 
         // this can be done as separate statements
-        Role::create(['name' => 'user']);
-        $adminRole = Role::create(['name' => 'admin']);
+        $adminRole = Role::create(['name' => UserType::ADMIN]);
+        Role::create(['name' => UserType::USER]);
 
         // assign created permissions to roles
         $adminRole->givePermissionTo(Permission::all());

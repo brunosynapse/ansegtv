@@ -43,7 +43,7 @@
 
                                         <tr>
                                         <td>{{ $category->name }}</td>
-                                        <td>/{{ $category->path }}</td>
+                                        <td>/{{ $category->slug }}</td>
                                         <td>
                                             <div class="dropdown d-inline mr-2">
                                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

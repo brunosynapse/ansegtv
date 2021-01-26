@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use EloquentFilter\Filterable;
-use App\Enums\PostStatus;
+use App\Enums\PostType;
 use App\ModelFilters\PostFilter;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -20,7 +20,7 @@ class Post extends Model
         'category_id',
         'status',
         'image',
-        'path'
+        'slug'
     ];
 
     public function category()
@@ -45,7 +45,7 @@ class Post extends Model
 
     public function status($status = null)
     {
-        $opStatus = PostStatus::getInstances();
+        $opStatus = PostType::getInstances();
 
         if (!$status)
             return $opStatus;

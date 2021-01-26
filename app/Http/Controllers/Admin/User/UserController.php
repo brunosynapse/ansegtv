@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Admin\User;
 
+use App\Enums\PermissionType;
+use App\Enums\UserType;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('role:admin')->except('edit', 'index', 'destroy');
+        $this->middleware('role:'.UserType::ADMIN)->except('edit', 'index', 'destroy');
     }
 
     /**
@@ -26,8 +26,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $users = User::filter($request->all())->paginateFilter(15);
+        $types = UserType::getInstances();
 
-        return view('admin.pages.users.index', compact('users'));
+        return view('admin.pages.users.index', compact('users', 'types'));
     }
 
     /**
@@ -37,7 +38,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        if (!Auth::user()->hasPermissionTo('create-user'))
+        if (!Auth::user()->hasPermissionTo(PermissionType::CREATE_USER))
         {
             abort(401);
         }
@@ -55,7 +56,7 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        if (!Auth::user()->hasPermissionTo('edit-user')){
+        if (!Auth::user()->hasPermissionTo(PermissionType::EDIT_ANOTHER_USER)){
             abort(401);
         }
 
@@ -80,23 +81,21 @@ class UserController extends Controller
     /**
      * Define privilege the specified resource.
      *
-     * @param int $id
+     * @param User $user
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function setPrivilege (Request $request, $id)
+    public function updateUserRole (Request $request, User $user)
     {
-        $user = User::find($id);
+        $role = $request->role;
 
-        $privege = $request->only('privilege');
-
-        if (!Auth::user()->hasPermissionTo('edit-user')){
-            if(Auth::user()->id != $user->id){
+        if (!Auth::user()->hasPermissionTo(PermissionType::UPDATE_ANOTHER_USER)){
+            if(Auth::id() != $user->id){
                 abort(401);
             }
         }
 
-        $user->syncRoles($privege);
+        $user->syncRoles($role);
 
         return redirect()->route('admin.users.index');
     }
@@ -109,8 +108,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        if (!Auth::user()->hasPermissionTo('edit-user')){
-            if(Auth::user()->id != $user->id){
+        if (!Auth::user()->hasPermissionTo(PermissionType::EDIT_ANOTHER_USER)){
+            if(Auth::id() != $user->id){
                 abort(401);
             }
         }
@@ -129,8 +128,8 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        if (!Auth::user()->hasPermissionTo('edit-user')){
-            if(Auth::user()->id != $user->id){
+        if (!Auth::user()->hasPermissionTo(PermissionType::UPDATE_ANOTHER_USER)){
+            if(Auth::id() != $user->id){
                 abort(401);
             }
         }
@@ -156,8 +155,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        if (!Auth::user()->hasPermissionTo('delete-user')){
-            if(Auth::user()->id != $user->id){
+        if (!Auth::user()->hasPermissionTo(PermissionType::DELETE_ANOTHER_USER)){
+            if(Auth::id() != $user->id){
                 abort(401);
             }
         }

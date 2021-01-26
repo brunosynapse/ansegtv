@@ -41,7 +41,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Caminho da Categoria</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" name="path" value="{{ $edition ? $category->path : old('path') }}">
+                                        <input type="text" class="form-control" name="path" value="{{ $edition ? $category->slug : old('slug') }}">
                                         <small class="form-text text-danger">
                                             Escreva em minúsculo. Não pode conter acentos, espaços ou caracteres especiais!
                                         </small>

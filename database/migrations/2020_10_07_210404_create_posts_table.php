@@ -26,8 +26,8 @@ class CreatePostsTable extends Migration
                 ->onDelete('set null');
             $table->string('slug')->unique();
             $table->string('status')->default(1);
-            $table->timestamps();
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 

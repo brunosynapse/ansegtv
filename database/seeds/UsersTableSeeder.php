@@ -1,9 +1,8 @@
 <?php
 
+use App\Enums\UserType;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
 
 class UsersTableSeeder extends Seeder
 {
@@ -19,6 +18,6 @@ class UsersTableSeeder extends Seeder
             'name' => 'Synapse Brasil',
             'email' => 'synapse@ansegtv.com.br',
             'password' => bcrypt('synapse@123'),
-        ])->assignRole('admin');
+        ])->assignRole(UserType::ADMIN);
     }
 }

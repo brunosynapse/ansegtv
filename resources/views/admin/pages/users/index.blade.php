@@ -50,7 +50,7 @@
                                         <td>{{ $user-> email }}</td>
                                         <td>{{$user->created_at->translatedFormat('d/m/Y')}}</td>
                                         <td scope="col">
-                                            @if($user->hasrole('admin'))
+                                            @if($user->hasrole($types['ADMIN']->value))
                                                 <div class="badge badge-success">Administrador</div>
                                             @else
                                                 <div class="badge badge-warning">Usuário</div>
@@ -58,24 +58,25 @@
                                         </td>
                                         <td>
                                             <div class="dropdown d-inline mr-2">
-                                                @hasrole('admin')
                                                     <button class="btn btn-primary dropdown-toggle hidden" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         Ações
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right">
+                                                        @role($types['ADMIN']->value)
+                                                            <form action="{{ route('admin.users.role', $user->id) }}" id="roleUserForm{{$user->id}}" method="post">
+                                                                @csrf
+                                                                <input name="role" type="hidden" value="{{$user->hasrole($types['ADMIN']->value)? $types['USER']->value : $types['ADMIN']->value}}">
+                                                            </form>
+                                                            <a class="dropdown-item" href="javascript:;" onclick="$('#roleUserForm{{$user->id}}').submit()">
+                                                                @if($user->hasrole($types['ADMIN']->value))
+                                                                    <i class="fas fa-user-shield"></i> Definir Usuário
+                                                                @else
+                                                                    <i class="fas fa-user"></i> Definir Administrador
+                                                                @endif
+                                                            </a>
+                                                        @endrole
                                                         <a class="dropdown-item" href="{{route('admin.users.edit', $user->id)}}" onclick="$('#statusCasesForm').submit()">
                                                             <i class="fas fa-edit"></i> Editar
-                                                        </a>
-                                                        <form action="{{ route('admin.users.privilege', $user->id) }}" id="privilegeUserForm{{$user->id}}" method="post">
-                                                            @csrf
-                                                            <input name="privilege" type="hidden" value="{{$user->hasrole('admin')? 'user' : 'admin'}}">
-                                                        </form>
-                                                        <a class="dropdown-item" href="javascript:;" onclick="$('#privilegeUserForm{{$user->id}}').submit()">
-                                                            @if($user->hasrole('admin'))
-                                                                <i class="fas fa-user-shield"></i> Definir Usuário
-                                                            @else
-                                                                <i class="fas fa-user"></i> Definir Administrador
-                                                            @endif
                                                         </a>
                                                         <form action="{{ route('admin.users.destroy', $user->id) }}" id="deleteUserForm{{$user->id}}" method="post">
                                                             @csrf
@@ -85,29 +86,6 @@
                                                             <i class="fas fa-trash"></i> Excluir
                                                         </a>
                                                     </div>
-                                                @else
-                                                    @if($user->id == Auth::user()->id)
-                                                        <button class="btn btn-primary dropdown-toggle hidden" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Ações
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="{{route('admin.users.edit', $user->id)}}" onclick="$('#statusCasesForm').submit()">
-                                                                <i class="fas fa-edit"></i> Editar
-                                                            </a>
-                                                            <form action="{{ route('admin.users.destroy', $user->id) }}" id="deleteUserForm{{$user->id}}" method="post">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                            </form>
-                                                            <a class="dropdown-item" href="javascript:;" data-confirm="Certeza? | Se excluir, você não poderá recuperá-lo!" data-confirm-yes="$('#deleteUserForm{{$user->id}}').submit()">
-                                                                <i class="fas fa-trash"></i> Excluir
-                                                            </a>
-                                                        </div>
-                                                    @else
-                                                        <button class="btn btn-primary dropdown-toggle hidden disabled" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Ações
-                                                        </button>
-                                                    @endif
-                                                @endhasrole
                                             </div>
                                         </td>
                                     </tr>
