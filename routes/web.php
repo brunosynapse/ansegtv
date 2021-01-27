@@ -26,9 +26,6 @@ Route::group([
     'namespace' => 'Site',
     'as' => 'site.'
 ], function(){
-    Route::resource('/', 'Post\PostController');
-});
-
-Route::group(['prefix' => 'admin'], function () {
-    Auth::routes();
+    Route::resource('/', 'Home\HomeController');
+    Route::resource('/noticias', 'Post\PostController');
 });

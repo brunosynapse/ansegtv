@@ -8,6 +8,7 @@ use EloquentFilter\Filterable;
 use App\Enums\PostStatusType;
 use App\ModelFilters\PostFilter;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
 class Post extends Model
 {
@@ -51,12 +52,16 @@ class Post extends Model
         return $query->where('highlight_position', $highlight)->first();
     }
 
-    public function scopeWithoutHighlightAndWithOrNotImage($query, $image = false) //WithoutHighlightAndWithOrNotImage
+    public function scopeWithoutHighlightAndWithOrNotImage($query, $image = false) //withoutHighlightAndWithOrNotImage
     {
-        if($image)
-        {
-            return  $query->whereNull('highlight_position')->whereNull('image');
+        if($image) {
+            return  $query->whereNull('highlight_position')->whereNull('image')->get();
         }
-        return $query->whereNull('highlight_position');
+        return $query->whereNull('highlight_position')->get();
+    }
+
+    public function scopeOrderedByViewsInTheLast30Days($query) //orderedByViewsInTheLast30Days
+    {
+            return $query->whereDate('created_at', '>', Carbon::now()->subDays(30))->orderBy('views', 'DESC')->get();
     }
 }

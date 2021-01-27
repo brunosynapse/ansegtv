@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Site\Post;
+namespace App\Http\Controllers\Site\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cookie;
 
-class PostController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = new Post;
+
+        return view('site.pages.home.index', compact('posts'));
     }
 
     /**
@@ -44,24 +44,12 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post $post
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(int $id)
+    public function show(Post $post)
     {
-        $post = Post::find($id); //refatorar isso que tá uma bosta e a injecao de dependencia nao esta funcionaod......
-
-        if(!$post){
-            abort(404);
-        }
-
-        if (!Cookie::has($post->id) && !Auth::check()) {
-            Cookie::queue($post->id, 'counter-views', 6 * 60);
-            $post->views += 1;
-            $post->save();
-        }
-
-        return view('site.pages.posts.show', compact('post'));
+        //
     }
 
     /**
