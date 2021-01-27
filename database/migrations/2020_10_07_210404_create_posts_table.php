@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Enums\PostStatusType;
 
 class CreatePostsTable extends Migration
 {
@@ -26,8 +27,8 @@ class CreatePostsTable extends Migration
                 ->references('id')
                 ->on('categories')
                 ->onDelete('set null');
-            $table->string('slug')->unique();
-            $table->string('status')->default(1);
+            $table->string('path')->unique();
+            $table->string('status')->default(PostStatusType::DRAFT);
             $table->softDeletes();
             $table->timestamps();
         });

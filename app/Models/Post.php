@@ -21,7 +21,7 @@ class Post extends Model
         'category_id',
         'status',
         'image',
-        'slug',
+        'path',
         'highlight_position',
     ];
 
@@ -46,20 +46,17 @@ class Post extends Model
         return $opStatus[$status];
     }
 
-    public function scopeHighlight1($query)
+    public function scopeHighlight($query, $highlight) //highlight
     {
-        return $query->where('highlight_position', PostPositionType::HIGHTLIGHT_1)->first();
+        return $query->where('highlight_position', $highlight)->first();
     }
 
-    public function scopeHighlight2($query)
+    public function scopeWithoutHighlightAndWithOrNotImage($query, $image = false) //WithoutHighlightAndWithOrNotImage
     {
-
-        return $query->where('highlight_position', PostPositionType::HIGHTLIGHT_2)->first();
-    }
-
-    public function scopeHighlight3($query)
-    {
-
-        return $query->where('highlight_position', PostPositionType::HIGHTLIGHT_3)->first();
+        if($image)
+        {
+            return  $query->whereNull('highlight_position')->whereNull('image');
+        }
+        return $query->whereNull('highlight_position');
     }
 }

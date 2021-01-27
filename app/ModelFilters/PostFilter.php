@@ -31,4 +31,9 @@ class PostFilter extends ModelFilter
         return $this->where('status', $status);
     }
 
+    public function highlight($highlight)
+    {
+        return $this->where('highlight_position', $highlight);
+    }
+
 }

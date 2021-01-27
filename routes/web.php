@@ -21,3 +21,14 @@ Route::group([
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
 });
+
+Route::group([
+    'namespace' => 'Site',
+    'as' => 'site.'
+], function(){
+    Route::resource('/', 'Post\PostController');
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+});

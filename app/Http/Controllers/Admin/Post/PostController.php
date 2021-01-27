@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Post;
+use App\Enums\PostPositionType;
 use App\Enums\PostStatusType;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
@@ -21,6 +22,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $type =  PostStatusType::getInstances();
+        $statusType = PostStatusType::$TYPES;
         $postsCount = Post::count();
         $publishedPosts = Post::where('status', PostStatusType::PUBLISHED )->count();
         $peddingPosts = Post::where('status', PostStatusType::PENDING)->count();
@@ -29,7 +31,7 @@ class PostController extends Controller
 
         return view(
             'admin/pages/posts/index',
-            compact('posts', 'postsCount', 'publishedPosts', 'peddingPosts', 'draftPosts', 'type')
+            compact('posts', 'postsCount', 'publishedPosts', 'peddingPosts', 'draftPosts', 'type', 'statusType')
         );
     }
 
@@ -40,10 +42,12 @@ class PostController extends Controller
      */
     public function create()
     {
+        $positionType = PostPositionType::$TYPES;
+        $statusType = PostStatusType::$TYPES;
         $categories = Category::all();
         $edition = false;
 
-        return view('admin/pages/posts/create-edit', compact('edition','categories'));
+        return view('admin/pages/posts/create-edit', compact('edition','categories', 'statusType', 'positionType'));
     }
 
     /**
@@ -68,7 +72,7 @@ class PostController extends Controller
                 ->single($request, $originalImageName)['path'];
         }
 
-        $data['slug'] = Str::slug($data['title'], '-');
+        $data['path'] = Str::slug($data['title'], '-');
 
         Post::create($data);
 
@@ -94,10 +98,12 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        $positionType = PostPositionType::$TYPES;
+        $statusType = PostStatusType::$TYPES;
         $categories = Category::all();
         $edition = true;
 
-        return view('admin/pages/posts/create-edit', compact('post', 'edition', 'categories'));
+        return view('admin/pages/posts/create-edit', compact('post', 'edition', 'categories', 'statusType', 'positionType'));
     }
 
     /**
@@ -111,7 +117,7 @@ class PostController extends Controller
     {
         $data = $request->all();
 
-        $data['slug'] = Str::slug($data['title'], '-');
+        $data['path'] = Str::slug($data['title'], '-');
 
         if($request->hasFile('image'))
         {
@@ -151,7 +157,7 @@ class PostController extends Controller
         if($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
-            $extension = $request->file('upload')->getClientOriginalExtenorar();
+            $extension = $request->file('upload')->getClientOriginalExtension();
             $fileName = $fileName.'_'.time().'.'.$extension;
 
             $request->file('upload')->move(public_path('images'), $fileName);

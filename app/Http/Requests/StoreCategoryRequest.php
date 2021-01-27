@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Enums\PostStatusType;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class StorePostRequest extends FormRequest
+class StoreCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,10 +24,7 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>"required|min:6|max:255|unique:posts",
-            'image' => 'mimes:jpeg,jpg,png,gif,webp|max:2024',
-            'category_id' => 'required',
-            'description' => 'required',
+            'name'=>"required|max:255|unique:categories",
         ];
     }
 }

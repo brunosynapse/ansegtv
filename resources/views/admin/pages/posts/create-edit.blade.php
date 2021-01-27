@@ -1,11 +1,11 @@
 @extends('admin/layouts.app')
 
-@section('title', 'Postagens')
+@section('title', 'Notícias')
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>{{ $edition ? 'Editar' : 'Criar' }} Postagem</h1>
+            <h1>{{ $edition ? 'Editar' : 'Criar' }} Notícia</h1>
         </div>
         <div class="section-body">
             <form action="{{ $edition ? route('admin.posts.update', $post->id) : route('admin.posts.store')}}"
@@ -13,7 +13,6 @@
                 @csrf
                 @if($edition)
                     @method('PUT')
-                    <input type="hidden" value="{{$post->id}}" name="id">
                 @endif
                 <div class="row">
                     <div class="col-md-9">
@@ -22,11 +21,11 @@
                                 <div class="card-body">
                                     <div class="card-body">
 
-                                        <div class="section-title mt-0">Título da Postagem</div>
+                                        <div class="section-title mt-0">Título da Notícia</div>
                                         <div class="form-group">
                                             <input type="text" class="form-control @error('title') is-invalid @enderror"
                                                    name="title" value="{{ $edition ? $post->title : old('title') }}"
-                                                   autocomplete="title" placeholder="Títudo da Postagem">
+                                                   autocomplete="title" placeholder="Título da Notícia">
                                             @error('title')
                                             <span class="invalid-feedback" role="alert">
                                             {{ $message }}
@@ -48,8 +47,31 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <span class="badge badge-danger m-2">Essa publicação ainda não tem uma imagem</span>
+                                                @if($edition)
+                                                    <div>
+                                                        {{mb_strimwidth(substr($post->image, 13, -1), 0, 30, "...")}}
+                                                        <span data-toggle="tooltip" data-placement="top" title="Exibir Imagem">
+                                                            <a href="{{asset("storage/".$post->image)}}" target="_blank"><i class="fas fa-eye text-info m-2" style="font-size: 24px;"></i></a>
+                                                        </span>
+                                                        <span data-toggle="tooltip" data-placement="top" title="Excluir Imagem">
+                                                            <a href="#"><i class="fas fa-trash text-danger m-2"  style="font-size: 24px;"></i></a>
+                                                        </span>
+                                                    </div>
+
+                                                @else
+                                                    <span class="badge badge-danger m-2">Defina uma imagem para esta Notícia</span>
+                                                @endif
                                             </div>
+                                        </div>
+
+                                        <div class="section-title mt-0">Descrição da Notícia</div>
+                                        <div class="form-group">
+                                            <textarea class="form-control h-100 @error('description') is-invalid @enderror" draggable="false" name="description">{{ $edition ? $post->description : old('description') }}</textarea>
+                                            @error('description')
+                                            <span class="invalid-feedback" role="alert">
+                                               {{ $message }}
+                                            </span>
+                                            @enderror
                                         </div>
 
                                         <div class="section-title mt-0">Conteúdo</div>
@@ -61,7 +83,7 @@
                                         <div class="form-group">
                                             <div class="row justify-content-end">
                                                 <div class="p-3">
-                                                    <button type="submit" class="btn btn-success">Salvar Postagem
+                                                    <button type="submit" class="btn btn-success">Salvar Notícia
                                                     </button>
                                                 </div>
                                             </div>
@@ -75,22 +97,21 @@
                         <div class="card card-success">
                             <div class="form-group">
                                 <div class="card-header mb-3">
-                                    <h4>Posição de Destaque</h4>
+                                    <h4 class="text-dark">Posição de Destaque {{$edition ? 'Atual: '.$post->status : ''}}</h4>
                                 </div>
                                 <div class="custom-switches-stacked">
                                     <label class="custom-switch">
-                                        <input type="radio" name="option" value="1" class="custom-switch-input"
-                                               checked="">
+                                        <input type="radio" name="highlight_position" value="1" class="custom-switch-input">
                                         <span class="custom-switch-indicator"></span>
                                         <span class="custom-switch-description">Destaque 1</span>
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="radio" name="option" value="2" class="custom-switch-input">
+                                        <input type="radio" name="highlight_position" value="2" class="custom-switch-input">
                                         <span class="custom-switch-indicator"></span>
                                         <span class="custom-switch-description">Destaque 2</span>
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="radio" name="option" value="3" class="custom-switch-input">
+                                        <input type="radio" name="highlight_position" value="3" class="custom-switch-input">
                                         <span class="custom-switch-indicator"></span>
                                         <span class="custom-switch-description">Destaque 3</span>
                                     </label>
@@ -99,7 +120,7 @@
 
                             <div class="form-group">
                                 <div class="card-header mb-3">
-                                    <h4>Categoria</h4>
+                                    <h4 class="text-dark">Categoria</h4>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-10">
@@ -129,30 +150,28 @@
 
                             <div class="form-group">
                                 <div class="card-header mb-3">
-                                    <h4>Situação da Publicação</h4>
+                                    <h4 class="text-dark">Situação da Publicação</h4>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-10">
                                         <select class="custom-select @error('status') is-invalid @enderror"
                                                 name="status">
                                             @if($edition)
-                                                <option
-                                                    value="Publicado" {{$post->status == "Publicado" ? 'selected' : ''}}>
-                                                    Publicado
-                                                </option>
-                                                <option
-                                                    value="Pendente" {{$post->status == "Pendente" ? 'selected' : ''}}>
-                                                    Pendente
-                                                </option>
-                                                <option
-                                                    value="Rascunho" {{$post->status == "Rascunho" ? 'selected' : ''}}>
-                                                    Rascunho
-                                                </option>
+                                                @foreach($statusType as $key => $value)
+                                                    <option
+                                                        {{$post->status == $key ? 'selected' : ''}}
+                                                        value="{{$key}}">
+                                                        {{$value['translation']}}
+                                                    </option>
+                                                @endforeach
                                             @else
                                                 <option disabled selected hidden> Selecione uma opção</option>
-                                                <option value="Publicado">Publicado</option>
-                                                <option value="Pendente">Pendente</option>
-                                                <option value="Rascunho">Rascunho</option>
+                                                @foreach($statusType as $key => $value)
+                                                    <option
+                                                        value="{{$key}}">
+                                                        {{$value['translation']}}
+                                                    </option>
+                                                @endforeach
                                             @endif
                                         </select>
                                         @error('status')
@@ -174,10 +193,8 @@
     <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
     <script>
         CKEDITOR.replace('content', {
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-        })
+            filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        });
     </script>
 @endsection

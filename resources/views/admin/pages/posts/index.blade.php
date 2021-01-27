@@ -1,17 +1,17 @@
 @extends('admin/layouts.app')
 
-@section('title', 'Postagens')
+@section('title', 'Notícias')
 
 @section('content')
     <section class="section">
         <div class="section-header d-flex justify-content-between">
             <div>
-                <h1>Postagens</h1>
+                <h1>Notícias</h1>
             </div>
             <div>
                 <form>
                     <div class="row">
-                        <input class="form-control col-md-10 col-lg-9" type="search" placeholder="Titulo da postagem"
+                        <input class="form-control col-md-10 col-lg-9" type="search" placeholder="Titulo da notícia"
                                name="title" aria-label="Search" minlength="4" maxlength="40">
                         <button class="btn col-md-2 col-lg-3" type="submit"><i class="fas fa-search"></i></button>
                     </div>
@@ -28,7 +28,7 @@
                                     <input type="hidden" name="" value="">
                                     <div class="d-flex justify-content-end">
                                         <button type="submit"
-                                                class="btn {{!request()->get('status') ? 'btn-primary' : 'btn-outline-primary'}} ">
+                                                class="btn {{!request()->get('status') && !request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} ">
                                             Todos <span class="badge badge-white">{{ $postsCount }}</span></button>
                                     </div>
                                 </form>
@@ -62,25 +62,24 @@
                                     </div>
                                 </form>
 
-
                                 <div class="d-flex justify-content-end">
                                     <div class="dropdown d-inline mr-2 btn-outline-primary">
-                                        <button class="btn btn-outline-primary dropdown-toggle hidden" type="button"
+                                        <button class="btn {{request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} dropdown-toggle hidden" type="button"
                                                 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">
                                             Publicações em Destaques
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" style="">
                                             <form>
-                                                <input type="hidden" name="hightligt" value="1">
+                                                <input type="hidden" name="highlight" value="1">
                                                 <input type="submit" class="dropdown-item" value="Destaque 1">
                                             </form>
                                             <form>
-                                                <input type="hidden" name="hightligt" value="2">
+                                                <input type="hidden" name="highlight" value="2">
                                                 <input type="submit" class="dropdown-item" value="Destaque 2">
                                             </form>
                                             <form>
-                                                <input type="hidden" name="hightligt" value="3">
+                                                <input type="hidden" name="highlight" value="3">
                                                 <input type="submit" class="dropdown-item" value="Destaque 3">
                                             </form>
                                         </div>
@@ -96,16 +95,18 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-end">
                             <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">
-                                Criar Postagem
+                                Criar Notícia
                             </a>
                         </div>
                         <div class="card-body  p-0">
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-striped">
                                     <thead>
                                     <tr>
-                                        <th>Título da Postagem</th>
+                                        <th>#</th>
+                                        <th>Título da Notícia</th>
                                         <th>Categoria</th>
+                                        <th>Slug</th>
                                         <th>Última Atualização</th>
                                         <th>Status</th>
                                     </tr>
@@ -113,7 +114,8 @@
                                     <tbody>
                                     @foreach($posts as $post)
                                         <tr>
-                                            <td>{{$post->title}}
+                                            <td>{{$post->id}}
+                                            <td>{{mb_strimwidth($post->title, 0, 30, "...")}}
                                                 <div class="table-links row ml-1">
                                                     <a href="{{route('admin.posts.edit', $post->id)}}">Editar</a>
                                                     <div class="bullet"></div>
@@ -140,15 +142,12 @@
                                                     {{$post->category['name']}}
                                                 </a>
                                             </td>
+                                            <td>
+                                                /{{mb_strimwidth($post->path, 0, 30, "...")}}
+                                            </td>
                                             <td>{{$post->updated_at->translatedFormat('d/m/Y')}}</td>
                                             <td>
-                                                @if($post->status == 'Publicado')
-                                                    <div class="badge badge-success">{{$post->status}}</div>
-                                                @elseif($post->status == 'Pendente')
-                                                    <div class="badge badge-warning">{{$post->status}}</div>
-                                                @else
-                                                    <div class="badge badge-dark">{{$post->status}}</div>
-                                                @endif
+                                                <div class="badge badge-{{$statusType[$post->status]['class']}}">{{$statusType[$post->status]['translation']}}</div>
                                             </td>
                                         </tr>
                                     @endforeach
