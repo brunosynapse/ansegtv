@@ -9,7 +9,7 @@ final class UserType extends Enum
     const ADMIN = 'admin';
     const USER = 'user';
 
-    const TYPES = [
+    public static $TYPES = [
         self::ADMIN => [
             'translation' => 'Administrador',
         ],

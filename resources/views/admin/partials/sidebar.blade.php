@@ -14,6 +14,7 @@
               <li><a class="nav-link" href="{{ route('admin.posts.create') }}">Criar Nova Postagens</a></li>
           </ul>
       </li>
+      <li class="{{ request()->is('users') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.categories.index') }}"><i class="fas fa-users"></i> <span>Categorias</span></a></li>
       <li class="menu-header">Mais Opções</li>
       <li class="{{ request()->is('users') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.users.index') }}"><i class="fas fa-users"></i> <span>Usuários</span></a></li>
   </ul>

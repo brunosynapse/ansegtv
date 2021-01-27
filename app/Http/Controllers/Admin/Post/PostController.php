@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Post;
-use App\Enums\PostType;
+use App\Enums\PostStatusType;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Services\UploadService;
@@ -20,16 +20,16 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
+        $type =  PostStatusType::getInstances();
         $postsCount = Post::count();
-
-        $publishedPosts = Post::where('status', PostType::PUBLISHED )->count();
-        $peddingPosts = Post::where('status', PostType::PENDING)->count();
-        $draftPosts = Post::where('status', PostType::DRAFT)->count();
+        $publishedPosts = Post::where('status', PostStatusType::PUBLISHED )->count();
+        $peddingPosts = Post::where('status', PostStatusType::PENDING)->count();
+        $draftPosts = Post::where('status', PostStatusType::DRAFT)->count();
         $posts = Post::filter($request->all())->paginateFilter(15);
 
         return view(
             'admin/pages/posts/index',
-            compact('posts', 'postsCount', 'publishedPosts', 'peddingPosts', 'draftPosts')
+            compact('posts', 'postsCount', 'publishedPosts', 'peddingPosts', 'draftPosts', 'type')
         );
     }
 

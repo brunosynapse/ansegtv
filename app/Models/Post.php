@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use App\Enums\PostPositionType;
 use Illuminate\Database\Eloquent\Model;
 use EloquentFilter\Filterable;
-use App\Enums\PostType;
+use App\Enums\PostStatusType;
 use App\ModelFilters\PostFilter;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -20,22 +21,13 @@ class Post extends Model
         'category_id',
         'status',
         'image',
-        'slug'
+        'slug',
+        'highlight_position',
     ];
 
     public function category()
     {
         return $this->belongsTo(Category::class);
-    }
-
-    public function getMonthUpdatedAtAttribute() // month_updated_at
-    {
-        return $this->getAttribute('updated_at')->translatedFormat('F');
-    }
-
-    public function getDayUpdatedAtAttribute() // day_updated_at
-    {
-        return $this->getAttribute('updated_at')->translatedFormat('d');
     }
 
     public function modelFilter()
@@ -45,12 +37,29 @@ class Post extends Model
 
     public function status($status = null)
     {
-        $opStatus = PostType::getInstances();
+        $opStatus = PostStatusType::getInstances();
 
-        if (!$status)
+        if (!$status){
             return $opStatus;
+        }
 
         return $opStatus[$status];
     }
 
+    public function scopeHighlight1($query)
+    {
+        return $query->where('highlight_position', PostPositionType::HIGHTLIGHT_1)->first();
+    }
+
+    public function scopeHighlight2($query)
+    {
+
+        return $query->where('highlight_position', PostPositionType::HIGHTLIGHT_2)->first();
+    }
+
+    public function scopeHighlight3($query)
+    {
+
+        return $query->where('highlight_position', PostPositionType::HIGHTLIGHT_3)->first();
+    }
 }

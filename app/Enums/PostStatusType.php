@@ -4,13 +4,13 @@ namespace App\Enums;
 
 use BenSampo\Enum\Enum;
 
-final class PostType extends Enum
+final class PostStatusType extends Enum
 {
-    const PUBLISHED = 'published';
-    const PENDING =   'pending';
-    const DRAFT = 'draft';
+    const PUBLISHED = 1;
+    const PENDING =   2;
+    const DRAFT = 3;
 
-    const TYPES = [
+    public static $TYPES = [
         self::PUBLISHED => [
             'translation' => 'Publicado',
         ],

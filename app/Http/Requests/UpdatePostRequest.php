@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Enums\Category;
-use App\Enums\PostType;
+use App\Enums\PostStatusType;
 use BenSampo\Enum\Rules\EnumValue;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -32,7 +32,7 @@ class UpdatePostRequest extends FormRequest
             'image' => 'mimes:jpeg,jpg,png,gif,webp|max:2024',
             'category_id' => ['required',  Rule::in(Category::getValues())],
             'description' => 'required',
-            'status' => ['required', Rule::in(PostType::getValues())]
+            'status' => ['required', Rule::in(PostStatusType::getValues())]
         ];
     }
 }

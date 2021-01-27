@@ -16,7 +16,9 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        //
+        $categories = Category::filter($request->all())->paginateFilter(15);
+
+        return view('admin.pages.categories.index', compact('categories'));
     }
 
     /**
@@ -26,7 +28,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $edition = false;
+
+        return view('admin.pages.categories.create-edit', compact('edition'));
     }
 
     /**
