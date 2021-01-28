@@ -58,12 +58,17 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        $upload = new UploadService();
+        if($position = $request->highlight_position){
+            Post::highlight($position)
+                ->update(['highlight_position' => null]);
+        }
 
         $data = $request->all();
 
         if($request->hasFile('image'))
         {
+            $upload = new UploadService();
+
             $originalImageName = $request->image->getClientOriginalName();
 
             $data['image'] = $upload
@@ -115,6 +120,11 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
+        if($position = $request->highlight_position){
+            Post::highlight($position)
+                ->update(['highlight_position' => null]);
+        }
+
         $data = $request->all();
 
         $data['path'] = Str::slug($data['title'], '-');
@@ -170,5 +180,11 @@ class PostController extends Controller
             @header('Content-type: text/html; charset=utf-8');
             echo $response;
         }
+    }
+
+    public function deleteMainImage(int $id){
+        Post::find($id)->update(['image' => null]);
+
+        return redirect()->back();
     }
 }

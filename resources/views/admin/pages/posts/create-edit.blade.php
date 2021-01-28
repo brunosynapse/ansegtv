@@ -48,18 +48,23 @@
                                             </div>
                                             <div class="col-md-4">
                                                 @if($edition)
-                                                    <div>
-                                                        {{mb_strimwidth(substr($post->image, 13, -1), 0, 30, "...")}}
-                                                        <span data-toggle="tooltip" data-placement="top" title="Exibir Imagem">
-                                                            <a href="{{asset("storage/".$post->image)}}" target="_blank"><i class="fas fa-eye text-info m-2" style="font-size: 24px;"></i></a>
-                                                        </span>
-                                                        <span data-toggle="tooltip" data-placement="top" title="Excluir Imagem">
-                                                            <a href="#"><i class="fas fa-trash text-danger m-2"  style="font-size: 24px;"></i></a>
-                                                        </span>
-                                                    </div>
-
+                                                    @if($post->image)
+                                                        <div>
+                                                            {{mb_strimwidth(substr($post->image, 13, -1), 0, 30, "...")}}
+                                                            <span data-toggle="tooltip" data-placement="top" title="Exibir Imagem">
+                                                                <a href="{{asset("storage/".$post->image)}}" target="_blank"><i class="fas fa-eye text-info m-2" style="font-size: 24px;"></i></a>
+                                                            </span>
+                                                            <span data-toggle="tooltip" data-placement="top" title="Excluir Imagem">
+                                                                <a href="javascript:;"
+                                                                   data-confirm="Certeza? | Você deseja excluir a imagem principal dessa Notícia?"
+                                                                   data-confirm-yes="$('#deleteMainImagePostForm{{$post->id}}').submit()"><i class="fas fa-trash text-danger m-2"  style="font-size: 24px;"></i></a>
+                                                            </span>
+                                                        </div>
+                                                    @else
+                                                        <h5 class="pt-2"><small class="text-danger">Essa Notícia não tem uma imagem definida!</small></h5>
+                                                    @endif
                                                 @else
-                                                    <span class="badge badge-danger m-2">Defina uma imagem para esta Notícia</span>
+                                                    <h5 class="pt-2"><small class="text-danger">Selecione uma imagem para esta Notícia!</small></h5>
                                                 @endif
                                             </div>
                                         </div>
@@ -107,21 +112,6 @@
                                             <span class="custom-switch-description">{{$value['translation']}}</span>
                                         </label>
                                     @endforeach
-{{--                                    <label class="custom-switch">--}}
-{{--                                        <input type="radio" name="highlight_position" value="1" class="custom-switch-input">--}}
-{{--                                        <span class="custom-switch-indicator"></span>--}}
-{{--                                        <span class="custom-switch-description">Destaque 1</span>--}}
-{{--                                    </label>--}}
-{{--                                    <label class="custom-switch">--}}
-{{--                                        <input type="radio" name="highlight_position" value="2" class="custom-switch-input">--}}
-{{--                                        <span class="custom-switch-indicator"></span>--}}
-{{--                                        <span class="custom-switch-description">Destaque 2</span>--}}
-{{--                                    </label>--}}
-{{--                                    <label class="custom-switch">--}}
-{{--                                        <input type="radio" name="highlight_position" value="3" class="custom-switch-input">--}}
-{{--                                        <span class="custom-switch-indicator"></span>--}}
-{{--                                        <span class="custom-switch-description">Destaque 3</span>--}}
-{{--                                    </label>--}}
                                 </div>
                             </div>
 
@@ -133,18 +123,11 @@
                                     <div class="col-md-10">
                                         <select class="custom-select @error('category_id') is-invalid @enderror"
                                                 name="category_id">
-                                            @if($edition)
-                                                @foreach($categories as $category)
-                                                    <option
-                                                        value="{{ $category->id }}" {{ $category->id == $post->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
-                                                @endforeach
-                                            @else
-                                                <option disabled selected hidden> Selecione uma opção</option>
-                                                @foreach($categories as $category)
-                                                    <option
-                                                        value="{{ $category->id }}">{{ $category->name }}</option>
-                                                @endforeach
-                                            @endif
+                                            @if(!$edition) <option disabled selected hidden> Selecione uma opção </option> @endif
+                                            @foreach($categories as $category)
+                                                <option
+                                                    value="{{ $category->id }}" {{ $edition ? $category->id == $post->category_id ? 'selected' : '' : '' }}>{{ $category->name }}</option>
+                                            @endforeach
                                         </select>
                                         @error('category_id')
                                         <span class="invalid-feedback" role="alert">
@@ -163,23 +146,14 @@
                                     <div class="col-md-10">
                                         <select class="custom-select @error('status') is-invalid @enderror"
                                                 name="status">
-                                            @if($edition)
-                                                @foreach($statusType as $key => $value)
-                                                    <option
-                                                        {{$post->status == $key ? 'selected' : ''}}
-                                                        value="{{$key}}">
-                                                        {{$value['translation']}}
-                                                    </option>
-                                                @endforeach
-                                            @else
-                                                <option disabled selected hidden> Selecione uma opção</option>
-                                                @foreach($statusType as $key => $value)
-                                                    <option
-                                                        value="{{$key}}">
-                                                        {{$value['translation']}}
-                                                    </option>
-                                                @endforeach
-                                            @endif
+                                            @if(!$edition) <option disabled selected hidden> Selecione uma opção </option> @endif
+                                            @foreach($statusType as $key => $value)
+                                                <option
+                                                    {{$edition ? $post->status == $key ? 'selected' : '' : ''}}
+                                                    value="{{$key}}">
+                                                    {{$value['translation']}}
+                                                </option>
+                                            @endforeach
                                         </select>
                                         @error('status')
                                         <span class="invalid-feedback" role="alert">
@@ -194,6 +168,14 @@
                     </div>
                 </div>
             </form>
+
+            @if($edition)
+                <form action="{{route('admin.posts.delete.main-image', $post->id)}}"
+                      class="hidden"
+                      id="deleteMainImagePostForm{{$post->id}}" method="post">
+                    @csrf
+                </form>
+            @endif
         </div>
     </section>
 

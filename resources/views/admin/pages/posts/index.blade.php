@@ -107,7 +107,7 @@
                                         <th>Título da Notícia</th>
                                         <th>Categoria</th>
                                         <th>Slug</th>
-                                        <th>Última Atualização</th>
+                                        <th>Data de Criação</th>
                                         <th>Status</th>
                                     </tr>
                                     </thead>
@@ -145,7 +145,7 @@
                                             <td>
                                                 /{{mb_strimwidth($post->path, 0, 30, "...")}}
                                             </td>
-                                            <td>{{$post->updated_at->translatedFormat('d/m/Y')}}</td>
+                                            <td>{{$post->created_at->translatedFormat('d/m/Y')}}</td>
                                             <td>
                                                 <div class="badge badge-{{$statusType[$post->status]['class']}}">{{$statusType[$post->status]['translation']}}</div>
                                             </td>

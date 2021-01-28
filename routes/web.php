@@ -16,6 +16,8 @@ Route::group([
     Route::resource('/categories', 'Category\CategoryController');
     Route::post('/posts/ckeditor/upload', 'Post\PostController@imageUpload')
         ->name('ckeditor.image-upload');
+    Route::post('/post/{id}/edit/delete-main-image', 'Post\PostController@deleteMainImage')
+        ->name('posts.delete.main-image');
 });
 
 Route::group(['prefix' => 'admin'], function () {
