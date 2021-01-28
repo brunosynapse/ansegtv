@@ -17321,7 +17321,7 @@ ol {
 .custom-select:focus,
 .custom-file-label:focus {
   background-color: #fefeff;
-  border-color: #95a0f4;
+  border-color: #ac853d;
 }
 
 .input-group-text,
@@ -18797,7 +18797,7 @@ h6 .badge {
 
 .btn {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 24px;
   padding: 0.3rem 0.8rem;
   letter-spacing: 0.5px;
@@ -19822,7 +19822,7 @@ a.dropdown-item.active {
   width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-size: 13px;
+  font-size: 14px;
   border-bottom: 1px solid #f9f9f9;
 }
 
@@ -20044,7 +20044,7 @@ html {
 
 body {
   background-color: #f4f6f9;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   font-family: "Nunito", "Segoe UI", arial;
   color: #6c757d;

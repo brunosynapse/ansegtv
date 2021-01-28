@@ -47,24 +47,20 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                @if($edition)
-                                                    @if($post->image)
-                                                        <div>
-                                                            {{mb_strimwidth(substr($post->image, 13, -1), 0, 30, "...")}}
-                                                            <span data-toggle="tooltip" data-placement="top" title="Exibir Imagem">
-                                                                <a href="{{asset("storage/".$post->image)}}" target="_blank"><i class="fas fa-eye text-info m-2" style="font-size: 24px;"></i></a>
-                                                            </span>
-                                                            <span data-toggle="tooltip" data-placement="top" title="Excluir Imagem">
-                                                                <a href="javascript:;"
-                                                                   data-confirm="Certeza? | Você deseja excluir a imagem principal dessa Notícia?"
-                                                                   data-confirm-yes="$('#deleteMainImagePostForm{{$post->id}}').submit()"><i class="fas fa-trash text-danger m-2"  style="font-size: 24px;"></i></a>
-                                                            </span>
-                                                        </div>
-                                                    @else
-                                                        <h5 class="pt-2"><small class="text-danger">Essa Notícia não tem uma imagem definida!</small></h5>
-                                                    @endif
+                                                @if($edition and $post->image)
+                                                    <div>
+                                                        {{mb_strimwidth(substr($post->image, 13, -1), 0, 30, "...")}}
+                                                        <span data-toggle="tooltip" data-placement="top" title="Exibir Imagem">
+                                                            <a href="{{asset("storage/".$post->image)}}" target="_blank"><i class="fas fa-eye text-info m-2" style="font-size: 17px;"></i></a>
+                                                        </span>
+                                                        <span data-toggle="tooltip" data-placement="top" title="Excluir Imagem">
+                                                            <a href="javascript:;"
+                                                               data-confirm="Certeza? | Você deseja excluir a imagem principal dessa Notícia? <br> Obs: A página será recarregada e suas alterações não serão salvas"
+                                                               data-confirm-yes="$('#deleteMainImagePostForm{{$post->id}}').submit()"><i class="fas fa-trash text-danger m-2"  style="font-size: 17px;"></i></a>
+                                                        </span>
+                                                    </div>
                                                 @else
-                                                    <h5 class="pt-2"><small class="text-danger">Selecione uma imagem para esta Notícia!</small></h5>
+                                                    <h5 class="pt-2"><small class="text-danger">Essa Notícia não tem uma imagem definida!</small></h5>
                                                 @endif
                                             </div>
                                         </div>
@@ -179,7 +175,7 @@
         </div>
     </section>
 
-    <script src="{{ asset('ckeditor4/ckeditor.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('ckeditor4_bkp/ckeditor.js') }}"></script>
     <script>
         CKEDITOR.replace('content', {
             filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",

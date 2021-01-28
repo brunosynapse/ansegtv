@@ -118,8 +118,10 @@ class PostController extends Controller
     public function update(UpdatePostRequest $request, Post $post)
     {
         if($position = $request->highlight_position){
-            Post::highlight($position)
-                ->update(['highlight_position' => null]);
+            $featuredPost = Post::highlight($position);
+            if($featuredPost && $featuredPost->id =! $post->id){
+                $featuredPost->update(['highlight_position' => null]);
+            }
         }
 
         $data = $request->all();

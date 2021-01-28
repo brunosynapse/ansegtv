@@ -12,7 +12,7 @@
                 <form>
                     <div class="row">
                         <input class="form-control col-md-10 col-lg-9" type="search" placeholder="Titulo da notícia"
-                               name="title" aria-label="Search" minlength="4" maxlength="40">
+                               name="title" aria-label="Search" minlength="4" maxlength="40" value="{{request()->get('title')}}">
                         <button class="btn col-md-2 col-lg-3" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
