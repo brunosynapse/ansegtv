@@ -97,24 +97,31 @@
                         <div class="card card-success">
                             <div class="form-group">
                                 <div class="card-header mb-3">
-                                    <h4 class="text-dark">Posição de Destaque {{$edition ? 'Atual: '.$post->status : ''}}</h4>
+                                    <h4 class="text-dark">Posição de Destaque {{$edition ? $post->highlight_position ? 'Atual: '.$post->highlight_position: '' : ''}}</h4>
                                 </div>
                                 <div class="custom-switches-stacked">
-                                    <label class="custom-switch">
-                                        <input type="radio" name="highlight_position" value="1" class="custom-switch-input">
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description">Destaque 1</span>
-                                    </label>
-                                    <label class="custom-switch">
-                                        <input type="radio" name="highlight_position" value="2" class="custom-switch-input">
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description">Destaque 2</span>
-                                    </label>
-                                    <label class="custom-switch">
-                                        <input type="radio" name="highlight_position" value="3" class="custom-switch-input">
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description">Destaque 3</span>
-                                    </label>
+                                    @foreach($positionType as $key => $value)
+                                        <label class="custom-switch">
+                                            <input type="radio" name="highlight_position" value="{{$key}}" class="custom-switch-input" {{$edition ? $post->highlight_position == $key ? 'checked=""' : '' : ''}}>
+                                            <span class="custom-switch-indicator"></span>
+                                            <span class="custom-switch-description">{{$value['translation']}}</span>
+                                        </label>
+                                    @endforeach
+{{--                                    <label class="custom-switch">--}}
+{{--                                        <input type="radio" name="highlight_position" value="1" class="custom-switch-input">--}}
+{{--                                        <span class="custom-switch-indicator"></span>--}}
+{{--                                        <span class="custom-switch-description">Destaque 1</span>--}}
+{{--                                    </label>--}}
+{{--                                    <label class="custom-switch">--}}
+{{--                                        <input type="radio" name="highlight_position" value="2" class="custom-switch-input">--}}
+{{--                                        <span class="custom-switch-indicator"></span>--}}
+{{--                                        <span class="custom-switch-description">Destaque 2</span>--}}
+{{--                                    </label>--}}
+{{--                                    <label class="custom-switch">--}}
+{{--                                        <input type="radio" name="highlight_position" value="3" class="custom-switch-input">--}}
+{{--                                        <span class="custom-switch-indicator"></span>--}}
+{{--                                        <span class="custom-switch-description">Destaque 3</span>--}}
+{{--                                    </label>--}}
                                 </div>
                             </div>
 
