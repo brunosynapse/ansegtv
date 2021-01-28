@@ -87,7 +87,7 @@ class UserController extends Controller
      */
     public function updateUserRole (Request $request, int $id)
     {
-        $user = User::find($id);
+        $user = User::find($id); //refatorar isso que tá uma bosta e a injecao de dependencia nao esta funcionaod......
 
         if (!Auth::user()->hasPermissionTo(PermissionType::UPDATE_ANOTHER_USER)){
             if(Auth::id() != $user->id){
