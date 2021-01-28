@@ -23,15 +23,12 @@ class PostController extends Controller
     {
         $type =  PostStatusType::getInstances();
         $statusType = PostStatusType::$TYPES;
-        $postsCount = Post::count();
-        $publishedPosts = Post::where('status', PostStatusType::PUBLISHED )->count();
-        $peddingPosts = Post::where('status', PostStatusType::PENDING)->count();
-        $draftPosts = Post::where('status', PostStatusType::DRAFT)->count();
-        $posts = Post::filter($request->all())->paginateFilter(15);
+        $postsCount = new Post;
+        $posts = Post::filter($request->all())->orderBy('created_at', 'DESC')->paginateFilter(15);
 
         return view(
             'admin/pages/posts/index',
-            compact('posts', 'postsCount', 'publishedPosts', 'peddingPosts', 'draftPosts', 'type', 'statusType')
+            compact('posts', 'postsCount', 'type', 'statusType')
         );
     }
 

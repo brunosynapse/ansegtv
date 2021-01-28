@@ -4,9 +4,9 @@
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/posts/create-edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/posts/create-edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/categories/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +232,7 @@
       <workItem from="1609245781476" duration="608000" />
       <workItem from="1609249556744" duration="1186000" />
       <workItem from="1611678415765" duration="4920000" />
-      <workItem from="1611752239906" duration="35552000" />
+      <workItem from="1611752239906" duration="40433000" />
     </task>
     <servers />
   </component>
@@ -240,6 +240,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="589" y="234" width="734" height="633" key="#Inspections" timestamp="1611846500651">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="589" y="234" width="734" height="633" key="#Inspections/0.25.1920.1055@0.25.1920.1055" timestamp="1611846500651" />
     <state x="498" y="204" width="585" height="387" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604600043979">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -280,10 +284,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="513" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1604467334358" />
-    <state x="315" y="302" width="587" height="502" key="find.popup" timestamp="1611844053200">
+    <state x="315" y="302" width="587" height="502" key="find.popup" timestamp="1611852922360">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="315" y="302" width="587" height="502" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1611844053200" />
+    <state x="315" y="302" width="587" height="502" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1611852922360" />
     <state x="484" y="258" key="run.anything.popup" timestamp="1611775371148">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>

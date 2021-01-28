@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Enums\PostPositionType;
 use Illuminate\Database\Eloquent\Model;
 use EloquentFilter\Filterable;
 use App\Enums\PostStatusType;
@@ -63,5 +62,24 @@ class Post extends Model
     public function scopeOrderedByViewsInTheLast30Days($query) //orderedByViewsInTheLast30Days
     {
             return $query->whereDate('created_at', '>', Carbon::now()->subDays(30))->orderBy('views', 'DESC')->get();
+    }
+
+    public function scopeOrderedByCreatedAt($query)  //orderedByCreatedAt
+    {
+        return $query->filter-> orderBy('created_at', 'DESC')->get();
+    }
+
+    public function scopePostStatusCount($query, $status, $operator = false) //postStatusCount
+    {
+        if($operator){
+            return $query->where('status', $operator, $status)->count();
+        }
+        return $query->where('status', $status)->count();
+    }
+
+    public function scopeByMonthAndYear($query, $monthNumber, $yearNumber) //byMonthAndYear
+    {
+        return $query->whereMonth('created_at', $monthNumber)
+            ->whereYear('created_at', $yearNumber)->get();
     }
 }

@@ -29,7 +29,7 @@
                                     <div class="d-flex justify-content-end">
                                         <button type="submit"
                                                 class="btn {{!request()->get('status') && !request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} ">
-                                            Todos <span class="badge badge-white">{{ $postsCount }}</span></button>
+                                            Todos <span class="badge badge-white">{{ $postsCount->postStatusCount(null, '!=') }}</span></button>
                                     </div>
                                 </form>
 
@@ -38,7 +38,7 @@
                                     <div class="d-flex justify-content-end">
                                         <button type="submit"
                                                 class="btn {{request()->get('status') == $type['PUBLISHED']->value ? 'btn-primary' : 'btn-outline-primary'}} ">
-                                            Publicados <span class="badge badge-white">{{ $publishedPosts }}</span>
+                                            Publicados <span class="badge badge-white">{{ $postsCount->postStatusCount($type['PUBLISHED']->value)}}</span>
                                         </button>
                                     </div>
                                 </form>
@@ -48,7 +48,7 @@
                                     <div class="d-flex justify-content-end">
                                         <button type="submit"
                                                 class="btn {{request()->get('status') == $type['PENDING']->value ? 'btn-primary' : 'btn-outline-primary'}} ">
-                                            Pendentes <span class="badge badge-white">{{ $peddingPosts }}</span>
+                                            Pendentes <span class="badge badge-white">{{ $postsCount->postStatusCount($type['PENDING']->value) }}</span>
                                         </button>
                                     </div>
                                 </form>
@@ -58,7 +58,7 @@
                                     <div class="d-flex justify-content-end">
                                         <button type="submit"
                                                 class="btn {{request()->get('status') == $type['DRAFT']->value ? 'btn-primary' : 'btn-outline-primary'}} ">
-                                            Rascunhos <span class="badge badge-white">{{ $draftPosts }}</span></button>
+                                            Rascunhos <span class="badge badge-white">{{ $postsCount->postStatusCount($type['DRAFT']->value) }}</span></button>
                                     </div>
                                 </form>
 
@@ -153,7 +153,9 @@
                                     @endforeach
                                     </tbody>
                                 </table>
-                                <div>
+                            </div>
+                            <div class="row justify-content-end">
+                                <div class="col-md-2">
                                     {{ $posts->appends(request()->query())->links() }}
                                 </div>
                             </div>

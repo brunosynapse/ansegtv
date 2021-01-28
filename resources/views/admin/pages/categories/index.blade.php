@@ -75,7 +75,9 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div class="d-flex justify-content-end">
+                        </div>
+                        <div class="row justify-content-end">
+                            <div class="col-md-2">
                                 {{ $categories->appends(request()->query())->links() }}
                             </div>
                         </div>
