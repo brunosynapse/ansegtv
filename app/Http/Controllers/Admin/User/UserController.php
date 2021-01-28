@@ -15,7 +15,7 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->middleware('role:'.UserType::ADMIN)->except('edit', 'index', 'destroy');
+        $this->middleware('role:'.UserType::ADMIN)->except('edit', 'index', 'destroy', 'update');
     }
 
     /**
@@ -85,9 +85,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function updateUserRole (Request $request, User $user)
+    public function updateUserRole (Request $request, int $id)
     {
-        $role = $request->role;
+        $user = User::find($id);
 
         if (!Auth::user()->hasPermissionTo(PermissionType::UPDATE_ANOTHER_USER)){
             if(Auth::id() != $user->id){
@@ -95,6 +95,7 @@ class UserController extends Controller
             }
         }
 
+        $role = $request->role;
         $user->syncRoles($role);
 
         return redirect()->route('admin.users.index');
