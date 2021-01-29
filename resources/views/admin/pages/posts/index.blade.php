@@ -115,7 +115,7 @@
                                     @foreach($posts as $post)
                                         <tr>
                                             <td>{{$post->id}}
-                                            <td>{{mb_strimwidth($post->title, 0, 30, "...")}}
+                                            <td>{{mb_strimwidth($post->title, 0, 50, "...")}}
                                                 <div class="table-links row ml-1">
                                                     <a href="{{route('admin.posts.edit', $post->id)}}">Editar</a>
                                                     <div class="bullet"></div>
