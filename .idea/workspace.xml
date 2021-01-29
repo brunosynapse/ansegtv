@@ -2,73 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/css/samples.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/img/github-top.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/img/header-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/img/header-separator.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/img/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/img/navigation-tip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/js/sample.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/js/sf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/ajax.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/api.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/appendto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/assets/inlineall/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/assets/outputxhtml/outputxhtml.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/assets/posteddata.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/assets/sample.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/assets/uilanguages/languages.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/datafiltering.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/dialog/assets/my_dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/dialog/dialog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/divreplace.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/enterkey/enterkey.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/htmlwriter/assets/outputforflash/outputforflash.fla" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/htmlwriter/assets/outputforflash/outputforflash.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/htmlwriter/assets/outputforflash/swfobject.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/htmlwriter/outputforflash.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/htmlwriter/outputhtml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/inlineall.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/inlinebycode.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/inlinetextarea.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/jquery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/magicline/magicline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/readonly.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/replacebyclass.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/replacebycode.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/sample.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/sample.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/sample_posteddata.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/tabindex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/toolbar/toolbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/uicolor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/uilanguages.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/wysiwygarea/fullpage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/old/xhtmlstyle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/css/fontello.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/font/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/font/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/font/fontello.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/font/fontello.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/font/fontello.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/font/fontello.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/js/fulltoolbareditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/js/toolbarmodifier.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/js/toolbartextmodifier.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/lib/codemirror/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/lib/codemirror/codemirror.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/lib/codemirror/codemirror.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/lib/codemirror/javascript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/lib/codemirror/neo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/lib/codemirror/show-hint.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckeditor4_bkp/samples/toolbarconfigurator/lib/codemirror/show-hint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/133093207_3724584814292279_5855598510281962312_n_1611864702.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +234,7 @@
       <workItem from="1611752239906" duration="49549000" />
       <workItem from="1611923381720" duration="2789000" />
       <workItem from="1611941209698" duration="51000" />
-      <workItem from="1611941262037" duration="897000" />
+      <workItem from="1611941262037" duration="1943000" />
     </task>
     <servers />
   </component>
@@ -355,10 +290,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="513" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1604467334358" />
-    <state x="456" y="322" width="587" height="502" key="find.popup" timestamp="1611942155461">
+    <state x="456" y="322" width="587" height="526" key="find.popup" timestamp="1611943085164">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="456" y="322" width="587" height="502" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1611942155461" />
+    <state x="456" y="322" width="587" height="526" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1611943085164" />
     <state x="484" y="258" key="run.anything.popup" timestamp="1611869035464">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
