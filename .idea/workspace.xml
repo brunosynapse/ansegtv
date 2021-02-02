@@ -2,8 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/ArialNarrow-Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/ArialNarrow-Bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/ArialNarrow.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/ArialNarrow.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/arialnarrowbold.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/arialnarrowbolditalic.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/arialnarrowregular.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/BannerCelular_tela_celular.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/Bannersite-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-aso.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-blueangels.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-brasfort.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-cefor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-corpvs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-federal-seguranca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-fenixx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-fidelys.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-global-service.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-kaikos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-renaforte.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-saga.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-tb-forte.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-union-security.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo-valorsat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/associates/logo_comandog8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bg_copyright.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/divider_h2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/divider_hr1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logo-header.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/site/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/site/partials/associated.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/site/partials/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/site/partials/home-slider.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/site/partials/navbar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/site/partials/news.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/home/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +189,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/associates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -164,16 +200,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images/associates" />
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/public/fonts" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/resources/views/auth/layouts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/ckeditor4_bkp" />
       <recent name="$PROJECT_DIR$/resources/lang/vendor/laravel-filemanager" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/resources/views/auth/layouts" />
-      <recent name="$PROJECT_DIR$/public/assets/pdf" />
-      <recent name="$PROJECT_DIR$/app/service" />
-      <recent name="$PROJECT_DIR$/database/seeds" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.Tag">
@@ -254,7 +290,6 @@
     <state x="1072" y="25" width="368" height="859" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1611692789891">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="763" y="0" width="516" height="732" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.735@0.0.1366.735" timestamp="1603585359837" />
     <state x="1072" y="25" width="368" height="859" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1611692789891" />
     <state x="584" y="208" width="526" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611772015472">
       <screen x="0" y="25" width="1920" height="1055" />
@@ -266,11 +301,11 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="99" y="125" width="1722" height="856" key="DiffContextDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1611869922147" />
-    <state x="700" y="254" width="426" height="480" key="FileChooserDialogImpl" timestamp="1611941258496">
+    <state x="700" y="254" width="426" height="480" key="FileChooserDialogImpl" timestamp="1612288687223">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="583" y="187" width="424" height="478" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1605017879413" />
-    <state x="700" y="254" width="426" height="480" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1611941258496" />
+    <state x="700" y="254" width="426" height="480" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1612288687223" />
     <state x="688" y="300" width="634" height="538" key="NewPhpClassDialog" timestamp="1611869025301">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
@@ -290,10 +325,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="513" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1604467334358" />
-    <state x="456" y="322" width="587" height="526" key="find.popup" timestamp="1611943085164">
+    <state x="415" y="331" width="587" height="594" key="find.popup" timestamp="1612291590103">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="456" y="322" width="587" height="526" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1611943085164" />
+    <state x="415" y="331" width="587" height="594" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1612291590103" />
     <state x="484" y="258" key="run.anything.popup" timestamp="1611869035464">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
