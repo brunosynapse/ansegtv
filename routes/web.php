@@ -29,5 +29,9 @@ Route::group([
     'as' => 'site.'
 ], function(){
     Route::resource('/', 'Home\HomeController');
+    Route::get('/ansegtv', 'Statics\AboutController');
+    Route::get('/estrutura', 'Statics\StructureController');
+    Route::get('/parcerias', 'Statics\PartnershipsController');
+    Route::get('/contato', 'Statics\ContactController');
     Route::resource('/noticias', 'Post\PostController');
 });

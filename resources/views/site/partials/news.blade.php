@@ -1,7 +1,6 @@
 <section id="noticias">
     <div class="container destaques">
         <div class="row">
-
             <div class="col col-md-8 title-header">
                 <h2 class="pull-left">destaques</h2>
                 <a class="btn-warning btn-all-news mt-3 pull-right" href="./noticias/">Veja todas as notícias</a>
