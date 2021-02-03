@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use EloquentFilter\Filterable;
@@ -14,7 +13,6 @@ use App\ModelFilters\UserFilter;
 class User extends Authenticatable
 {
 
-    use SoftDeletes;
     use HasRoles;
     use Notifiable;
     use Filterable;
@@ -45,6 +43,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
     public function modelFilter()
     {

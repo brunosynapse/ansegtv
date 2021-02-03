@@ -2,49 +2,16 @@
     <div class="title-headers">
         <h3>Mais Lidas</h3>
     </div>
-    <div class="col">
-        <a href="">
-            <span class="posicao">01</span>
-            <div class="info">
-                <span class="data">29|01|2021</span>
-                <h4>Meios de pagamento se complementam</h4>
-            </div>
-        </a>
-    </div>
-    <div class="col">
-        <a href="">
-            <span class="posicao">02</span>
-            <div class="info">
-                <span class="data">06|01|2021</span>
-                <h4>Serviços no processo de recuperação econômica</h4>
-            </div>
-        </a>
-    </div>
-    <div class="col">
-        <a href="">
-            <span class="posicao">03</span>
-            <div class="info">
-                <span class="data">13|01|2021</span>
-                <h4>Serviços no processo de recuperação econômica</h4>
-            </div>
-        </a>
-    </div>
-    <div class="col">
-        <a href="">
-            <span class="posicao">04</span>
-            <div class="info">
-                <span class="data">28|01|2021</span>
-                <h4>ANSEGTV faz balanço do ano em reunião</h4>
-            </div>
-        </a>
-    </div>
-    <div class="col">
-        <a href="">
-            <span class="posicao">05</span>
-            <div class="info">
-                <span class="data">26|01|2021</span>
-                <h4>Reforma Tributária no setor de serviços</h4>
-            </div>
-        </a>
-    </div>
+    @inject('posts', 'App\Models\Post')
+    @foreach($posts::active()->byMonthAndYear(date('m'), date('Y'))->take(5)->get() as $key => $post)
+        <div class="col">
+            <a href="{{route('site.posts.show', $post->path)}}">
+                <span class="posicao">{{$key + 1}}</span>
+                <div class="info">
+                    <span class="data">{{$post->created_at->format('d|m|Y')}}</span>
+                    <h4>{{mb_strimwidth($post->title, 0, 60, "...")}}</h4>
+                </div>
+            </a>
+        </div>
+    @endforeach
 </div>

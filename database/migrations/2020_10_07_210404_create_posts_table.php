@@ -22,14 +22,21 @@ class CreatePostsTable extends Migration
             $table->text('description');
             $table->integer('highlight_position')->nullable();
             $table->integer('views')->nullable()->default(0);
+
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')
                 ->onDelete('set null');
+
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('set null');
+
             $table->string('path')->unique();
             $table->string('status')->default(PostStatusType::DRAFT);
-            $table->softDeletes();
             $table->timestamps();
         });
     }

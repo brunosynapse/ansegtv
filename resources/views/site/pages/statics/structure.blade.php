@@ -1,46 +1,6 @@
-<!-- Head Section -->
-{{--<head>--}}
-{{--    <title>Quem somos | ANSEGTV - Associação Nacional de Segurança e Transporte de Valores</title>--}}
-{{--    <meta charset="utf-8">--}}
-{{--    <meta name="description" content="Saiba mais sobre a ANSEGTV. Nossa estrutura, unidades, serviços" />--}}
-{{--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">--}}
-{{--    <meta name="robots" content="index, follow">--}}
-{{--    <meta name="google-site-verification" content="fr91pley1eSdpCFMb-YbDS8l9GqIjBnP8ZsXShUXsRg" />--}}
-{{--    <!-- OpenGraph TAGS -->--}}
-{{--    <meta property="og:title" content="Quem Somos | ANSEGTV - Associação Nacional de Segurança e Transporte de Valores">--}}
-{{--    <meta property="og:site_name" content="ANSEGTV">--}}
-{{--    <meta property="og:url" content="https://ansegtv.com.br/quem-somos">--}}
-{{--    <meta property="og:description" content="Saiba mais sobre a ANSEGTV. Nossa estrutura, unidades, serviços">--}}
-{{--    <meta property="og:type" content="website">--}}
-{{--    <meta property="og:image" content="https://ansegtv.com.br/img/open-graph-ansegtv.png">--}}
-
-{{--    <!-- Bootstrap CSS -->--}}
-{{--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">--}}
-{{--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">--}}
-{{--    <!-- Custom CSS -->--}}
-{{--    <link rel="stylesheet" href="../css/style.css">--}}
-
-{{--    <!-- Google Tag Manager -->--}}
-{{--    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':--}}
-{{--                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],--}}
-{{--            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=--}}
-{{--            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);--}}
-{{--        })(window,document,'script','dataLayer','GTM-MHXVQCR');</script>--}}
-{{--    <!-- End Google Tag Manager -->--}}
-
-{{--</head>--}}
-
 @extends('site/layouts.app')
 
 @section('content')
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHXVQCR"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <!-- Estrutura Section -->
     <section id="estrutura">
         <div class="container">
@@ -110,7 +70,8 @@
         <div class="container">
             <div class="row">
                 <div class="header-wrap">
-                    <img src="{{asset('images/icon_map.png')}}" alt="Atuação da ANSEGTV" class="icon" width="92" height="92">
+                    <img src="{{asset('images/icon_map.png')}}" alt="Atuação da ANSEGTV" class="icon" width="92"
+                         height="92">
                     <h2 class="title">Atuação da ANSEGTV</h2><br>
                     <h3 class="subtitle">A ANSEGTV possui atuação nacional em 25 estados + DF. Clique no mapa para
                         conhecer as empresas.</h3>
@@ -612,7 +573,3 @@
         </div>
     </section>
 @endsection
-
-@push('scripts')
-    <script src="{{asset('js/script.js')}}"></script>
-@endpush

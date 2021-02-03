@@ -10,6 +10,7 @@ use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -74,6 +75,8 @@ class PostController extends Controller
                 ->single($request, $originalImageName)['path'];
         }
 
+        $data['user_id'] = Auth::id();
+
         $data['path'] = Str::slug($data['title'], '-');
 
         Post::create($data);
@@ -118,7 +121,7 @@ class PostController extends Controller
     public function update(UpdatePostRequest $request, Post $post)
     {
         if($position = $request->highlight_position){
-            $featuredPost = Post::highlight($position);
+            $featuredPost = Post::highlight($position)->first();
             if($featuredPost && $featuredPost->id =! $post->id){
                 $featuredPost->update(['highlight_position' => null]);
             }

@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Site\Post;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cookie;
+use App\Services\SeoToolsPostService;
+use App\Services\IncrementCounterViewPostService;
 
 class PostController extends Controller
 {
@@ -17,7 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('site.pages.posts.index');
+        $posts = new Post;
+
+        return view('site.pages.posts.index', compact('posts'));
     }
 
     /**
@@ -44,22 +46,15 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post $post
+     * @param  string $slug
      * @return \Illuminate\Http\Response
      */
-    public function show(int $id)
+    public function show(string $slug)
     {
-        $post = Post::find($id); //refatorar isso que tá uma bosta e a injecao de dependencia nao esta funcionaod......
+        $post = Post::findOrFailBySlug($slug);
 
-        if(!$post){
-            abort(404);
-        }
-
-        if (!Cookie::has($post->id) && !Auth::check()) {
-            Cookie::queue($post->id, 'counter-views', 6 * 60);
-            $post->views += 1;
-            $post->save();
-        }
+        SeoToolsPostService::handle($post);
+        IncrementCounterViewPostService::handle($post);
 
         return view('site.pages.posts.show', compact('post'));
     }

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg static-top navbar-light px-3">
     <div class="container">
-        <a class="navbar-brand" href="./">
+        <a class="navbar-brand" href="{{route('site.index')}}">
             <img src="{{asset('images/logo-header.png')}}" height="140px" alt="Logo ANSEGTV">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,22 +9,22 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="./">Home</a>
+                    <a class="nav-link" href="{{route('site.index')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./ansegtv/">ANSEGTV</a>
+                    <a class="nav-link" href="{{route('site.about')}}">ANSEGTV</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./estrutura/">Estrutura</a>
+                    <a class="nav-link" href="{{route('site.structure')}}">Estrutura</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./parcerias/">Parcerias</a>
+                    <a class="nav-link" href="{{route('site.partnerships')}}">Parcerias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./noticias/">Notícias</a>
+                    <a class="nav-link" href="{{route('site.posts.index')}}">Notícias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./contato/">Contato</a>
+                    <a class="nav-link" href="{{route('site.contact')}}">Contato</a>
                 </li>
             </ul>
             <ul class="navbar-social">
@@ -38,7 +38,6 @@
                     <a class="nav-link" href="https://www.instagram.com/ansegtvoficial/" target="_blank"><i class="fa fa-instagram"></i> </a>
                 </li>
             </ul>
-
         </div>
     </div>
 </nav>
