@@ -10,11 +10,12 @@
             <div class="row">
                 <div class="col-12 col-md-8">
                     <div class="row">
-                        @foreach($posts::active()->latest()->get() as $post)
+                        @foreach($filteredPosts as $post)
                             <div class="itemlist-news mb-4" class="col-12 item-list">
                                 <div class="row">
                                     <div class="col col-md-4">
-                                        <a href=""><img src="{{asset("storage/".$post->image)}}" alt=""
+                                        <a href=""><img src="{{asset("storage/".$post->image)}}"
+                                                        alt="Imagem da notícia {{$post->title}}"
                                                         class="img-fluid"></a>
                                     </div>
                                     <div class="col col-md-8">
@@ -25,7 +26,7 @@
                                         </div>
                                         <div class="texto">
                                             <a href="{{route('site.posts.show', $post->path)}}">
-                                                <h4 class="title">{{$post->title}}</h4>
+                                                <h4 class="title">{{mb_strimwidth($post->title, 0, 150, "...") }}</h4>
                                             </a>
                                             <p class="desc">{{mb_strimwidth($post->description, 0, 200, "...")}}</p>
                                             <button class="leia-mais">Leia mais</button>
@@ -40,8 +41,9 @@
                     <div class="row">
                         <div class="col-12 pesquisa">
                             <form class="form-inline my-2 my-lg-0 pull-right">
-                                <input class="form-control mr-sm-2" type="search" placeholder="O que deseja pesquisar?"
-                                       aria-label="Search">
+                                <input class="form-control mr-sm-2" type="search" name="search"
+                                       placeholder="O que deseja pesquisar?"
+                                       aria-label="Search" minlength="4" value="{{request()->get('search')}}">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
                             </form>
                         </div>

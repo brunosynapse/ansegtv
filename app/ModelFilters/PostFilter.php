@@ -19,6 +19,12 @@ class PostFilter extends ModelFilter
         return $this->where('title', 'LIKE', "%$title%");
     }
 
+    public function search($search)
+    {
+        return $this->where('title', 'LIKE', "%$search%")
+            ->orWhere('content', 'LIKE', "%$search%");
+    }
+
     public function category($id)
     {
         $this->related('category', function($query) use ($id) {
