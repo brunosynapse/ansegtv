@@ -5,15 +5,14 @@
     <div id="accordion" class="list-arquivo">
         <ul class="list-group list-group-flush">
 
-
-            @inject('posts', 'App\Models\Post')
+            @inject('carbon', 'Illuminate\Support\Carbon')
             @for($count = 0 ; $count < 4 ; $count++ )
                 <li class="list-group-item">
                     <div class="" id="Headingarchives-{{$count}}">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#archives-{{$count}}"
+                            <button class="btn btn-link text-capitalize" data-toggle="collapse" data-target="#archives-{{$count}}"
                                     aria-expanded="true" aria-controls="archives-{{$count}}">
-                                {{date('F Y', strtotime("-{$count} months"))}}
+                                {{$carbon::now()->subMonth($count)->translatedFormat('F Y')}}
                             </button>
                         </h5>
                     </div>
