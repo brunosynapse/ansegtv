@@ -34,7 +34,7 @@
 
             @if($highlight_2 = $posts::active()->highlight(2)->first())
                 <div class="col-12 destaque-2">
-                    <a href="">
+                    <a href="{{route('site.posts.show', $highlight_2->path)}}">
                         <div class="overlay-image">
                             <img src="{{asset("storage/".$highlight_2->image)}}"
                                  alt="Imagem da notícia {{$highlight_2->path}}"
@@ -50,7 +50,7 @@
 
             @if($highlight_3 = $posts::active()->highlight(3)->first())
                 <div class="col-12 destaque-3">
-                    <a href="">
+                    <a href="{{route('site.posts.show', $highlight_3->path)}}">
                         <div class="overlay-image">
                             <img src="{{asset("storage/".$highlight_3->image)}}"
                                  alt="Imagem da notícia {{$highlight_3->path}}"
