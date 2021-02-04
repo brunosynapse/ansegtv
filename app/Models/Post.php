@@ -61,6 +61,11 @@ class Post extends Model
         return $query->where('status', PostStatusType::PUBLISHED);
     }
 
+    public function scopeOrderByView($query) //orderByView
+    {
+        return $query->orderBy('views', 'desc');
+    }
+
     public function scopeFindOrFailBySlug($query, $slug)  //findBySlug
     {
         $users = $query->where('path', $slug)->get();
@@ -87,9 +92,9 @@ class Post extends Model
         return $query->whereNull('image');
     }
 
-    public function scopeOrderedByViewsInTheLast30Days($query) //orderedByViewsInTheLast30Days
+    public function scopeLatestDays($query, $days) //latestDays
     {
-        return $query->whereDate('created_at', '>', Carbon::now()->subDays(30))->orderBy('views', 'DESC')->get();
+        return $query->whereDate('created_at', '>', Carbon::now()->subDays($days));
     }
 
     public function scopeOrderedByCreatedAt($query)  //orderedByCreatedAt

@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-12 col-md-8">
                     <div class="row">
-                        @foreach($posts as $post)
+                        @foreach($posts::active()->latest()->get() as $post)
                             <div class="itemlist-news mb-4" class="col-12 item-list">
                                 <div class="row">
                                     <div class="col col-md-4">

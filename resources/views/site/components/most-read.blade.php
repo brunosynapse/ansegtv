@@ -3,7 +3,7 @@
         <h3>Mais Lidas</h3>
     </div>
     @inject('posts', 'App\Models\Post')
-    @foreach($posts::active()->byMonthAndYear(date('m'), date('Y'))->take(5)->get() as $key => $post)
+    @foreach($posts::active()->latestDays(30)->orderByView()->get() as $key => $post)
         <div class="col">
             <a href="{{route('site.posts.show', $post->path)}}">
                 <span class="posicao">{{$key + 1}}</span>
