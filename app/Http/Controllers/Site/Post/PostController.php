@@ -7,6 +7,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Services\SeoToolsPostService;
 use App\Services\IncrementCounterViewPostService;
+use Illuminate\Support\Carbon;
 
 class PostController extends Controller
 {

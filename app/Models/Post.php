@@ -12,6 +12,8 @@ class Post extends Model
 {
     use Filterable;
 
+    protected $dates = ['created_at'];
+
     protected $fillable = [
         'title',
         'content',
@@ -118,6 +120,6 @@ class Post extends Model
 
     public function scopeArchivedPosts($query, $month, $year) //archivedPosts
     {
-        return $query->active()->byMonthAndYear($month, $year)->latest()->take(5)->get();
+        return $query->byMonthAndYear($month, $year)->latest()->take(5)->get();
     }
 }

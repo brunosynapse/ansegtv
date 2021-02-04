@@ -143,7 +143,9 @@
                                                 </a>
                                             </td>
                                             <td>
-                                                /{{mb_strimwidth($post->path, 0, 30, "...")}}
+                                                <a href="{{route('site.posts.show', $post->path)}}">
+                                                    /{{mb_strimwidth($post->path, 0, 30, "...")}}
+                                                </a>
                                             </td>
                                             <td>{{$post->created_at->translatedFormat('d/m/Y')}}</td>
                                             <td>

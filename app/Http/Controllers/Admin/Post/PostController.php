@@ -11,6 +11,7 @@ use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
@@ -128,6 +129,8 @@ class PostController extends Controller
         }
 
         $data = $request->all();
+
+        $data['created_at'] = Carbon::parse($data['created_at']);
 
         $data['path'] = Str::slug($data['title'], '-');
 

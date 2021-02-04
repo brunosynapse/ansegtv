@@ -180,12 +180,20 @@
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-10">
-                                        <input type="text" name="created_at" class="form-control datepicker"
-                                               value="{{$edition ? $post->created_at : old('created_at') }}">
+                                        <div class="form-group">
+                                            <input type="datetime-local"
+                                                   class="form-control @error('created_at') is-invalid @enderror"
+                                                   name="created_at"
+                                                   value="{{$edition ? $post->created_at->format('Y-m-d\Th:m') : old('created_at')}}">
+                                            @error('created_at')
+                                            <span class="invalid-feedback" role="alert">
+                                           {{ $message }}
+                                        </span>
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -202,19 +210,11 @@
     </section>
 
     @push('javascript')
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript" src="{{ URL::asset('ckeditor4_bkp/ckeditor.js') }}"></script>
         <script>
             CKEDITOR.replace('content', {
                 filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",
                 filebrowserUploadMethod: 'form'
-            });
-
-            $(function () {
-                $(".datepicker").datepicker();
             });
         </script>
     @endpush

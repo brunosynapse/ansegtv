@@ -1,5 +1,8 @@
 window._ = require('lodash');
 
+/* PLUGINS */
+import 'jquery-ui/ui/widgets/datepicker.js';
+
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -34,8 +37,6 @@ require('jquery.nicescroll');
 require('./stisla/stisla');
 require('./stisla/scripts');
 require('./stisla/custom');
-
-require('./ckeditor/custom');
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
