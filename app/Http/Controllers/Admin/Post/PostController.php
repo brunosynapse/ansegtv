@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Post;
+
 use App\Enums\PostPositionType;
 use App\Enums\PostStatusType;
 use App\Http\Controllers\Controller;
@@ -22,7 +23,7 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $type =  PostStatusType::getInstances();
+        $type = PostStatusType::getInstances();
         $statusType = PostStatusType::$TYPES;
         $postsCount = new Post;
         $posts = Post::filter($request->all())->orderBy('created_at', 'DESC')->paginateFilter(15);
@@ -45,7 +46,7 @@ class PostController extends Controller
         $categories = Category::all();
         $edition = false;
 
-        return view('admin/pages/posts/create-edit', compact('edition','categories', 'statusType', 'positionType'));
+        return view('admin/pages/posts/create-edit', compact('edition', 'categories', 'statusType', 'positionType'));
     }
 
     /**
@@ -56,15 +57,14 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        if($position = $request->highlight_position){
+        if ($position = $request->highlight_position) {
             Post::highlight($position)
                 ->update(['highlight_position' => null]);
         }
 
         $data = $request->all();
 
-        if($request->hasFile('image'))
-        {
+        if ($request->hasFile('image')) {
             $upload = new UploadService();
 
             $originalImageName = $request->image->getClientOriginalName();
@@ -87,7 +87,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Post  $post
+     * @param Post $post
      * @return \Illuminate\Http\Response
      */
     public function show($post)
@@ -98,7 +98,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Post  $post
+     * @param Post $post
      * @return \Illuminate\Http\Response
      */
     public function edit(Post $post)
@@ -115,14 +115,14 @@ class PostController extends Controller
      * Update the specified resource in storage.
      *
      * @param UpdatePostRequest $request
-     * @param  Post  $post
+     * @param Post $post
      * @return \Illuminate\Http\Response
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        if($position = $request->highlight_position){
+        if ($position = $request->highlight_position) {
             $featuredPost = Post::highlight($position)->first();
-            if($featuredPost && $featuredPost->id =! $post->id){
+            if ($featuredPost && $featuredPost->id = !$post->id) {
                 $featuredPost->update(['highlight_position' => null]);
             }
         }
@@ -131,8 +131,7 @@ class PostController extends Controller
 
         $data['path'] = Str::slug($data['title'], '-');
 
-        if($request->hasFile('image'))
-        {
+        if ($request->hasFile('image')) {
             $upload = new UploadService();
 
             $originalImageName = $request->image->getClientOriginalName();
@@ -154,7 +153,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Post  $post
+     * @param Post $post
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)
@@ -166,16 +165,16 @@ class PostController extends Controller
 
     public function imageUpload(Request $request)
     {
-        if($request->hasFile('upload')) {
+        if ($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
             $extension = $request->file('upload')->getClientOriginalExtension();
-            $fileName = $fileName.'_'.time().'.'.$extension;
+            $fileName = $fileName . '_' . time() . '.' . $extension;
 
             $request->file('upload')->move(public_path('images'), $fileName);
 
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $url = asset('images/'.$fileName);
+            $url = asset('images/' . $fileName);
             $msg = 'Sua Imagem foi enviada!';
             $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
 
@@ -184,14 +183,18 @@ class PostController extends Controller
         }
     }
 
-    public function deleteMainImage(int $id){
+    public function deleteMainImage(int $id)
+    {
         $upload = new UploadService;
 
         $post = Post::find($id);
 
         $upload->removeFilePah($post->image);
 
-        $post->update(['image' => null]);
+        $post->save([
+            'image' => null,
+            'timestamps' => false,
+        ]);
 
         return redirect()->back();
     }
