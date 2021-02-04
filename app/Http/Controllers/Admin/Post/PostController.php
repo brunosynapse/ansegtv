@@ -185,7 +185,13 @@ class PostController extends Controller
     }
 
     public function deleteMainImage(int $id){
-        Post::find($id)->update(['image' => null]);
+        $upload = new UploadService;
+
+        $post = Post::find($id);
+
+        $upload->removeFilePah($post->image);
+
+        $post->update(['image' => null]);
 
         return redirect()->back();
     }
