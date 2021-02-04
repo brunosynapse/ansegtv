@@ -191,10 +191,9 @@ class PostController extends Controller
 
         $upload->removeFilePah($post->image);
 
-        $post->save([
-            'image' => null,
-            'timestamps' => false,
-        ]);
+        $post->timestamps = false;
+        $post->image = null;
+        $post->save();
 
         return redirect()->back();
     }
