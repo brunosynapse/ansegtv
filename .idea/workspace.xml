@@ -2,41 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/IncrementCounterViewPostService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/SeoToolsPostService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/frente-parlamentar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/open-graph-ansegtv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/site/components/highlight-post.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/site/pages/statics/partnerships.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/Home/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/Post/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/Statics/AboutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/Statics/AboutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/Statics/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/Statics/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/Statics/PartnershipsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/Statics/PartnershipsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/Statics/StructureController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/Statics/StructureController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StorePostRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StorePostRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdatePostRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdatePostRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/seotools.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/seotools.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_06_132400_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_06_132400_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_07_210404_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_07_210404_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/components/archives.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/components/archives.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/components/most-read.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/components/most-read.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/posts/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/statics/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/statics/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/statics/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/statics/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/statics/structure.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/statics/structure.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/partials/associated.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/partials/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/partials/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/partials/news.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/posts/create-edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/posts/create-edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +239,8 @@
       <workItem from="1611923381720" duration="2789000" />
       <workItem from="1611941209698" duration="51000" />
       <workItem from="1611941262037" duration="1943000" />
-      <workItem from="1612352164198" duration="27180000" />
+      <workItem from="1612352164198" duration="28080000" />
+      <workItem from="1612439970056" duration="3326000" />
     </task>
     <servers />
   </component>
@@ -294,7 +265,6 @@
     <state x="598" y="275" width="585" height="387" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612296422650">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="425" y="174" width="585" height="387" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.735@0.0.1366.735" timestamp="1603737654369" />
     <state x="498" y="204" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1604600043979" />
     <state x="598" y="275" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1920.1055@0.25.1920.1055" timestamp="1612296422650" />
     <state x="1072" y="25" width="368" height="859" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1612363679622">
@@ -304,7 +274,6 @@
     <state x="584" y="208" width="526" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612374171956">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="416" y="127" width="530" height="481" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1603738253383" />
     <state x="487" y="149" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1605196609917" />
     <state x="584" y="208" width="526" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1920.1055@0.25.1920.1055" timestamp="1612374171956" />
     <state x="99" y="125" width="1722" height="856" key="DiffContextDialog" timestamp="1611869922147">
@@ -339,14 +308,13 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="513" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1604467334358" />
-    <state x="300" y="410" width="760" height="594" key="find.popup" timestamp="1612382230642">
+    <state x="468" y="279" width="760" height="594" key="find.popup" timestamp="1612441177451">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="300" y="410" width="760" height="594" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1612382230642" />
+    <state x="468" y="279" width="760" height="594" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1612441177451" />
     <state x="484" y="258" key="run.anything.popup" timestamp="1611869035464">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state x="344" y="162" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1603730115793" />
     <state x="484" y="258" key="run.anything.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1611869035464" />
     <state x="650" y="135" width="946" height="975" key="search.everywhere.popup" timestamp="1612376760139">
       <screen x="0" y="25" width="1920" height="1055" />

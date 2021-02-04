@@ -22,6 +22,7 @@ class Post extends Model
         'image',
         'path',
         'highlight_position',
+        'created_at'
     ];
 
     public function category()

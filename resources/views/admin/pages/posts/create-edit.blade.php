@@ -50,24 +50,34 @@
                                                 @if($edition and $post->image)
                                                     <div>
                                                         {{mb_strimwidth(substr($post->image, 13, -1), 0, 30, "...")}}
-                                                        <span data-toggle="tooltip" data-placement="top" title="Exibir Imagem">
-                                                            <a href="{{asset("storage/".$post->image)}}" target="_blank"><i class="fas fa-eye text-info m-2" style="font-size: 17px;"></i></a>
+                                                        <span data-toggle="tooltip" data-placement="top"
+                                                              title="Exibir Imagem">
+                                                            <a href="{{asset("storage/".$post->image)}}"
+                                                               target="_blank"><i class="fas fa-eye text-info m-2"
+                                                                                  style="font-size: 17px;"></i></a>
                                                         </span>
-                                                        <span data-toggle="tooltip" data-placement="top" title="Excluir Imagem">
+                                                        <span data-toggle="tooltip" data-placement="top"
+                                                              title="Excluir Imagem">
                                                             <a href="javascript:;"
                                                                data-confirm="Certeza? | Você deseja excluir a imagem principal dessa Notícia? <br> Obs: A página será recarregada e suas alterações não serão salvas"
-                                                               data-confirm-yes="$('#deleteMainImagePostForm{{$post->id}}').submit()"><i class="fas fa-trash text-danger m-2"  style="font-size: 17px;"></i></a>
+                                                               data-confirm-yes="$('#deleteMainImagePostForm{{$post->id}}').submit()"><i
+                                                                    class="fas fa-trash text-danger m-2"
+                                                                    style="font-size: 17px;"></i></a>
                                                         </span>
                                                     </div>
                                                 @else
-                                                    <h5 class="pt-2"><small class="text-danger">Essa Notícia não tem uma imagem definida!</small></h5>
+                                                    <h5 class="pt-2"><small class="text-danger">Essa Notícia não tem uma
+                                                            imagem definida!</small></h5>
                                                 @endif
                                             </div>
                                         </div>
 
                                         <div class="section-title mt-0">Descrição da Notícia</div>
                                         <div class="form-group">
-                                            <textarea class="form-control h-100 @error('description') is-invalid @enderror" draggable="false" name="description">{{ $edition ? $post->description : old('description') }}</textarea>
+                                            <textarea
+                                                class="form-control h-100 @error('description') is-invalid @enderror"
+                                                draggable="false"
+                                                name="description">{{ $edition ? $post->description : old('description') }}</textarea>
                                             @error('description')
                                             <span class="invalid-feedback" role="alert">
                                                {{ $message }}
@@ -98,12 +108,14 @@
                         <div class="card card-success">
                             <div class="form-group">
                                 <div class="card-header mb-3">
-                                    <h4 class="text-dark">Posição de Destaque {{$edition ? $post->highlight_position ? 'Atual: '.$post->highlight_position: '' : ''}}</h4>
+                                    <h4 class="text-dark">Posição de
+                                        Destaque {{$edition ? $post->highlight_position ? 'Atual: '.$post->highlight_position: '' : ''}}</h4>
                                 </div>
                                 <div class="custom-switches-stacked">
                                     @foreach($positionType as $key => $value)
                                         <label class="custom-switch">
-                                            <input type="radio" name="highlight_position" value="{{$key}}" class="custom-switch-input" {{$edition ? $post->highlight_position == $key ? 'checked=""' : '' : ''}}>
+                                            <input type="radio" name="highlight_position" value="{{$key}}"
+                                                   class="custom-switch-input" {{$edition ? $post->highlight_position == $key ? 'checked=""' : '' : ''}}>
                                             <span class="custom-switch-indicator"></span>
                                             <span class="custom-switch-description">{{$value['translation']}}</span>
                                         </label>
@@ -119,7 +131,8 @@
                                     <div class="col-md-10">
                                         <select class="custom-select @error('category_id') is-invalid @enderror"
                                                 name="category_id">
-                                            @if(!$edition) <option disabled selected hidden> Selecione uma opção </option> @endif
+                                            @if(!$edition)
+                                                <option disabled selected hidden> Selecione uma opção</option> @endif
                                             @foreach($categories as $category)
                                                 <option
                                                     value="{{ $category->id }}" {{ $edition ? $category->id == $post->category_id ? 'selected' : '' : '' }}>{{ $category->name }}</option>
@@ -142,7 +155,8 @@
                                     <div class="col-md-10">
                                         <select class="custom-select @error('status') is-invalid @enderror"
                                                 name="status">
-                                            @if(!$edition) <option disabled selected hidden> Selecione uma opção </option> @endif
+                                            @if(!$edition)
+                                                <option disabled selected hidden> Selecione uma opção</option> @endif
                                             @foreach($statusType as $key => $value)
                                                 <option
                                                     {{$edition ? $post->status == $key ? 'selected' : '' : ''}}
@@ -156,6 +170,18 @@
                                                {{ $message }}
                                         </span>
                                         @enderror
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="card-header mb-3">
+                                    <h4 class="text-dark">Data de Criação da Publicação</h4>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-10">
+                                        <input type="text" name="created_at" class="form-control datepicker"
+                                               value="{{$edition ? $post->created_at : old('created_at') }}">
                                     </div>
                                 </div>
                             </div>
@@ -175,11 +201,21 @@
         </div>
     </section>
 
-    <script type="text/javascript" src="{{ URL::asset('ckeditor4_bkp/ckeditor.js') }}"></script>
-    <script>
-        CKEDITOR.replace('content', {
-            filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form'
-        });
-    </script>
+    @push('javascript')
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="{{ URL::asset('ckeditor4_bkp/ckeditor.js') }}"></script>
+        <script>
+            CKEDITOR.replace('content', {
+                filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod: 'form'
+            });
+
+            $(function () {
+                $(".datepicker").datepicker();
+            });
+        </script>
+    @endpush
 @endsection

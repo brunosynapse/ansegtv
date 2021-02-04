@@ -32,7 +32,8 @@ class UpdatePostRequest extends FormRequest
             'image' => 'mimes:jpeg,jpg,png,gif,webp|max:2024',
             'category_id' => 'required',
             'description' => 'required',
-            'status' => ['required', Rule::in(PostStatusType::getValues())]
+            'status' => ['required', Rule::in(PostStatusType::getValues())],
+            'created_at' => 'required',
         ];
     }
 }
