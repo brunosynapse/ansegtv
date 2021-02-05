@@ -35,8 +35,15 @@
                                 </div>
                             </div>
                         @endforeach
+
+                        <div class="clearfix">
+                            <ul class="pagination pagination-md pt-2">
+                                {{ $filteredPosts->appends(request()->query())->links() }}
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-4 sidebar">
                     <div class="row">
                         <div class="col-12 pesquisa">

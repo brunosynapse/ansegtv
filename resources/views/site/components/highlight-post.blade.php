@@ -5,8 +5,8 @@
             <a class="btn-warning btn-all-news mt-3 pull-right" href="./noticias/">Veja todas as notícias</a>
         </div>
         <div class="col col-md-4 pesquisar">
-            <form class="form-inline my-2 my-lg-0 pull-right">
-                <input class="form-control mr-sm-2" type="search" placeholder="O que deseja pesquisar?"
+            <form action="{{route('site.posts.index')}}" class="form-inline my-2 my-lg-0 pull-right">
+                <input class="form-control mr-sm-2" name="search" type="search" placeholder="O que deseja pesquisar?"
                        aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
             </form>

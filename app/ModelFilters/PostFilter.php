@@ -22,7 +22,7 @@ class PostFilter extends ModelFilter
     public function search($search)
     {
         return $this->where('title', 'LIKE', "%$search%")
-            ->orWhere('content', 'LIKE', "%$search%");
+            ->orWhere('content', 'LIKE', "%".htmlentities($search)."%");
     }
 
     public function category($id)
