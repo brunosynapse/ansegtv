@@ -21,7 +21,7 @@
                                     <div class="col col-md-8">
                                         <div class="info">
                                             <a href="" class="data"><span>{{$post->created_at->format('d|m|Y')}}</span></a>
-                                            <a href="" class="categoria"><span>{{$post->category->name}}</span></a>
+                                            <a href="javascript:;" onclick="document.getElementById('searchByCategory{{$post->id}}').submit();" class="categoria"><span>{{$post->category->name}}</span></a>
                                             <a href="" class="autor"><span>{{$post->user->name}}</span></a>
                                         </div>
                                         <div class="texto">
@@ -33,6 +33,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                <form action="" id="searchByCategory{{$post->id}}" method="get">
+                                    <input type="hidden" value="{{$post->category->id}}" name="category">
+                                </form>
                             </div>
                         @endforeach
 
