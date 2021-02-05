@@ -6,7 +6,7 @@
     <section class="section">
         <div class="section-header d-flex justify-content-between">
             <div>
-                <h1>Cases e Denuncias</h1>
+                <h1>Usuários</h1>
             </div>
             <div>
                 <form>
