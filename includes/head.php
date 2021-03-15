@@ -13,11 +13,12 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://ansegtv.com.br/img/open-graph-ansegtv.png">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?nocache=<?php echo time(); ?>">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
 
     <!-- Google Tag Manager 
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
