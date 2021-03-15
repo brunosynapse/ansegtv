@@ -1133,6 +1133,7 @@ ul.servicos li {display: inline-block; width:40%;}
   text-transform: uppercase; 
   color:var(--marrom-primario);
   text-decoration: underline;
+  line-height: 1;
 }
 
 /* .mais-recentes-title:after{

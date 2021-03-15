@@ -17,13 +17,13 @@
     
     <section id="copyright">
     <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <p>© Copyright - 2021 - Todos os Direitos Reservados. Desenvolvido por <a href="https://synapsebrasil.com.br" target="_blank">Synapse Brasil</p>
-                </div>
+        <div class="row">
+            <div class="col">
+            <p>© Copyright - 2021 - Todos os Direitos Reservados. Synapse Brasil <!-- <button class="ativa-aviso-lgpd" onclick="window.sendAdoptCommand('open')">Mostrar Aviso LGPD </button> --> | <a href="https://ansegtv.com.br/politica-de-privacidade" title="Política de Privacidade">Política de Privacidade</a></p>
             </div>
         </div>
-    </section>
+    </div>
+    </section>    
     
     <!-- Boostrap and Custom JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -37,5 +37,7 @@
         }, function() {
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300);
         });
+
+        <script src="//tag.goadopt.io/injector.js?website_code=98bfaecd-beda-4252-b173-f964b7a9a092" class="adopt-injector"></script>
 
     </script>
