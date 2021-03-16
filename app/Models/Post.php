@@ -121,6 +121,11 @@ class Post extends Model
         return $query->whereNull('image');
     }
 
+    public function scopeWithImage($query) //withImage
+    {
+        return $query->whereNotNull('image');
+    }
+
 
     /*  Scope - ordered */
 
@@ -142,5 +147,13 @@ class Post extends Model
     public function scopeArchivedPosts($query, $month, $year) //archivedPosts
     {
         return $query->byMonthAndYear($month, $year)->latest()->take(5)->get();
+    }
+
+    public function scopeLatestWithImageAndWithoutHighlight($query) { //latestWithImageAndWithoutHighlight
+        return $query->active()->latest()->withoutHighlight()->withImage()->get();
+    }
+
+    public function scopeLatestWithoutImageAndWithoutHighlight($query) { //latestWithoutImageAndWithoutHighlight
+        return $query->active()->latest()->withoutHighlight()->withoutImage()->get();
     }
 }

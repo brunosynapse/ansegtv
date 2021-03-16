@@ -252,86 +252,36 @@
                     <hr>
                 </div>
                 <div class="row borda-direita-recents">
-                    <div class="col-12 col-md-8 news-image-list  borda-direita-recents-images  ">
+
+                    <div class="col-12 col-md-8 news-image-list borda-direita-recents-images">
                         <div class="row">
-
-                            <div class="col-12 col-md-6">
-                                <a href="">
-
-                                    <div class="most-recents-container" style="background-image: url('{{asset('images/uploads/ministerio-economia.png')}}');">
-                                        <div class="most-recents-overlay">
-                                            <span class="most-recents-date font-lato date-style text-white">29/01/2021</span>
+                            @foreach($posts::latestWithImageAndWithoutHighlight() as $key => $post)
+                                <div class="col-12 col-md-6">
+                                    <a href="{{route('site.posts.show', $post->path)}}">
+                                        <div class="most-recents-container" style="background-image: url('{{asset("storage/".$post->image)}}');">
+                                            <div class="most-recents-overlay">
+                                                <span class="most-recents-date font-lato date-style text-white">{{$post->formatted_date}}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <h4 class="most-recents-info font-lato title-style text-black">Nova GTV-e proporciona maior segurança e agilidade</h4>
+                                        <h4 class="most-recents-info font-lato title-style text-black">{{mb_strimwidth($post->title, 0, 60, "...")}}</h4>
 
-                                </a>
-                            </div>
-
-                            <div class="col-12 col-md-6 no-gutters">
-                                <a href="">
-
-                                    <div class="most-recents-container" style="background-image: url('{{asset('images/uploads/ministerio-economia.png')}}');">
-                                        <div class="most-recents-overlay">
-                                            <span class="most-recents-date font-lato date-style text-white">29/01/2021</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="most-recents-info font-lato title-style text-black">Nova GTV-e proporciona maior segurança e agilidade</h4>
-
-                                </a>
-                            </div>
-
-                            <div class="col-12 col-md-6">
-                                <a href="">
-
-                                    <div class="most-recents-container" style="background-image: url('{{asset('images/uploads/ministerio-economia.png')}}');">
-                                        <div class="most-recents-overlay">
-                                            <span class="most-recents-date font-lato date-style text-white">29/01/2021</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="most-recents-info font-lato title-style text-black">Nova GTV-e proporciona maior segurança e agilidade</h4>
-
-                                </a>
-                            </div>
-
-                            <div class="col-12 col-md-6" style="position:relative;float:left;">
-                                <a href="">
-
-                                    <div class="most-recents-container" style="background-image: url('{{asset('images/uploads/ministerio-economia.png')}}');">
-                                        <div class="most-recents-overlay">
-                                            <span class="most-recents-date most-recents-date font-lato date-style text-white">29/01/2021</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="most-recents-info font-lato title-style text-black">Nova GTV-e proporciona maior segurança e agilidade</h4>
-
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
+                            @endforeach
                         </div>
 
                     </div>
 
-                    <div class="col-12 col-md-4 news-list ">
-                        <div class="col">
-                            <a href="">
-                                <span class="data-style text-black">27/01/2021</span>
-                                <h4 class="title-recents">Lorem ipsum dolor strict text</h4>
-                                <p class="desc-recents">O assessor tributário da ANSEGTV (Associação Nacional de Segurança e Transporte de Valores), Andrey Ferreira, e Rubens Tavares, sócio da BMS Projetos & Consultoria, debateram em webinar nesta terça-feira (28) questões previdenciárias em tempos de pandemia.</p>
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="">
-                                <span class="data">27/01/2021</span>
-                                <h4 class="title-recents">Lorem ipsum dolor strict text</h4>
-                                <p class="desc-recents">O assessor tributário da ANSEGTV (Associação Nacional de Segurança e Transporte de Valores), Andrey Ferreira, e Rubens Tavares, sócio da BMS Projetos & Consultoria, debateram em webinar nesta terça-feira (28) questões previdenciárias em tempos de pandemia.</p>
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="">
-                                <span class="data">27/01/2021</span>
-                                <h4 class="title-recents">Lorem ipsum dolor strict text</h4>
-                                <p class="desc-recents">O assessor tributário da ANSEGTV (Associação Nacional de Segurança e Transporte de Valores), Andrey Ferreira, e Rubens Tavares, sócio da BMS Projetos & Consultoria, debateram em webinar nesta terça-feira (28) questões previdenciárias em tempos de pandemia.</p>
-                            </a>
-                        </div>
+                    <div class="col-12 col-md-4 news-list">
+                        @foreach($posts::latestWithoutImageAndWithoutHighlight() as $key => $post)
+                            <div class="col">
+                                <a href="{{route('site.posts.show', $post->path)}}">
+                                    <span class="data-style text-black">{{$post->formatted_date}}</span>
+                                    <h4 class="title-recents">{{mb_strimwidth($post->title, 0, 60, "...")}}</h4>
+                                    <p class="desc-recents">{{mb_strimwidth($post->description, 0, 250, "...")}}</p>
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
