@@ -219,6 +219,7 @@
 
 
 
+@include('site/partials.home-slider')
 
 <section id="">
     <div class="container destaques">

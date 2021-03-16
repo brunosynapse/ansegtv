@@ -124,7 +124,7 @@ ul.navbar-social .nav-item a i {font-size: 1.2rem; color: #c2a868;}
 */
 
 #home-slider {
-    background-image: url(../img/Bannersite-02.png);
+    background-image: url(../images/Bannersite-02.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -369,7 +369,7 @@ a.voltar {
 // #Associados Styles
 */
 .associados-title {
-    background-image: url(../img/divider_h2.png);
+    background-image: url(../images/divider_h2.png);
     padding: 10px 20px;
     margin-bottom: 40px;
     box-shadow: #ccc 0 0 20px;
@@ -393,7 +393,7 @@ a.voltar {
 
 #estrutura {padding: 60px 0;}
 .estrutura-title {
-    background-image: url(../img/divider_hr1.png);
+    background-image: url(../images/divider_hr1.png);
     padding: 10px 20px;
     margin-bottom: 40px;
     box-shadow: #ccc 0 0 20px;
@@ -835,7 +835,7 @@ text#label_state_mt {
 
 #contato {padding: 50px 0;}
 .contato-title {
-    background-image: url(../img/divider_hr1.png);
+    background-image: url(../images/divider_hr1.png);
     padding: 10px 20px;
     margin-bottom: 40px;
     box-shadow: #ccc 0 0 20px;
@@ -877,7 +877,7 @@ text#label_state_mt {
 }
 
 #copyright {
-    background-image: url(../img/bg_copyright.png);
+    background-image: url(../images/bg_copyright.png);
     padding: 15px 0 0;
 }
 #copyright p {
@@ -899,7 +899,7 @@ text#label_state_mt {
     ul.social-nav {list-style: none; margin: 10px 0; padding: 0; display: inline-flex;}
 
     /*Home Slider*/
-    #home-slider {padding: 20px; background-image: url(../img/BannerCelular_tela_celular.png); height: 240px;}
+    #home-slider {padding: 20px; background-image: url(../images/BannerCelular_tela_celular.png); height: 240px;}
     #home-slider h2 {text-align: center;}
 
     /*Notícias*/
