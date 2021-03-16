@@ -91,85 +91,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 arquivo">
-                    <div class="title-headers">
-                        <h3 class="super-title">Arquivo</h3>
-                    </div>
+                @include('site.components.archives-new')
 
-                    <!-- accordion 2 -->
-
-                    <button class="custom-accordion">2021</button>
-                    <div class="panel">
-                        <button class="custom-accordion">Março (3)</button>
-                        <div class="panel">
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                        </div>
-
-                        <button class="custom-accordion">Fevereiro (1)</button>
-                        <div class="panel">
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                        </div>
-
-                        <button class="custom-accordion">Janeiro (1)</button>
-                        <div class="panel">
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                        </div>
-                    </div>
-
-                    <button class="custom-accordion">2020</button>
-                    <div class="panel">
-                        <button class="custom-accordion">Dezembro (4)</button>
-                        <div class="panel">
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                        </div>
-
-                        <button class="custom-accordion">Novembro (3)</button>
-                        <div class="panel">
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                        </div>
-
-                        <button class="custom-accordion">Outubro (2)</button>
-                        <div class="panel">
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                            <a href="">
-                                <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -99,8 +99,8 @@ class Post extends Model
 
     public function scopeByMonthAndYear($query, $monthNumber, $yearNumber) //byMonthAndYear
     {
-        return $query->whereMonth('created_at', $monthNumber)
-            ->whereYear('created_at', $yearNumber);
+        return $query->whereYear('created_at', $yearNumber)
+            ->whereMonth('created_at', $monthNumber);
     }
 
 
