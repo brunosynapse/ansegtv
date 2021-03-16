@@ -10,17 +10,12 @@
 
             <div class="col-12 col-md-8">
                 <h2 class="font-lato super-title pull-left py-3">destaques</h2>
-                <!-- <a class="btn-warning btn-all-news mt-3 pull-right" href="./noticias/">Veja todas as notícias</a> -->
             </div>
             <div class="col-12 col-md-4 pesquisar">
                 <div class="col-lg-12">
-                    <!-- <form class="form-inline my-2 my-lg-0 pull-left">
-                        <input class="form-control mr-sm-2" type="search" placeholder="O que deseja pesquisar?" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-                    </form> -->
                 </div>
                 <div class="col-12">
-                    <a href="" class="all-news-link pull-right pt-3"><h3>veja todas as notícias</h3></a>
+                    <a href="{{route('site.posts.index')}}" class="all-news-link pull-right pt-3"><h3>veja todas as notícias</h3></a>
                 </div>
             </div>
         </div>
@@ -53,7 +48,6 @@
                                 </div>
                             @endforeach
                         </div>
-
                     </div>
 
                     <div class="col-12 col-md-4 news-list">
@@ -71,7 +65,6 @@
             </div>
 
             <div class="col-12 col-md-4 sidebar">
-
                 <div class="col-12 mais-lidas">
                     <div class="title-headers">
                         <h3 class="super-title">Mais Lidas</h3>
