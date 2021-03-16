@@ -53,19 +53,29 @@ class Post extends Model
         return $opStatus[$status];
     }
 
+
+    /*  Formatted */
+
+    public function getFormattedCategoryNameAttribute() { //formatted_category_name
+        return $this->category->name;
+    }
+
     public function getFormattedDateAndHourAttribute() //formatted_date_and_hour
     {
         return $this->getAttribute('created_at')->format("d/m/Y - h\hi");
     }
 
+    public function getFormattedDateAttribute() //formatted_date
+    {
+        return $this->getAttribute('created_at')->format("d/m/Y");
+    }
+
+
+    /* Scope */
+
     public function scopeActive($query) //active
     {
         return $query->where('status', PostStatusType::PUBLISHED);
-    }
-
-    public function scopeOrderByView($query) //orderByView
-    {
-        return $query->orderBy('views', 'desc');
     }
 
     public function scopeFindOrFailBySlug($query, $slug)  //findBySlug
@@ -78,6 +88,23 @@ class Post extends Model
 
         abort(404);
     }
+
+    public function scopePostStatusCount($query, $status, $operator = false) //postStatusCount
+    {
+        if ($operator) {
+            return $query->where('status', $operator, $status)->count();
+        }
+        return $query->where('status', $status)->count();
+    }
+
+    public function scopeByMonthAndYear($query, $monthNumber, $yearNumber) //byMonthAndYear
+    {
+        return $query->whereMonth('created_at', $monthNumber)
+            ->whereYear('created_at', $yearNumber);
+    }
+
+
+    /* Scope - highlight */
 
     public function scopeHighlight($query, $highlight) //highlight
     {
@@ -94,6 +121,14 @@ class Post extends Model
         return $query->whereNull('image');
     }
 
+
+    /*  Scope - ordered */
+
+    public function scopeOrderByView($query) //orderByView
+    {
+        return $query->orderBy('views', 'desc');
+    }
+
     public function scopeLatestDays($query, $days) //latestDays
     {
         return $query->whereDate('created_at', '>', Carbon::now()->subDays($days));
@@ -102,20 +137,6 @@ class Post extends Model
     public function scopeOrderedByCreatedAt($query)  //orderedByCreatedAt
     {
         return $query->filter->orderBy('created_at', 'DESC')->get();
-    }
-
-    public function scopePostStatusCount($query, $status, $operator = false) //postStatusCount
-    {
-        if ($operator) {
-            return $query->where('status', $operator, $status)->count();
-        }
-        return $query->where('status', $status)->count();
-    }
-
-    public function scopeByMonthAndYear($query, $monthNumber, $yearNumber) //byMonthAndYear
-    {
-        return $query->whereMonth('created_at', $monthNumber)
-            ->whereYear('created_at', $yearNumber);
     }
 
     public function scopeArchivedPosts($query, $month, $year) //archivedPosts

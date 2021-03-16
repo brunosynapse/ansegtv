@@ -348,7 +348,7 @@
                             @foreach($posts::active()->latestDays(30)->orderByView()->get() as $key => $post)
                                 <li>
                                     <p class="date-style text-black">
-                                        {{$post->created_at->format('d/m/Y')}}
+                                        {{$post->formatted_date}}
                                         <br><a href="{{route('site.posts.show', $post->path)}}"><span class="title-most-read">{{mb_strimwidth($post->title, 0, 60, "...")}}</span></a>
                                     </p>
                                 </li>

@@ -4,8 +4,8 @@
             <a href="{{route('site.posts.show', $highlight_1->path)}}">
                 <div class="news-container" style="background-image: url('{{asset("storage/".$highlight_1->image)}}');">
                     <div class="news-overlay">
-                        <span class="font-lato date-style text-white">{{$highlight_1->created_at->format('d/m/Y')}}</span>
-                        <h5 class="my-3 news-info text-white">{{$highlight_1->category_name}}</h5>
+                        <span class="font-lato date-style text-white">{{$highlight_1->formatted_date}}</span>
+                        <h5 class="my-3 news-info text-white">{{$highlight_1->formatted_category_name}}</h5>
                         <h4 class="font-lato title-style text-white">{{$highlight_1->title}}</h4>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                 <a href="{{route('site.posts.show', $highlight_2->path)}}">
                     <div class="sidebar-news-container" style="background-image: url('{{asset("storage/".$highlight_2->image)}}');">
                         <div class="sidebar-news-overlay">
-                            <span class="font-lato date-style text-white">{{$highlight_2->created_at->format('d/m/Y')}}</span>
+                            <span class="font-lato date-style text-white">{{$highlight_2->formatted_date}}</span>
                             <h4 class="font-lato title-style text-white">{{$highlight_2->title}}</h4>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                 <a href="{{route('site.posts.show', $highlight_3->path)}}">
                     <div class="sidebar-news-container" style="background-image: url('{{asset("storage/".$highlight_3->image)}}');">
                         <div class="sidebar-news-overlay">
-                            <span class="font-lato date-style text-white">{{$highlight_3->created_at->format('d/m/Y')}}</span>
+                            <span class="font-lato date-style text-white">{{$highlight_3->formatted_date}}</span>
                             <h4 class="font-lato title-style text-white">{{$highlight_3->title}}</h4>
                         </div>
                     </div>
