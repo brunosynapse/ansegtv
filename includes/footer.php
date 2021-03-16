@@ -38,6 +38,8 @@
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300);
         });
 
-        <script src="//tag.goadopt.io/injector.js?website_code=98bfaecd-beda-4252-b173-f964b7a9a092" class="adopt-injector"></script>
 
     </script>
+    <!-- LGPD  -->
+    <script src="//tag.goadopt.io/injector.js?website_code=98bfaecd-beda-4252-b173-f964b7a9a092" class="adopt-injector"></script>
+    <!-- LGPD  -->

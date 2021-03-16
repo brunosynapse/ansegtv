@@ -89,17 +89,24 @@
         <!-- News Body -->
             <section id="news-body" class="mt-5">
                 <div class="container">
+                
                     <div class="row">
-                        <div class="col-12 col-md-10 offset-md-1 title-news text-center">
-                            <h1>A importância do planejamento tributário</h1>
-                            <p class="post-infos">
-                                <span class="mx-2 author"><i class="fa fa-user"></i>  AnsegTV</span> | <span class="mx-2 date"><i class="fa fa-clock-o"></i>11/09/2020 - 18h35</span> | <span class="mx-2 category"><i class="fa fa-tag"></i> ANSEGTV</span>
-                            </p>
-                            <hr class="divider">
+                        <div class="col-12 col-md-8 content-news">
+                        <div class="info-news-container py-3">
+                            <a href="" class="link-path">20/03/2020</a> <a href="" class="link-path">PARCERIAS</a> <a href="" class="link-path">ANSEGTV</a>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-10 offset-md-1 content-news">
+                        <h1 class="font-lato super-title text-left">A importância do planejamento tributário</h1>
+                            <!-- <p class="post-infos">
+                                <span class="mx-2 author"><i class="fa fa-user"></i>  AnsegTV</span> <strong>|</strong> <span class="mx-2 date"><i class="fa fa-clock-o"></i>11/09/2020 - 18h35</span> | <span class="mx-2 category"><i class="fa fa-tag"></i> ANSEGTV</span>
+                            </p>
+                            <hr class="divider"> -->
+
+                            <div class="single-image-container" style="background-image: url('../../img/uploads/2020/03/presidente-ansegtv.jpg');">
+                                <div class="single-image-overlay">
+                                </div>
+                            </div>
+                            <div class="single-image-credits text-black font-lato pull-right"> Foto divulgação.</div>
+                            <div class="py-3"></div>
                             <p class="article">Ao que tudo indica, as sessões em plenário virtual contribuíram para acelerar os julgamentos das pautas tributárias no STF (Supremo Tribunal Federal), que vem priorizando a matéria. Em agosto, foram analisados vários temas relevantes. Foi decidido, por exemplo, que é inconstitucional a incidência de contribuição previdenciária sobre o salário-maternidade, pago durante o período de licença.</p>
                             <p class="article">Estavam também incluídas na agenda do mês a ação que busca o reconhecimento da inexigibilidade das contribuições para o SEBRAE, a APEX e a ABDI, e outra, a respeito das contribuições destinadas ao Incra, ambas a partir da vigência da Emenda Constitucional nº 33/2001. As duas foram retiradas de pauta a pedido do Ministro Gilmar Mendes e ainda não têm data para retomada de análise.</p>
                             <figure class="pull-right m-2 text-right">
@@ -117,8 +124,181 @@
                             <br>
                             <br>
                         </div>
-                        <div class="col text-center mt-4"> <a href="../" class="voltar">Veja todas as notícias</a></div>
+                        <div class="col-12 col-md-4">
+                        <div class="col-12 pesquisar my-2 mb-4">
+                            <h3 class="super-title">PESQUISAR</h3>
+                            <form class="form-inline mb-4 my-lg-0 pull-left formpesquisar">
+                                <input class="form-control mr-sm-2 textinputpesquisar pull-left" type="search" placeholder="O que você está procurando?" aria-label="Search">
+                                <button class="btn my-2 my-sm-0 pull-right" type="submit">
+                                <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                        </div>    
+                        <div class="py-3"></div>
+                        <div class="col-12 mt-4 arquivo">
+                                <div class="title-headers">
+                                    <h3 class="super-title">Arquivo</h3>
+                                </div>
+                                
+                                <!-- accordion 2 -->
+
+                                    <button class="custom-accordion year">2021</button>
+                                    <div class="panel">
+                                            <button class="custom-accordion">Março (3)</button>
+                                            <div class="panel">
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>    
+                                            </div>
+
+                                            <button class="custom-accordion">Fevereiro (1)</button>
+                                            <div class="panel">
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>
+                                            </div>
+
+                                            <button class="custom-accordion">Janeiro (1)</button>
+                                            <div class="panel">
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>
+                                            </div>
+                                    </div>
+
+                                    <button class="custom-accordion year">2020</button>
+                                    <div class="panel">
+                                            <button class="custom-accordion">Dezembro (4)</button>
+                                            <div class="panel">
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>    
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>    
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>    
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>    
+                                            </div>
+
+                                            <button class="custom-accordion">Novembro (3)</button>
+                                            <div class="panel">
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>
+                                            </div>
+
+                                            <button class="custom-accordion">Outubro (2)</button>
+                                            <div class="panel">
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>
+                                                <a href="">
+                                                    <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                </a>
+                                            </div>
+                                    </div>
+
+                                    <script>
+                                    var acc = document.getElementsByClassName("custom-accordion");
+                                    var i;
+
+                                    for (i = 0; i < acc.length; i++) {
+                                    acc[i].addEventListener("click", function() {
+                                        this.classList.toggle("active");
+                                        var panel = this.nextElementSibling;
+                                        if (panel.style.display === "block") {
+                                        panel.style.display = "none";
+                                        } else {
+                                        panel.style.display = "block";
+                                        }
+                                    });
+                                    }
+                                    </script>
+
+                                <!-- accordion 2 -->
+                                <br><br>
+                            </div>
+                            <!-- end arquivo  -->
+                        </div>
+                        <!-- end col-md-4  -->
+
                     </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-12">
+                            <h3 class="super-title">notícias <br>relacionadas</h3>
+                        </div>
+                            <div class="col-12 col-md-3">
+                                <a href="">
+
+                                    <div class="relateds-container" style="background-image: url('../../img/uploads/2020/05/ministerio-economia.png');">
+                                        <div class="relateds-overlay">
+                                            <span class="relateds-date font-lato date-style text-white">29/01/2021</span>
+                                        </div>
+                                    </div>
+                                    <h4 class="relateds-info font-lato title-style text-black">Nova GTV-e proporciona maior segurança e agilidade</h4>
+                                
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-3">
+                                <a href="">
+
+                                    <div class="relateds-container" style="background-image: url('../../img/uploads/2020/05/ministerio-economia.png');">
+                                        <div class="relateds-overlay">
+                                            <span class="relateds-date font-lato date-style text-white">29/01/2021</span>
+                                        </div>
+                                    </div>
+                                    <h4 class="relateds-info font-lato title-style text-black">Nova GTV-e proporciona maior segurança e agilidade</h4>
+                                
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-3">
+                                <a href="">
+
+                                    <div class="relateds-container" style="background-image: url('../../img/uploads/2020/05/ministerio-economia.png');">
+                                        <div class="relateds-overlay">
+                                            <span class="relateds-date font-lato date-style text-white">29/01/2021</span>
+                                        </div>
+                                    </div>
+                                    <h4 class="relateds-info font-lato title-style text-black">Nova GTV-e proporciona maior segurança e agilidade</h4>
+                                
+                                </a>
+                            </div>
+                            
+                            <div class="col-12 col-md-3">
+                                <a href="">
+
+                                    <div class="relateds-container" style="background-image: url('../../img/uploads/2020/05/ministerio-economia.png');">
+                                        <div class="relateds-overlay">
+                                            <span class="relateds-date font-lato date-style text-white">29/01/2021</span>
+                                        </div>
+                                    </div>
+                                    <h4 class="relateds-info font-lato title-style text-black">Nova GTV-e proporciona maior segurança e agilidade</h4>
+                                
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+
                 </div>
             </section>
         <!-- Footer Section -->
@@ -141,13 +321,13 @@
     
     <section id="copyright">
     <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <p>© Copyright - 2020 - Todos os Direitos Reservados. Synapse Brasil</p>
-                </div>
+        <div class="row">
+            <div class="col">
+            <p>© Copyright - 2021 - Todos os Direitos Reservados. Synapse Brasil <!-- <button class="ativa-aviso-lgpd" onclick="window.sendAdoptCommand('open')">Mostrar Aviso LGPD </button> --> | <a href="https://ansegtv.com.br/politica-de-privacidade" title="Política de Privacidade">Política de Privacidade</a></p>
             </div>
         </div>
-    </section>
+    </div>
+    </section>    
     
     <!-- Boostrap and Custom JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -167,3 +347,7 @@
         });
         
     </script>
+
+    <!-- LGPD  -->
+    <script src="//tag.goadopt.io/injector.js?website_code=98bfaecd-beda-4252-b173-f964b7a9a092" class="adopt-injector"></script>
+    <!-- LGPD  -->
