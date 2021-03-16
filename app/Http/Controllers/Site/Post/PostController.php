@@ -56,11 +56,12 @@ class PostController extends Controller
     public function show(string $slug)
     {
         $post = Post::findOrFailBySlug($slug);
+        $relatedPosts = Post::where('category_id', $post->category_id)->where('id', '!=', $post->id )->get();
 
         SeoToolsPostService::handle($post);
         IncrementCounterViewPostService::handle($post);
 
-        return view('site.pages.posts.show', compact('post'));
+        return view('site.pages.posts.show', compact('post', 'relatedPosts'));
     }
 
     /**

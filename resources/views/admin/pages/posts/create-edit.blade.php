@@ -72,6 +72,18 @@
                                             </div>
                                         </div>
 
+                                        <div class="section-title mt-0">Crédito da imagem principal</div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control @error('image_credit') is-invalid @enderror"
+                                                   name="image_credit" value="{{ $edition ? $post->image_credit : old('image_credit') }}"
+                                                   autocomplete="title" placeholder="Crédito da imagem principal">
+                                            @error('image_credit')
+                                                <span class="invalid-feedback" role="alert">
+                                                    {{ $message }}
+                                                </span>
+                                            @enderror
+                                        </div>
+
                                         <div class="section-title mt-0">Descrição da Notícia</div>
                                         <div class="form-group">
                                             <textarea

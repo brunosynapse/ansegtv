@@ -22,6 +22,7 @@ class Post extends Model
         'user_id',
         'status',
         'image',
+        'image_credit',
         'path',
         'highlight_position',
         'created_at'
@@ -58,6 +59,10 @@ class Post extends Model
 
     public function getFormattedCategoryNameAttribute() { //formatted_category_name
         return $this->category->name;
+    }
+
+    public function getFormattedUserAttribute() { //formatted_user
+        return $this->user->name;
     }
 
     public function getFormattedDateAndHourAttribute() //formatted_date_and_hour

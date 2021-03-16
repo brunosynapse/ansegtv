@@ -1,4 +1,4 @@
-<div class="col-12 arquivo">
+<div class="col-12 arquivo mt-4">
     <div class="title-headers">
         <h3 class="super-title">Arquivo</h3>
     </div>
