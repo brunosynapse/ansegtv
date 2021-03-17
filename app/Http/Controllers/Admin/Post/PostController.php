@@ -59,8 +59,10 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         if ($position = $request->highlight_position) {
-            Post::highlight($position)
-                ->update(['highlight_position' => null]);
+            $featuredPost = Post::highlight($position)->first();
+            if ($featuredPost) {
+                $featuredPost->update(['highlight_position' => null]);
+            }
         }
 
         $data = $request->all();
@@ -123,7 +125,7 @@ class PostController extends Controller
     {
         if ($position = $request->highlight_position) {
             $featuredPost = Post::highlight($position)->first();
-            if ($featuredPost && $featuredPost->id = !$post->id) {
+            if ($featuredPost && $featuredPost->id != $post->id) {
                 $featuredPost->update(['highlight_position' => null]);
             }
         }
