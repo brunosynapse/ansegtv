@@ -11,7 +11,7 @@
                 @forelse($filteredPosts as $filteredPost)
                     <div class="row py-4 news-finded">
                         <div class="col-12 col-md-5">
-                            <a href="{{route('site.posts.show', $filteredPost->path)}}"><img src="{{ asset("storage/".$filteredPost->image) }}" alt="Imagem principal da notícia {{ $filteredPost->title }}" class="img-fluid"></a>
+                            <a href="{{route('site.posts.show', $filteredPost->path)}}"><img src="{{ $filteredPost->image ? asset("storage/".$filteredPost->image) : '' }}" alt="Imagem principal da notícia {{ $filteredPost->title }}" class="img-fluid"></a>
                         </div>
                         <div class="col-12 col-md-7">
                             <div class="info">

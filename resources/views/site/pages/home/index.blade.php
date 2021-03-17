@@ -37,7 +37,7 @@
                             @foreach($posts::latestWithImageAndWithoutHighlight() as $key => $post)
                                 <div class="col-12 col-md-6">
                                     <a href="{{route('site.posts.show', $post->path)}}">
-                                        <div class="most-recents-container" style="background-image: url('{{asset("storage/".$post->image)}}');">
+                                        <div class="most-recents-container" style="background-image: url('{{$post->image ? asset("storage/".$post->image) : ''}}');">
                                             <div class="most-recents-overlay">
                                                 <span class="most-recents-date font-lato date-style text-white">{{$post->formatted_date}}</span>
                                             </div>

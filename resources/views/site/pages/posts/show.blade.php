@@ -48,8 +48,9 @@
                 </div>
                 @foreach($relatedPosts as $relatedPost)
                     <div class="col-12 col-md-3">
+
                         <a href="{{route('site.posts.show', $relatedPost->path)}}">
-                            <div class="relateds-container" style="background-image: url('{{asset("storage/".$relatedPost->image)}}');">
+                            <div class="relateds-container" style="background-image: url('{{ $relatedPost->image ? asset("storage/".$relatedPost->image) : ''}}');">
                                 <div class="relateds-overlay">
                                     <span class="relateds-date font-lato date-style text-white">{{ $relatedPost->formatted_date }}</span>
                                 </div>
