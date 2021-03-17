@@ -1381,3 +1381,12 @@ ol li::before {
     background-color:transparent !important;
     border: 1px solid var(--marrom-primario);
   }
+
+  .desc{
+    height: 84px;
+    max-height: 84px;
+  }
+  
+html, body{
+  overflow-x: hidden !important;
+}

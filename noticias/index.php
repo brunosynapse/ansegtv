@@ -93,349 +93,181 @@
                <h2 >Notícias</h2>
             </div>
             <div class="row">
-               <div class="col-12 col-md-8">
-                  <div class="row">
-                     <div id="itemlist-news" class="col-12 item-list">
-                        <div class="row">
-                           <div class="col col-md-4">
-                              <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
-                              </div>
-                              <div class="col col-md-8">
-                                 <div class="info">
-                                    <a href="" class="data"><span>28|01|2021</span></a>
-                                    <a href="" class="categoria"><span>Parcerias</span></a>
-                                    <a href="" class="autor"><span>ANSEGTV</span></a>
-                                 </div>
-                                 <div class="texto">
-                                    <a href="">
-                                       <h4 class="title">Necessária, Reforma Tributária deve ser equilibrada</h4>
-                                    </a>
-                                    <p class="desc">A Reforma Tributária segue no centro do debate econômico. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado, Davi Alcolumbre (DEM-AP), já declararam que pretendem aprovar a medida até o fim deste ano...</p>
-                                    <button class="leia-mais">Leia mais</button>
-                                 </div>
-                              </div>                        
-                        </div>
+            <div class="col-12 col-md-8">  
+               <div class="row py-4 news-finded">
+                  <div class="col-12 col-md-5">
+                     <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
+                  </div>
+                  <div class="col-12 col-md-7">
+                     <div class="info">
+                           <a href="" class="data"><span>28|01|2021</span></a>
+                           <a href="" class="categoria"><span>Parcerias</span></a>
+                           <a href="" class="autor"><span>ANSEGTV</span></a>
                      </div>
-                     <div id="itemlist-news" class="col-12 item-list">
-                        <div class="row">
-                           <div class="col col-md-4">
-                              <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
-                              </div>
-                              <div class="col col-md-8">
-                                 <div class="info">
-                                    <a href="" class="data"><span>28|01|2021</span></a>
-                                    <a href="" class="categoria"><span>Parcerias</span></a>
-                                    <a href="" class="autor"><span>ANSEGTV</span></a>
-                                 </div>
-                                 <div class="texto">
-                                    <a href="">
-                                       <h4 class="title">Necessária, Reforma Tributária deve ser equilibrada</h4>
-                                    </a>
-                                    <p class="desc">A Reforma Tributária segue no centro do debate econômico. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado, Davi Alcolumbre (DEM-AP), já declararam que pretendem aprovar a medida até o fim deste ano...</p>
-                                    <button class="leia-mais">Leia mais</button>
-                                 </div>
-                              </div>                        
-                        </div>
-                     </div>
-                     <div id="itemlist-news" class="col-12 item-list">
-                        <div class="row">
-                           <div class="col col-md-4">
-                              <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
-                              </div>
-                              <div class="col col-md-8">
-                                 <div class="info">
-                                    <a href="" class="data"><span>28|01|2021</span></a>
-                                    <a href="" class="categoria"><span>Parcerias</span></a>
-                                    <a href="" class="autor"><span>ANSEGTV</span></a>
-                                 </div>
-                                 <div class="texto">
-                                    <a href="">
-                                       <h4 class="title">Necessária, Reforma Tributária deve ser equilibrada</h4>
-                                    </a>
-                                    <p class="desc">A Reforma Tributária segue no centro do debate econômico. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado, Davi Alcolumbre (DEM-AP), já declararam que pretendem aprovar a medida até o fim deste ano...</p>
-                                    <button class="leia-mais">Leia mais</button>
-                                 </div>
-                              </div>                        
-                        </div>
-                     </div>
-                     <div id="itemlist-news" class="col-12 item-list">
-                        <div class="row">
-                           <div class="col col-md-4">
-                              <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
-                              </div>
-                              <div class="col col-md-8">
-                                 <div class="info">
-                                    <a href="" class="data"><span>28|01|2021</span></a>
-                                    <a href="" class="categoria"><span>Parcerias</span></a>
-                                    <a href="" class="autor"><span>ANSEGTV</span></a>
-                                 </div>
-                                 <div class="texto">
-                                    <a href="">
-                                       <h4 class="title">Necessária, Reforma Tributária deve ser equilibrada</h4>
-                                    </a>
-                                    <p class="desc">A Reforma Tributária segue no centro do debate econômico. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado, Davi Alcolumbre (DEM-AP), já declararam que pretendem aprovar a medida até o fim deste ano...</p>
-                                    <button class="leia-mais">Leia mais</button>
-                                 </div>
-                              </div>                        
-                        </div>
-                     </div>
-                     <div id="itemlist-news" class="col-12 item-list">
-                        <div class="row">
-                           <div class="col col-md-4">
-                              <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
-                              </div>
-                              <div class="col col-md-8">
-                                 <div class="info">
-                                    <a href="" class="data"><span>28|01|2021</span></a>
-                                    <a href="" class="categoria"><span>Parcerias</span></a>
-                                    <a href="" class="autor"><span>ANSEGTV</span></a>
-                                 </div>
-                                 <div class="texto">
-                                    <a href="">
-                                       <h4 class="title">Necessária, Reforma Tributária deve ser equilibrada</h4>
-                                    </a>
-                                    <p class="desc">A Reforma Tributária segue no centro do debate econômico. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado, Davi Alcolumbre (DEM-AP), já declararam que pretendem aprovar a medida até o fim deste ano...</p>
-                                    <button class="leia-mais">Leia mais</button>
-                                 </div>
-                              </div>                        
-                        </div>
+                     <div class="texto">
+                           <a href="">
+                              <h4 class="title text-truncate"> Lorem ipsum nader Reforma Tributária deve ser equilibrada</h4>
+                           </a>
+                           <p class="desc">A Reforma Tributária segue no centro do debate. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado já declararam.</p>
+                           <a href="" class="leia-mais">Leia mais</a>
                      </div>
                   </div>
                </div>
+
+               <div class="row py-4 news-finded">
+                  <div class="col-12 col-md-5">
+                     <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
+                  </div>
+                  <div class="col-12 col-md-7">
+                     <div class="info">
+                           <a href="" class="data"><span>28|01|2021</span></a>
+                           <a href="" class="categoria"><span>Parcerias</span></a>
+                           <a href="" class="autor"><span>ANSEGTV</span></a>
+                     </div>
+                     <div class="texto">
+                           <a href="">
+                              <h4 class="title text-truncate"> Lorem ipsum nader Reforma Tributária deve ser equilibrada</h4>
+                           </a>
+                           <p class="desc">A Reforma Tributária segue no centro do debate. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado já declararam.</p>
+                           <a href="" class="leia-mais">Leia mais</a>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row py-4 news-finded">
+                  <div class="col-12 col-md-5">
+                     <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
+                  </div>
+                  <div class="col-12 col-md-7">
+                     <div class="info">
+                           <a href="" class="data"><span>28|01|2021</span></a>
+                           <a href="" class="categoria"><span>Parcerias</span></a>
+                           <a href="" class="autor"><span>ANSEGTV</span></a>
+                     </div>
+                     <div class="texto">
+                           <a href="">
+                              <h4 class="title text-truncate"> Lorem ipsum nader Reforma Tributária deve ser equilibrada</h4>
+                           </a>
+                           <p class="desc">A Reforma Tributária segue no centro do debate. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado já declararam.</p>
+                           <a href="" class="leia-mais">Leia mais</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- end col-md-8  -->
                <div class="col-12 col-md-4 sidebar">
-                  <div class="row">
-                     <div class="col-12 pesquisa">
-                        <form class="form-inline my-2 my-lg-0 pull-right">
-                           <input class="form-control mr-sm-2" type="search" placeholder="O que deseja pesquisar?" aria-label="Search">
-                           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-                        </form>
-                     </div>
-                     <div class="col-12 mais-lidas">
-                        <div class="title-headers">
-                              <h3>Mais Lidas</h3>
-                        </div>
-                        <div class="col">
-                              <a href="">
-                                 <span class="posicao">01</span>
-                                 <div class="info">
-                                    <span class="data">29|01|2021</span>
-                                    <h4>Meios de pagamento se complementam</h4>
-                                 </div>
-                              </a>
-                        </div>
-                        <div class="col">
-                              <a href="">
-                                 <span class="posicao">02</span>
-                                 <div class="info">
-                                    <span class="data">06|01|2021</span>
-                                    <h4>Serviços no processo de recuperação econômica</h4>
-                                 </div>
-                              </a>
-                        </div>
-                        <div class="col">
-                              <a href="">
-                                 <span class="posicao">03</span>
-                                 <div class="info">
-                                    <span class="data">13|01|2021</span>
-                                    <h4>Serviços no processo de recuperação econômica</h4>
-                                 </div>
-                              </a>
-                        </div>
-                        <div class="col">
-                              <a href="">
-                                 <span class="posicao">04</span>
-                                 <div class="info">
-                                    <span class="data">28|01|2021</span>
-                                    <h4>ANSEGTV faz balanço do ano em reunião</h4>
-                                 </div>
-                              </a>
-                        </div>
-                        <div class="col">
-                              <a href="">
-                                 <span class="posicao">05</span>
-                                 <div class="info">
-                                    <span class="data">26|01|2021</span>
-                                    <h4>Reforma Tributária no setor de serviços</h4>
-                                 </div>
-                              </a>
-                        </div>
-                     </div>
-                     <div class="col-12 arquivo">
-                        <div class="title-headers">
-                              <h3>Arquivo</h3>
-                        </div>
-                        <div id="accordion" class="list-arquivo">
-                              <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">
-                                    <div class="" id="Headingjaneiro2021">
-                                          <h5 class="mb-0">
-                                             <button class="btn btn-link" data-toggle="collapse" data-target="#janeiro2021" aria-expanded="true" aria-controls="janeiro2021">
-                                             Janeiro 2021
-                                             </button>
-                                          </h5>
-                                          </div>
+                          <div class="col-12 pesquisar my-2 mb-4">
+                              <h3 class="super-title">PESQUISAR</h3>
+                              <form class="form-inline mb-4 my-lg-0 pull-left formpesquisar">
+                                  <input class="form-control mr-sm-2 textinputpesquisar pull-left" type="search" placeholder="O que você está procurando?" aria-label="Search">
+                                  <button class="btn my-2 my-sm-0 pull-right" type="submit">
+                                  <i class="fa fa-search"></i>
+                                  </button>
+                              </form>
+                          </div>    
+                          <div class="py-3"></div>
+                          <div class="col-12 mt-4 arquivo">
+                                  <div class="title-headers">
+                                      <h3 class="super-title">Arquivo</h3>
+                                  </div>
+                                  
+                                  <!-- accordion 2 -->
 
-                                          <div id="janeiro2021" class="collapse show" aria-labelledby="Headingjaneiro2021" data-parent="#accordion">
-                                          <div class="card-body">
-                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">A necessidade de um Programa de Integridade nas empresas</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Serviços no processo de recuperação econômica</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Frente Parlamentar faz balanço das atividades desenvolvidas durante a pandemia</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Comando G8 é o novo filiado da ANSEGTV</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Importante, LGPD ainda gera dúvidas</h4>
-                                                      </a>
-                                                </li>
-                                             </ul>
-                                          </div>
-                                    </div>
-                                 </li>
-                                 <li class="list-group-item">
-                                    <div class="" id="Headingdezembro2020">
-                                          <h5 class="mb-0">
-                                             <button class="btn btn-link" data-toggle="collapse" data-target="#dezembro2020" aria-expanded="true" aria-controls="dezembro2020">
-                                             Dezembro 2020
-                                             </button>
-                                          </h5>
-                                          </div>
+                                      <button class="custom-accordion year">2021</button>
+                                      <div class="panel">
+                                              <button class="custom-accordion">Março (3)</button>
+                                              <div class="panel">
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>    
+                                              </div>
 
-                                          <div id="dezembro2020" class="collapse" aria-labelledby="Headingdezembro2020" data-parent="#accordion">
-                                          <div class="card-body">
-                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">A necessidade de um Programa de Integridade nas empresas</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Serviços no processo de recuperação econômica</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Frente Parlamentar faz balanço das atividades desenvolvidas durante a pandemia</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Comando G8 é o novo filiado da ANSEGTV</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Importante, LGPD ainda gera dúvidas</h4>
-                                                      </a>
-                                                </li>
-                                             </ul>
-                                          </div>
-                                    </div>
-                                 </li>
-                                 <li class="list-group-item">
-                                    <div class="" id="Headingnovembro2020">
-                                          <h5 class="mb-0">
-                                             <button class="btn btn-link" data-toggle="collapse" data-target="#novembro2020" aria-expanded="true" aria-controls="novembro2020">
-                                             Novembro 2020
-                                             </button>
-                                          </h5>
-                                          </div>
+                                              <button class="custom-accordion">Fevereiro (1)</button>
+                                              <div class="panel">
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>
+                                              </div>
 
-                                          <div id="novembro2020" class="collapse" aria-labelledby="Headingnovembro2020" data-parent="#accordion">
-                                          <div class="card-body">
-                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">A necessidade de um Programa de Integridade nas empresas</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Serviços no processo de recuperação econômica</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Frente Parlamentar faz balanço das atividades desenvolvidas durante a pandemia</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Comando G8 é o novo filiado da ANSEGTV</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Importante, LGPD ainda gera dúvidas</h4>
-                                                      </a>
-                                                </li>
-                                             </ul>
-                                          </div>
-                                    </div>
-                                 </li>
-                                 <li class="list-group-item">
-                                    <div class="" id="Headingoutubro2020">
-                                          <h5 class="mb-0">
-                                             <button class="btn btn-link" data-toggle="collapse" data-target="#outubro2020" aria-expanded="true" aria-controls="outubro2020">
-                                             Outubro 2020
-                                             </button>
-                                          </h5>
-                                          </div>
+                                              <button class="custom-accordion">Janeiro (1)</button>
+                                              <div class="panel">
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>
+                                              </div>
+                                      </div>
 
-                                          <div id="outubro2020" class="collapse" aria-labelledby="Headingoutubro2020" data-parent="#accordion">
-                                          <div class="card-body">
-                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">A necessidade de um Programa de Integridade nas empresas</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Serviços no processo de recuperação econômica</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Frente Parlamentar faz balanço das atividades desenvolvidas durante a pandemia</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Comando G8 é o novo filiado da ANSEGTV</h4>
-                                                      </a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                      <a href="">
-                                                         <h4 class="title-arquivo">Importante, LGPD ainda gera dúvidas</h4>
-                                                      </a>
-                                                </li>
-                                             </ul>
-                                          </div>
-                                    </div>
-                                 </li>
-                                 
-                              </ul>
+                                      <button class="custom-accordion year">2020</button>
+                                      <div class="panel">
+                                              <button class="custom-accordion">Dezembro (4)</button>
+                                              <div class="panel">
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>    
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>    
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>    
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>    
+                                              </div>
+
+                                              <button class="custom-accordion">Novembro (3)</button>
+                                              <div class="panel">
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>
+                                              </div>
+
+                                              <button class="custom-accordion">Outubro (2)</button>
+                                              <div class="panel">
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>
+                                                  <a href="">
+                                                      <h4 class="title-archive my-4">Lorem ipsum dolor strict text</h4>
+                                                  </a>
+                                              </div>
+                                      </div>
+
+                                      <script>
+                                      var acc = document.getElementsByClassName("custom-accordion");
+                                      var i;
+
+                                      for (i = 0; i < acc.length; i++) {
+                                      acc[i].addEventListener("click", function() {
+                                          this.classList.toggle("active");
+                                          var panel = this.nextElementSibling;
+                                          if (panel.style.display === "block") {
+                                          panel.style.display = "none";
+                                          } else {
+                                          panel.style.display = "block";
+                                          }
+                                      });
+                                      }
+                                      </script>
+
+                                  <!-- accordion 2 -->
+                                  <br><br>
+                              </div>
+                              <!-- end arquivo  -->
                         </div>
-                     </div>
-                  </div>
-               </div>
+                        <!-- end col-md-4  -->
             </div>
          </div>
       </section>

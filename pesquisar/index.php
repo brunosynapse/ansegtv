@@ -90,68 +90,67 @@
             <section id="news-body" class="mt-5">
                 <div class="container">
                   <div class="row">
-                       <div class="col-12 col-md-8">
+                    <div class="col-12 col-md-8">
                          <h2 class="super-title-initial"><strong>Resultado da busca para:</strong> "Transporte de valores"</h2>
-                          <div class="row py-4 news-finded">
-                              <div class="col-12 col-md-5">
-                                  <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
-                              </div>
-                              <div class="col-12 col-md-7">
-                                  <div class="info">
-                                      <a href="" class="data"><span>28|01|2021</span></a>
-                                      <a href="" class="categoria"><span>Parcerias</span></a>
-                                      <a href="" class="autor"><span>ANSEGTV</span></a>
-                                  </div>
-                                  <div class="texto">
-                                      <a href="">
-                                        <h4 class="title">Reforma Tributária deve ser equilibrada</h4>
-                                      </a>
-                                      <p class="desc">A Reforma Tributária segue no centro do debate econômico. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado, Davi Alcolumbre (DEM-AP), já declararam que pretendem aprovar a...</p>
-                                      <a href="" class="leia-mais">Leia mais</a>
-                                  </div>
-                              </div>
-                          </div>
+                            <div class="row py-4 news-finded">
+                                <div class="col-12 col-md-5">
+                                    <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
+                                </div>
+                                <div class="col-12 col-md-7">
+                                    <div class="info">
+                                        <a href="" class="data"><span>28|01|2021</span></a>
+                                        <a href="" class="categoria"><span>Parcerias</span></a>
+                                        <a href="" class="autor"><span>ANSEGTV</span></a>
+                                    </div>
+                                    <div class="texto">
+                                        <a href="">
+                                            <h4 class="title text-truncate"> Lorem ipsum nader Reforma Tributária deve ser equilibrada</h4>
+                                        </a>
+                                        <p class="desc">A Reforma Tributária segue no centro do debate. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado já declararam.</p>
+                                        <a href="" class="leia-mais">Leia mais</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                          <div class="row py-4 news-finded">
-                              <div class="col-12 col-md-5">
-                                  <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
-                              </div>
-                              <div class="col-12 col-md-7">
-                                  <div class="info">
-                                      <a href="" class="data"><span>28|01|2021</span></a>
-                                      <a href="" class="categoria"><span>Parcerias</span></a>
-                                      <a href="" class="autor"><span>ANSEGTV</span></a>
-                                  </div>
-                                  <div class="texto">
-                                      <a href="">
-                                        <h4 class="title">Reforma Tributária deve ser equilibrada</h4>
-                                      </a>
-                                      <p class="desc">A Reforma Tributária segue no centro do debate econômico. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado, Davi Alcolumbre (DEM-AP), já declararam que pretendem aprovar a...</p>
-                                      <a href="" class="leia-mais">Leia mais</a>
-                                  </div>
-                              </div>
-                          </div>
+                            <div class="row py-4 news-finded">
+                                <div class="col-12 col-md-5">
+                                    <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
+                                </div>
+                                <div class="col-12 col-md-7">
+                                    <div class="info">
+                                        <a href="" class="data"><span>28|01|2021</span></a>
+                                        <a href="" class="categoria"><span>Parcerias</span></a>
+                                        <a href="" class="autor"><span>ANSEGTV</span></a>
+                                    </div>
+                                    <div class="texto">
+                                        <a href="">
+                                            <h4 class="title text-truncate"> Lorem ipsum nader Reforma Tributária deve ser equilibrada</h4>
+                                        </a>
+                                        <p class="desc">A Reforma Tributária segue no centro do debate. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado já declararam.</p>
+                                        <a href="" class="leia-mais">Leia mais</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                          <div class="row py-4 news-finded">
-                              <div class="col-12 col-md-5">
-                                  <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
-                              </div>
-                              <div class="col-12 col-md-7">
-                                  <div class="info">
-                                      <a href="" class="data"><span>28|01|2021</span></a>
-                                      <a href="" class="categoria"><span>Parcerias</span></a>
-                                      <a href="" class="autor"><span>ANSEGTV</span></a>
-                                  </div>
-                                  <div class="texto">
-                                      <a href="">
-                                        <h4 class="title">Reforma Tributária deve ser equilibrada</h4>
-                                      </a>
-                                      <p class="desc">A Reforma Tributária segue no centro do debate econômico. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado, Davi Alcolumbre (DEM-AP), já declararam que pretendem aprovar a...</p>
-                                      <a href="" class="leia-mais">Leia mais</a>
-                                  </div>
-                              </div>
-                          </div>
-                        
+                            <div class="row py-4 news-finded">
+                                <div class="col-12 col-md-5">
+                                    <a href=""><img src="../img/uploads/2020/08/congresso_ansegtv_agosto.jpg" alt="" class="img-fluid"></a>
+                                </div>
+                                <div class="col-12 col-md-7">
+                                    <div class="info">
+                                        <a href="" class="data"><span>28|01|2021</span></a>
+                                        <a href="" class="categoria"><span>Parcerias</span></a>
+                                        <a href="" class="autor"><span>ANSEGTV</span></a>
+                                    </div>
+                                    <div class="texto">
+                                        <a href="">
+                                            <h4 class="title text-truncate"> Lorem ipsum nader Reforma Tributária deve ser equilibrada</h4>
+                                        </a>
+                                        <p class="desc">A Reforma Tributária segue no centro do debate. O presidente da Câmara, Rodrigo Maia (DEM-RJ), e do Senado já declararam.</p>
+                                        <a href="" class="leia-mais">Leia mais</a>
+                                    </div>
+                                </div>
+                            </div>
                       </div>
                         <!-- end col-md-8  -->
                         <div class="col-12 col-md-4">
@@ -269,7 +268,7 @@
                         <!-- end col-md-4  -->
 
                     
-                  </div>
+                    </div>
               </div>
             </section>
         <!-- Footer Section -->
