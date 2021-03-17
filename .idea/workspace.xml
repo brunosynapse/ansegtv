@@ -27,9 +27,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/site/pages/search/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/partials/home-slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/partials/home-slider.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/posts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,6 +279,7 @@
       <workItem from="1612526626510" duration="2664000" />
       <workItem from="1615898950813" duration="6660000" />
       <workItem from="1615925970902" duration="127000" />
+      <workItem from="1615984135053" duration="4739000" />
     </task>
     <servers />
   </component>

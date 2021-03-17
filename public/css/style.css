@@ -1211,7 +1211,12 @@ text#label_state_mt {
     text-decoration: none;
     font-weight: bold ;
 }
-
+.super-title-initial{
+    text-transform: initial;
+    color:var(--marrom-primario);
+    text-decoration: none;
+    font-weight: initial ;
+}
 .title-recents{
     font-family: 'Lato', sans-serif;
     font-size:16px;
@@ -1361,4 +1366,18 @@ ol li::before {
     width:80% !important;
     border:1px solid transparent !important;
     color: #1e1e1e;
+}
+
+.leia-mais{
+    background-color:var(--marrom-primario) !important;
+    color:#FFFFFF;
+    padding: 8px 14px;
+    margin-bottom:20px;
+    border: 1px solid transparent;
+}
+
+.leia-mais:hover{
+    color:var(--marrom-primario);
+    background-color:transparent !important;
+    border: 1px solid var(--marrom-primario);
 }

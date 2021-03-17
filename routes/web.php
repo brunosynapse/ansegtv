@@ -34,4 +34,5 @@ Route::group([
     Route::get('/parcerias', 'Statics\PartnershipsController')->name('partnerships');
     Route::get('/contato', 'Statics\ContactController')->name('contact');
     Route::resource('/noticias', 'Post\PostController')->names('posts');
+    Route::get('/pesquisa', 'Search\SearchController')->name('search');
 });

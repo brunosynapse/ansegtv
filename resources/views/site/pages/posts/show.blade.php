@@ -16,7 +16,6 @@
                             </div>
                         </div>
 
-
                         <div class="single-image-credits text-black font-lato pull-right"> {{$post->image_credit}}</div>
                     @endif
 
@@ -31,8 +30,8 @@
                 <div class="col-12 col-md-4">
                     <div class="col-12 pesquisar my-2 mb-4">
                         <h3 class="super-title">PESQUISAR</h3>
-                        <form class="form-inline mb-4 my-lg-0 pull-left formpesquisar">
-                            <input class="form-control mr-sm-2 textinputpesquisar pull-left" type="search" placeholder="O que você está procurando?" aria-label="Search">
+                        <form class="form-inline mb-4 my-lg-0 pull-left formpesquisar" action="{{ route('site.search') }}">
+                            <input class="form-control mr-sm-2 textinputpesquisar pull-left" name="search" type="search" placeholder="O que você está procurando?" aria-label="Search">
                             <button class="btn my-2 my-sm-0 pull-right" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
@@ -50,21 +49,21 @@
                     <h3 class="super-title">notícias <br>relacionadas</h3>
                 </div>
 
-
                 @foreach($relatedPosts as $relatedPost)
                     <div class="col-12 col-md-3">
                         <a href="{{route('site.posts.show', $relatedPost->path)}}">
                             <div class="relateds-container" style="background-image: url('{{asset("storage/".$relatedPost->image)}}');">
                                 <div class="relateds-overlay">
-                                    <span class="relateds-date font-lato date-style text-white">29/01/2021</span>
+                                    <span class="relateds-date font-lato date-style text-white">{{ $relatedPost->formatted_date }}</span>
                                 </div>
                             </div>
-                            <h4 class="relateds-info font-lato title-style text-black">Nova GTV-e proporciona maior segurança e agilidade</h4>
+                            <h4 class="relateds-info font-lato title-style text-black">{{mb_strimwidth($relatedPost->title, 0, 150, "...") }}</h4>
                         </a>
                     </div>
                 @endforeach
 
             </div>
+
         </div>
 
 
