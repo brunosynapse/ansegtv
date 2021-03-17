@@ -21,7 +21,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $posts = new Post;
-        $filteredPosts = Post::filter($request->all())->active()->latest()->paginateFilter(1);
+        $filteredPosts = Post::filter($request->all())->active()->latest()->paginateFilter(15);
 
         return view('site.pages.posts.index', compact('posts', 'filteredPosts'));
     }

@@ -27,34 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/dev/assets/image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/dev/assets/image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/dev/contents.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/dev/image2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/dialogs/image2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/icons/hidpi/image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/icons/image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/lang/en-au.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/lang/en-ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/lang/en-gb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/lang/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/lang/es-mx.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/lang/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/lang/pt-br.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/lang/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/plugin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/samples/assets/image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/samples/assets/image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ckeditor4_bkp/plugins/image2/samples/image2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Post/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/Post/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/Post/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/posts/create-edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/posts/create-edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/components/archives-new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/components/archives-new.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/posts/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/search/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/search/search.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +275,7 @@
       <workItem from="1612526626510" duration="2664000" />
       <workItem from="1615898950813" duration="6660000" />
       <workItem from="1615925970902" duration="127000" />
-      <workItem from="1615984135053" duration="13427000" />
+      <workItem from="1615984135053" duration="13678000" />
     </task>
     <servers />
   </component>
