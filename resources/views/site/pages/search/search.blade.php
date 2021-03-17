@@ -11,7 +11,7 @@
                 @forelse($filteredPosts as $filteredPost)
                     <div class="row py-4 news-finded">
                         <div class="col-12 col-md-5">
-                            <a href="{{route('site.posts.show', $filteredPost->path)}}"><img src="{{ asset("storage/".$filteredPost->image) }}" alt="" class="img-fluid"></a>
+                            <a href="{{route('site.posts.show', $filteredPost->path)}}"><img src="{{ asset("storage/".$filteredPost->image) }}" alt="Imagem principal da notícia {{ $filteredPost->title }}" class="img-fluid"></a>
                         </div>
                         <div class="col-12 col-md-7">
                             <div class="info">
@@ -21,7 +21,7 @@
                             </div>
                             <div class="texto">
                                 <a href="{{ route('site.posts.show', $filteredPost->path) }}">
-                                    <h4 class="title">{{ mb_strimwidth($filteredPost->title, 0, 150, "...") }}</h4>
+                                    <h4 class="title text-truncate">{{ mb_strimwidth($filteredPost->title, 0, 150, "...") }}</h4>
                                 </a>
                                 <p class="desc">{{mb_strimwidth($filteredPost->description, 0, 180, "...") }}</p>
                                 <a href="{{ route('site.posts.show', $filteredPost->path) }}" class="leia-mais">Leia mais</a>
@@ -29,9 +29,22 @@
                         </div>
                     </div>
                 @empty
-
+                    <div class="row">
+                        <div class="col-12">
+                            <p>
+                                <strong>
+                                    Nenhuma notícia encontrada para essa pesquisa!
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
                 @endforelse
+                <div class="mt-4">
+                    {{ $filteredPosts->appends(request()->query())->links() }}
+                </div>
             </div>
+
+
 
             <!-- end col-md-8  -->
             <div class="col-12 col-md-4">

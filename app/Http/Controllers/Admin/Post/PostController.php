@@ -44,7 +44,7 @@ class PostController extends Controller
     {
         $positionType = PostPositionType::$TYPES;
         $statusType = PostStatusType::$TYPES;
-        $categories = Category::all();
+        $categories = Category::all('name', 'id');
         $edition = false;
 
         return view('admin/pages/posts/create-edit', compact('edition', 'categories', 'statusType', 'positionType'));

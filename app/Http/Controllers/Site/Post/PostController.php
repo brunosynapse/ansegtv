@@ -21,7 +21,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $posts = new Post;
-        $filteredPosts = Post::filter($request->all())->active()->latest()->paginateFilter(15);
+        $filteredPosts = Post::filter($request->all())->active()->latest()->paginateFilter(1);
 
         return view('site.pages.posts.index', compact('posts', 'filteredPosts'));
     }
@@ -56,7 +56,7 @@ class PostController extends Controller
     public function show(string $slug)
     {
         $post = Post::findOrFailBySlug($slug);
-        $relatedPosts = Post::where('category_id', $post->category_id)->where('id', '!=', $post->id )->get();
+        $relatedPosts = Post::where('category_id', $post->category_id)->where('id', '!=', $post->id )->take(4)->get();
 
         SeoToolsPostService::handle($post);
         IncrementCounterViewPostService::handle($post);

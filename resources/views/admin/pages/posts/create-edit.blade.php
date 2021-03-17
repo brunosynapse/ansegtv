@@ -226,7 +226,8 @@
         <script>
             CKEDITOR.replace('content', {
                 filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",
-                filebrowserUploadMethod: 'form'
+                filebrowserUploadMethod: 'form',
+                extraPlugins: 'image2'
             });
         </script>
     @endpush

@@ -19,7 +19,6 @@
                         <div class="single-image-credits text-black font-lato pull-right"> {{$post->image_credit}}</div>
                     @endif
 
-
                     <div class="py-3"></div>
 
                     {!! $post->content !!}
@@ -41,14 +40,12 @@
                         @include('site.components.archives-new')
                 </div>
                 <!-- end col-md-4  -->
-
             </div>
 
             <div class="row">
                 <div class="col-12 col-md-12">
                     <h3 class="super-title">notícias <br>relacionadas</h3>
                 </div>
-
                 @foreach($relatedPosts as $relatedPost)
                     <div class="col-12 col-md-3">
                         <a href="{{route('site.posts.show', $relatedPost->path)}}">
@@ -61,15 +58,11 @@
                         </a>
                     </div>
                 @endforeach
-
             </div>
 
         </div>
-
-
     </section>
 @endsection
-
 
 
 @push('scripts')
