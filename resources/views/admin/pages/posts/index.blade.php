@@ -4,67 +4,73 @@
 
 @section('content')
     <section class="section">
-        <div class="section-header d-flex justify-content-between">
-            <div>
-                <h1>Notícias</h1>
-            </div>
-            <div>
-                <form>
-                    <div class="row">
-                        <input class="form-control col-md-10 col-lg-9" type="search" placeholder="Titulo da notícia"
-                               name="title" aria-label="Search" minlength="4" maxlength="40" value="{{request()->get('title')}}">
-                        <button class="btn col-md-2 col-lg-3" type="submit"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
-            </div>
+        <div class="section-header row justify-content-between">
+                <div class="col-12 col-md-9">
+                    <h1>Notícias</h1>
+                </div>
+                <div class="col-12 col-md-3">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-10">
+                                <input class="form-control" type="search" placeholder="Titulo da notícia"
+                                       name="title" aria-label="Search" minlength="4" maxlength="40" value="{{request()->get('title')}}">
+                            </div>
+                            <div class="col-2">
+                                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
         </div>
         <div class="section-body">
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-0">
                         <div class="card-body">
-                            <ul class="nav nav-pills">
-                                <form action="" method="GET" class="pr-2 pl-2">
-                                    <input type="hidden" name="" value="">
-                                    <div class="d-flex justify-content-end">
+                            <div class="row">
+                                <div class="col-12 col-md-1">
+                                    <form action="" method="GET" class="px-2 px-md-0 py-1">
+                                        <input type="hidden" name="" value="">
                                         <button type="submit"
-                                                class="btn {{!request()->get('status') && !request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} ">
-                                            Todos <span class="badge badge-white">{{ $postsCount->postStatusCount(null, '!=') }}</span></button>
-                                    </div>
-                                </form>
+                                                class="btn {{!request()->get('status') && !request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} w-100">
+                                            Todos <span class="badge badge-white">{{ $postsCount->postStatusCount(null, '!=') }}</span>
+                                        </button>
+                                    </form>
+                                </div>
 
-                                <form action="" method="GET" class="pr-2 pl-2">
-                                    <input type="hidden" name="status" value="{{$type['PUBLISHED']->value}}">
-                                    <div class="d-flex justify-content-end">
+                                <div class="col-12 col-md-2">
+                                    <form action="" method="GET" class="px-2 px-md-0 py-1">
+                                        <input type="hidden" name="status" value="{{$type['PUBLISHED']->value}}">
                                         <button type="submit"
-                                                class="btn {{request()->get('status') == $type['PUBLISHED']->value ? 'btn-primary' : 'btn-outline-primary'}} ">
+                                                class="btn {{request()->get('status') == $type['PUBLISHED']->value ? 'btn-primary' : 'btn-outline-primary'}} w-100">
                                             Publicados <span class="badge badge-white">{{ $postsCount->postStatusCount($type['PUBLISHED']->value)}}</span>
                                         </button>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
 
-                                <form action="" method="GET" class="pr-2 pl-2">
-                                    <input type="hidden" name="status" value="{{$type['PENDING']->value}}">
-                                    <div class="d-flex justify-content-end">
+                                <div class="col-12 col-md-2">
+                                    <form action="" method="GET" class="px-2 px-md-0 py-1">
+                                        <input type="hidden" name="status" value="{{$type['PENDING']->value}}">
                                         <button type="submit"
-                                                class="btn {{request()->get('status') == $type['PENDING']->value ? 'btn-primary' : 'btn-outline-primary'}} ">
+                                                class="btn {{request()->get('status') == $type['PENDING']->value ? 'btn-primary' : 'btn-outline-primary'}} w-100">
                                             Pendentes <span class="badge badge-white">{{ $postsCount->postStatusCount($type['PENDING']->value) }}</span>
                                         </button>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
 
-                                <form action="" method="GET" class="pr-2 pl-2">
-                                    <input type="hidden" name="status" value="{{$type['DRAFT']->value}}">
-                                    <div class="d-flex justify-content-end">
+                                <div class="col-12 col-md-2">
+                                    <form action="" method="GET" class="px-2 px-md-0 py-1">
+                                        <input type="hidden" name="status" value="{{$type['DRAFT']->value}}">
                                         <button type="submit"
-                                                class="btn {{request()->get('status') == $type['DRAFT']->value ? 'btn-primary' : 'btn-outline-primary'}} ">
-                                            Rascunhos <span class="badge badge-white">{{ $postsCount->postStatusCount($type['DRAFT']->value) }}</span></button>
-                                    </div>
-                                </form>
+                                                    class="btn {{request()->get('status') == $type['DRAFT']->value ? 'btn-primary' : 'btn-outline-primary'}} w-100">
+                                                Rascunhos <span class="badge badge-white">{{ $postsCount->postStatusCount($type['DRAFT']->value) }}</span>
+                                        </button>
+                                    </form>
+                                </div>
 
-                                <div class="d-flex justify-content-end">
-                                    <div class="dropdown d-inline mr-2 btn-outline-primary">
-                                        <button class="btn {{request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} dropdown-toggle hidden" type="button"
+                                <div class="col-12 col-md-2">
+                                    <div class="dropdown d-inline px-2 px-md-0 py-1 btn-outline-primary">
+                                        <button class="btn {{request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} dropdown-toggle hidden w-100" type="button"
                                                 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">
                                             Publicações em Destaques
@@ -85,7 +91,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
