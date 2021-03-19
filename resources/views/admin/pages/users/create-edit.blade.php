@@ -39,7 +39,7 @@
                                 </div>
 
                                 <div class="form-group col-md-3 col-12">
-                                    <label>{{ __('Password') }}</label>
+                                    <label>Senha</label>
                                     <label for="password" class="col-md-4 col-form-label text-md-right"></label>
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" rautocomplete="new-password">
                                     @error('password')
@@ -50,7 +50,7 @@
                                 </div>
 
                                 <div class="form-group col-md-3 col-12">
-                                    <label>{{ __('Confirm Password') }}</label>
+                                    <label>Confirme sua Senha</label>
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                                 </div>
                             </div>
