@@ -68,7 +68,7 @@
                                     </form>
                                 </div>
 
-                                <div class="col-12 col-md-2">
+                                <div class="col-12 col-md-2 mt-1">
                                     <div class="dropdown d-inline px-2 px-md-0 py-1 btn-outline-primary">
                                         <button class="btn {{request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} dropdown-toggle hidden w-100" type="button"
                                                 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
