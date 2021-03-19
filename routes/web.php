@@ -20,6 +20,9 @@ Route::group([
         ->name('posts.delete.main-image');
 });
 
+
+Route::redirect('/admin', '/admin/posts');
+
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
 });

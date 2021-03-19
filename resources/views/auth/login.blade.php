@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="simple-footer">
-                    Copyright &copy; Secovi
+                    Copyright &copy; ANSEGTV - {{date('Y')}}
                 </div>
             </div>
         </div>
