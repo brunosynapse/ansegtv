@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 
@@ -100,11 +101,13 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        if($category->posts()->count()){
+        try{
+            $category->delete();
+        } catch (\Exception $exception) {
+            Log::info($exception);
+
             return redirect()->back()->with('error', 'Não foi possível excluir! Categoria vinculada vinculada à Noticias.');
         }
-
-        $category->delete();
 
         return redirect()->route('admin.categories.index');
     }

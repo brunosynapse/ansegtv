@@ -28,6 +28,7 @@
   <component name="ChangeListManager">
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoryController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +187,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/ckeditor4_bkp/plugins" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rituaali-front" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -276,6 +277,17 @@
       <workItem from="1615898950813" duration="6660000" />
       <workItem from="1615925970902" duration="127000" />
       <workItem from="1615984135053" duration="13678000" />
+      <workItem from="1616013953415" duration="107000" />
+      <workItem from="1616089982779" duration="39000" />
+      <workItem from="1616090243933" duration="1239000" />
+      <workItem from="1616166520590" duration="6886000" />
+      <workItem from="1616416137849" duration="9000" />
+      <workItem from="1616505327725" duration="666000" />
+      <workItem from="1616610484626" duration="394000" />
+      <workItem from="1616668061918" duration="14000" />
+      <workItem from="1616672361956" duration="620000" />
+      <workItem from="1616704599131" duration="752000" />
+      <workItem from="1616709321032" duration="89000" />
     </task>
     <servers />
   </component>
