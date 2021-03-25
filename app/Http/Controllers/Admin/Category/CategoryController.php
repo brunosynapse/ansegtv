@@ -101,14 +101,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        try{
             $category->delete();
-        } catch (\Exception $exception) {
-            Log::info($exception);
-
-            return redirect()->back()->with('error', 'Não foi possível excluir! Categoria vinculada vinculada à Noticias.');
-        }
-
         return redirect()->route('admin.categories.index');
     }
 }
