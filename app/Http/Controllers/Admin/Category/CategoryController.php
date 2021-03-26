@@ -103,7 +103,7 @@ class CategoryController extends Controller
     {
 
         if($category->posts()->count()){
-            return redirect()->back()->with('error', 'Não foi possível excluir! Categoria vinculada vinculada à Noticias.');
+            return redirect()->back()->with('error', 'Não foi possível excluir! Categoria vinculada à Noticias.');
         }
 
         $category->delete();
