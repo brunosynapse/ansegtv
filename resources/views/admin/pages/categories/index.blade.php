@@ -68,13 +68,13 @@
                                                                 class="fas fa-pen"></i> Editar</a>
                                                         <form
                                                             action="{{ route('admin.categories.destroy', $category->id) }}"
-                                                            id="deleteCategoryForm" method="post">
+                                                            id="deleteCategoryForm-{{ $category->id }}" method="post">
                                                             @csrf
                                                             @method('DELETE')
                                                         </form>
                                                         <a class="dropdown-item" href="javascript:;"
                                                            data-confirm="Certeza? | Não apague se essa categoria estiver vinculada à alguma notícia!"
-                                                           data-confirm-yes="$('#deleteCategoryForm').submit()">
+                                                           data-confirm-yes="$('#deleteCategoryForm-{{ $category->id }}').submit()">
                                                             <i class="fas fa-trash"></i>
                                                             Excluir
                                                         </a>

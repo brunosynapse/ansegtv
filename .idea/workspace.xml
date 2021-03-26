@@ -27,7 +27,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/categories/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +288,7 @@
       <workItem from="1616668061918" duration="14000" />
       <workItem from="1616672361956" duration="620000" />
       <workItem from="1616704599131" duration="752000" />
-      <workItem from="1616709321032" duration="192000" />
+      <workItem from="1616709321032" duration="1355000" />
     </task>
     <servers />
   </component>
@@ -294,12 +296,12 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
+    <option name="COLUMN_ID_ORDER">
       <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
       </list>
     </option>
   </component>
