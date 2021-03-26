@@ -50,7 +50,7 @@
                     <div class="col-12 col-md-3">
 
                         <a href="{{route('site.posts.show', $relatedPost->path)}}">
-                            <div class="relateds-container" style="background-image: url('{{ $relatedPost->image ? asset("storage/".$relatedPost->image) : asset('images/img-default-ansegtv.jpg') }}');">
+                            <div class="relateds-container" style="background-image: url('{{ $relatedPost->image ? asset("storage/".$relatedPost->image) : asset('images/default-ansegtv.jpg') }}');">
                                 <div class="relateds-overlay">
                                     <span class="relateds-date font-lato date-style text-white">{{ $relatedPost->formatted_date }}</span>
                                 </div>
