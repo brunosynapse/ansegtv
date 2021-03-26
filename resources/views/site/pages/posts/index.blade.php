@@ -13,7 +13,7 @@
 
                         <div class="row py-4 news-finded">
                             <div class="col-12 col-md-5">
-                                <a href=""><img src="{{ $filteredPost->image ? asset("storage/".$filteredPost->image) : '' }}" alt="Imagem principal da notícia {{ $filteredPost->title }}" class="img-fluid"></a>
+                                <a href="{{ route('site.show', $filteredPost->path) }}"><img src="{{ $filteredPost->image ? asset("storage/".$filteredPost->image) : asset('images/img-default-ansegtv.jpg') }}" alt="Imagem principal da notícia {{ $filteredPost->title }}" class="img-fluid"></a>
                             </div>
                             <div class="col-12 col-md-7">
                                 <div class="info">

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -27,7 +30,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47b2cd31-b2f8-4eab-8518-5400539c36d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/img-default-ansegtv.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/pages/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/pages/posts/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +192,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rituaali-front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -199,10 +205,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/public/ckeditor4_bkp/plugins" />
       <recent name="$PROJECT_DIR$/public/images/uploads" />
       <recent name="$PROJECT_DIR$/public/images/upload" />
-      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/public/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -287,6 +293,8 @@
       <workItem from="1616672361956" duration="620000" />
       <workItem from="1616704599131" duration="752000" />
       <workItem from="1616709321032" duration="1355000" />
+      <workItem from="1616763578493" duration="438000" />
+      <workItem from="1616768396873" duration="1036000" />
     </task>
     <servers />
   </component>
