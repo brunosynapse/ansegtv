@@ -188,7 +188,7 @@
 
                             <div class="form-group">
                                 <div class="card-header mb-3">
-                                    <h4 class="text-dark">Data de Criação da Publicação</h4>
+                                    <h4 class="text-dark">Data da Publicação</h4>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-10">
@@ -203,6 +203,9 @@
                                         </span>
                                             @enderror
                                         </div>
+                                        <small class="text-warning">
+                                            Para agendar uma notícia escolha uma data futura.
+                                        </small>
                                     </div>
                                 </div>
                             </div>

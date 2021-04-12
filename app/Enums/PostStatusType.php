@@ -12,15 +12,15 @@ final class PostStatusType extends Enum
 
     public static $TYPES = [
         self::PUBLISHED => [
-            'translation' => 'Publicado',
+            'translation' => 'Publicada',
             'class' => 'success',
         ],
         self::PENDING => [
-            'translation' => 'Pendente',
-            'class' => 'light',
+            'translation' => 'Agendada',
+            'class' => 'warning',
         ],
         self::DRAFT => [
-            'translation' => 'Rascunho',
+            'translation' => 'Não publicada',
             'class' => 'dark',
         ],
     ];

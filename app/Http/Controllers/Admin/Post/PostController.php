@@ -30,7 +30,7 @@ class PostController extends Controller
         $posts = Post::filter($request->all())->latest()->paginateFilter(15);
 
         return view(
-            'admin/pages/posts/index',
+            'admin.pages.posts.index',
             compact('posts', 'postsCount', 'type', 'statusType')
         );
     }
@@ -47,7 +47,7 @@ class PostController extends Controller
         $categories = Category::all('name', 'id');
         $edition = false;
 
-        return view('admin/pages/posts/create-edit', compact('edition', 'categories', 'statusType', 'positionType'));
+        return view('admin.pages.posts.create-edit', compact('edition', 'categories', 'statusType', 'positionType'));
     }
 
     /**
@@ -66,6 +66,14 @@ class PostController extends Controller
         }
 
         $data = $request->all();
+
+        if ($data['status'] == PostStatusType::PENDING && now() >= Carbon::parse($data['created_at'])) {
+            $data['status'] = PostStatusType::DRAFT;
+        }
+
+        if(now() < Carbon::parse($data['created_at']) && $data['status'] != PostStatusType::DRAFT) {
+            $data['status'] = PostStatusType::PENDING;
+        };
 
         if ($request->hasFile('image')) {
             $upload = new UploadService();
@@ -111,7 +119,7 @@ class PostController extends Controller
         $categories = Category::all();
         $edition = true;
 
-        return view('admin/pages/posts/create-edit', compact('post', 'edition', 'categories', 'statusType', 'positionType'));
+        return view('admin.pages.posts.create-edit', compact('post', 'edition', 'categories', 'statusType', 'positionType'));
     }
 
     /**
@@ -131,6 +139,14 @@ class PostController extends Controller
         }
 
         $data = $request->all();
+
+        if ($data['status'] == PostStatusType::PENDING && now() >= Carbon::parse($data['created_at'])) {
+            $data['status'] = PostStatusType::DRAFT;
+        }
+
+        if(now() < Carbon::parse($data['created_at']) && $data['status'] != PostStatusType::DRAFT) {
+            $data['status'] = PostStatusType::PENDING;
+        };
 
         $data['created_at'] = Carbon::parse($data['created_at']);
 
