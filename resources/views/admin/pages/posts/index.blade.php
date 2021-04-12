@@ -28,7 +28,7 @@
                     <div class="card mb-0">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-12 col-md-1">
+                                <div class="col-12 col-md-2">
                                     <form action="" method="GET" class="px-2 px-md-0 py-1">
                                         <input type="hidden" name="" value="">
                                         <button type="submit"
