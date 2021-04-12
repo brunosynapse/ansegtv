@@ -83,6 +83,11 @@ class Post extends Model
         return $query->where('status', PostStatusType::PUBLISHED);
     }
 
+    public function scopePending($query) //pending
+    {
+        return $query->where('status', PostStatusType::PENDING);
+    }
+
     public function scopeFindOrFailBySlug($query, $slug)  //findBySlug
     {
         $users = $query->where('path', $slug)->get();

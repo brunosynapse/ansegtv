@@ -196,7 +196,7 @@
                                             <input type="datetime-local"
                                                    class="form-control @error('created_at') is-invalid @enderror"
                                                    name="created_at"
-                                                   value="{{$edition ? $post->created_at->format('Y-m-d\TH:m') : date('Y-m-d\TH:m')}}">
+                                                   value="{{$edition ? $post->created_at->format('Y-m-d\TH:i') : date('Y-m-d\T:i')}}">
                                             @error('created_at')
                                             <span class="invalid-feedback" role="alert">
                                            {{ $message }}
