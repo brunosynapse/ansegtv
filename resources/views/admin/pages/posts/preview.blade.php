@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-12 col-md-8 content-news">
                     <div class="info-news-container py-3">
-                        <a href="#" class="link-path">{{$post->formatted_date}}</a> <a href="#" class="link-path">{{ $post->formatted_category_name }}</a> <a href="#" class="link-path">{{ $post->formatted_user }}</a>
+                        <a href="#" class="link-path">{{$post->formatted_date}}</a> <a href="#" class="link-path">{{ $post->formatted_category_name }}</a>
                     </div>
                     <h1 class="font-lato super-title text-left">{{$post->title}}</h1>
 

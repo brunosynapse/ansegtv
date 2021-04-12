@@ -17,7 +17,6 @@
                             <div class="info">
                                 <a href="{{ route('site.posts.show', $filteredPost->path) }}" class="data"><span>{{ $filteredPost->formatted_date }}</span></a>
                                 <a href="{{ route('site.posts.show', $filteredPost->path) }}" class="categoria"><span>{{ $filteredPost->formatted_category_name }}</span></a>
-                                <a href="{{ route('site.posts.show', $filteredPost->path) }}" class="autor"><span>{{ $filteredPost->formatted_user }}</span></a>
                             </div>
                             <div class="texto">
                                 <a href="{{ route('site.posts.show', $filteredPost->path) }}">
@@ -44,8 +43,6 @@
                 </div>
             </div>
 
-
-
             <!-- end col-md-8  -->
             <div class="col-12 col-md-4">
                 <div class="col-12 pesquisar my-2 mb-4">
@@ -65,12 +62,9 @@
             </div>
             <!-- end col-md-4  -->
 
-
         </div>
     </div>
 </section>
-
-
 
 @endsection
 

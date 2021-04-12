@@ -158,7 +158,7 @@
                                             </td>
 
                                             <td>
-                                                {{ $post->author }}
+                                                {{ $post->formatted_user }}
                                             </td>
                                             <td>{{$post->created_at->translatedFormat('d/m/Y')}}</td>
                                             <td>
