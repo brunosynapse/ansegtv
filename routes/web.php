@@ -18,6 +18,7 @@ Route::group([
         ->name('ckeditor.image-upload');
     Route::post('/post/{id}/edit/delete-main-image', 'Post\PostController@deleteMainImage')
         ->name('posts.delete.main-image');
+    Route::get('/post-preview/{slug}', 'Post\PostPreviewController')->name('post.preview.show');
 });
 
 

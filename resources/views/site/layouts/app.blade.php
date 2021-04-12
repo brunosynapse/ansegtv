@@ -52,6 +52,9 @@
     <!--  End Google Tag Manager (noscript) -->
 @endif
 
+
+@stack('banner')
+
 @include('site/partials.navbar')
 
 <div id="app">

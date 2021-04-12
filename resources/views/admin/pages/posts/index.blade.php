@@ -125,6 +125,8 @@
                                                 <div class="table-links row ml-1">
                                                     <a href="{{route('admin.posts.edit', $post->id)}}">Editar</a>
                                                     <div class="bullet"></div>
+                                                    <a class="text-info" target="_blank" href="{{route('admin.post.preview.show', $post->path)}}">Pré-visualizar</a>
+                                                    <div class="bullet"></div>
                                                     <form action="{{route('admin.posts.destroy', $post->id)}}"
                                                           id="deletePostForm{{$post->id}}" method="post">
                                                         @csrf
