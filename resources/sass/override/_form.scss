@@ -104,6 +104,12 @@ select.form-control:not([size]):not([multiple]) {
     }
   }
 }
+.custom-switch-description {
+    color: #000;
+}
+.form-group input, .form-group select, .form-group textarea{
+    border: 1px solid #4b4848;
+}
 
 .input-group-append [class*="btn-outline-"] {
   background-color: color_lighten(primary, 32.4%);
