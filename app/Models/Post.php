@@ -43,6 +43,15 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getAuthorAttribute()
+    {
+        if($this->user){
+            return $this->user->name;
+        }
+
+        return 'Usuário não vinculado';
+    }
+
     public function status($status = null)
     {
         $opStatus = PostStatusType::getInstances();
