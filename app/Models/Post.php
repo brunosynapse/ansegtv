@@ -146,7 +146,7 @@ class Post extends Model
 
     public function scopeOrderedByCreatedAt($query)  //orderedByCreatedAt
     {
-        return $query->filter->orderBy('created_at', 'DESC')->get();
+        return $query->filter->latest()->get();
     }
 
     public function scopeArchivedPosts($query, $month, $year) //archivedPosts

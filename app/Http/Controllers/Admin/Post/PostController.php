@@ -27,7 +27,7 @@ class PostController extends Controller
         $type = PostStatusType::getInstances();
         $statusType = PostStatusType::$TYPES;
         $postsCount = new Post;
-        $posts = Post::filter($request->all())->orderBy('created_at', 'DESC')->paginateFilter(15);
+        $posts = Post::filter($request->all())->latest()->paginateFilter(15);
 
         return view(
             'admin/pages/posts/index',
