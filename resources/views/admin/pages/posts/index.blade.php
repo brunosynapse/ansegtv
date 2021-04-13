@@ -43,7 +43,7 @@
                                         <input type="hidden" name="status" value="{{$type['PUBLISHED']->value}}">
                                         <button type="submit"
                                                 class="btn {{request()->get('status') == $type['PUBLISHED']->value ? 'btn-primary' : 'btn-outline-primary'}} w-100">
-                                            Publicados <span class="badge badge-white">{{ $postsCount->postStatusCount($type['PUBLISHED']->value)}}</span>
+                                            Publicada <span class="badge badge-white">{{ $postsCount->postStatusCount($type['PUBLISHED']->value)}}</span>
                                         </button>
                                     </form>
                                 </div>
@@ -53,7 +53,7 @@
                                         <input type="hidden" name="status" value="{{$type['PENDING']->value}}">
                                         <button type="submit"
                                                 class="btn {{request()->get('status') == $type['PENDING']->value ? 'btn-primary' : 'btn-outline-primary'}} w-100">
-                                            Pendentes <span class="badge badge-white">{{ $postsCount->postStatusCount($type['PENDING']->value) }}</span>
+                                            Agendada <span class="badge badge-white">{{ $postsCount->postStatusCount($type['PENDING']->value) }}</span>
                                         </button>
                                     </form>
                                 </div>
@@ -73,7 +73,7 @@
                                         <button class="btn {{request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} dropdown-toggle hidden w-100" type="button"
                                                 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">
-                                            Publicações em Destaques
+                                            Notícias em Destaques
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" style="">
                                             <form>
