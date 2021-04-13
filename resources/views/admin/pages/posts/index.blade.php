@@ -28,8 +28,8 @@
                     <div class="card mb-0">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-12 col-md-2">
-                                    <form action="" method="GET" class="px-2 px-md-0 py-1">
+                                <div class="col-12 col-sm-6 col-xl-2">
+                                    <form action="" method="GET" class="py-1">
                                         <input type="hidden" name="" value="">
                                         <button type="submit"
                                                 class="btn {{!request()->get('status') && !request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} w-100">
@@ -38,8 +38,8 @@
                                     </form>
                                 </div>
 
-                                <div class="col-12 col-md-2">
-                                    <form action="" method="GET" class="px-2 px-md-0 py-1">
+                                <div class="col-12 col-sm-6 col-xl-2">
+                                    <form action="" method="GET" class="py-1">
                                         <input type="hidden" name="status" value="{{$type['PUBLISHED']->value}}">
                                         <button type="submit"
                                                 class="btn {{request()->get('status') == $type['PUBLISHED']->value ? 'btn-primary' : 'btn-outline-primary'}} w-100">
@@ -48,8 +48,8 @@
                                     </form>
                                 </div>
 
-                                <div class="col-12 col-md-2">
-                                    <form action="" method="GET" class="px-2 px-md-0 py-1">
+                                <div class="col-12 col-sm-6 col-xl-2">
+                                    <form action="" method="GET" class="py-1">
                                         <input type="hidden" name="status" value="{{$type['PENDING']->value}}">
                                         <button type="submit"
                                                 class="btn {{request()->get('status') == $type['PENDING']->value ? 'btn-primary' : 'btn-outline-primary'}} w-100">
@@ -58,8 +58,8 @@
                                     </form>
                                 </div>
 
-                                <div class="col-12 col-md-2">
-                                    <form action="" method="GET" class="px-2 px-md-0 py-1">
+                                <div class="col-12 col-sm-6 col-xl-2">
+                                    <form action="" method="GET" class="py-1">
                                         <input type="hidden" name="status" value="{{$type['DRAFT']->value}}">
                                         <button type="submit"
                                                     class="btn {{request()->get('status') == $type['DRAFT']->value ? 'btn-primary' : 'btn-outline-primary'}} w-100">
@@ -68,8 +68,8 @@
                                     </form>
                                 </div>
 
-                                <div class="col-12 col-md-2 mt-1">
-                                    <div class="dropdown d-inline px-2 px-md-0 py-1 btn-outline-primary">
+                                <div class="col-12 mt-1 col-xl-3">
+                                    <div class="dropdown d-inline py-1 btn-outline-primary">
                                         <button class="btn {{request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} dropdown-toggle hidden w-100" type="button"
                                                 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">
