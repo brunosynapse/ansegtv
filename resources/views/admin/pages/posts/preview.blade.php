@@ -71,7 +71,7 @@
         <div class="container">
             <div class="p-2 text-center">
                 <h4 class="text-white">
-                    Essa é uma página de pré-visualização de notícia!
+                    Essa é uma página de pré-visualização de notícia.
                 </h4>
             </div>
         </div>
