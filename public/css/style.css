@@ -1044,7 +1044,7 @@ text#label_state_mt {
     margin-bottom:20px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center right;
+    background-position: inherit;
 
 }
 
@@ -1081,7 +1081,7 @@ text#label_state_mt {
     margin-bottom:15px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center right;
+    background-position: inherit;
 
 }
 
