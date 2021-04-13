@@ -13,6 +13,7 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -58,13 +59,6 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        if ($position = $request->highlight_position) {
-            $featuredPost = Post::highlight($position)->first();
-            if ($featuredPost) {
-                $featuredPost->update(['highlight_position' => null]);
-            }
-        }
-
         $data = $request->all();
 
         if ($data['status'] == PostStatusType::PENDING && now() >= Carbon::parse($data['created_at'])) {
@@ -73,6 +67,23 @@ class PostController extends Controller
 
         if(now() < Carbon::parse($data['created_at']) && $data['status'] != PostStatusType::DRAFT) {
             $data['status'] = PostStatusType::PENDING;
+
+            Log::channel('post_save')->info('A notícia: '.$data['path'].' foi agendada pelo usuário de id: '.Auth::id());
+
+
+            if ($position = $request->highlight_position) {
+                $data['highlight_position_scheduled'] = $position;
+
+                Log::channel('post_save')->info('A notícia: '.$data['path'].' foi agendada com a posição de destaque: '. $position.' pelo usuário de id: '.Auth::id());
+                $data['highlight_position'] = null;
+            }
+        } else {
+            if ($position = $request->highlight_position) {
+                $featuredPost = Post::highlight($position)->first();
+                if ($featuredPost) {
+                    $featuredPost->update(['highlight_position' => null]);
+                }
+            }
         };
 
         if ($request->hasFile('image')) {
@@ -131,13 +142,6 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        if ($position = $request->highlight_position) {
-            $featuredPost = Post::highlight($position)->first();
-            if ($featuredPost && $featuredPost->id != $post->id) {
-                $featuredPost->update(['highlight_position' => null]);
-            }
-        }
-
         $data = $request->all();
 
         if ($data['status'] == PostStatusType::PENDING && now() >= Carbon::parse($data['created_at'])) {
@@ -146,7 +150,23 @@ class PostController extends Controller
 
         if(now() < Carbon::parse($data['created_at']) && $data['status'] != PostStatusType::DRAFT) {
             $data['status'] = PostStatusType::PENDING;
-        };
+
+            Log::channel('post_save')->info('A notícia de id: '.$post->id . ' foi agendada pelo usuário de id: '.Auth::id());
+
+            if ($position = $request->highlight_position) {
+                $data['highlight_position_scheduled'] = $position;
+
+                Log::channel('post_save')->info('A notícia de id: '.$post->id . ' foi agendada com a posição de destaque: '. $position.' pelo usuário de id: '.Auth::id());
+                $data['highlight_position'] = null;
+            }
+        }else {
+            if ($position = $request->highlight_position) {
+                $featuredPost = Post::highlight($position)->first();
+                if ($featuredPost && $featuredPost->id != $post->id) {
+                    $featuredPost->update(['highlight_position' => null]);
+                }
+            }
+        }
 
         $data['created_at'] = Carbon::parse($data['created_at']);
 

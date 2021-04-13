@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 
 class PublishPendingPosts extends Command
 {
+    protected $HighLightPositionHasChange = false;
     /**
      * The name and signature of the console command.
      *
@@ -43,20 +44,53 @@ class PublishPendingPosts extends Command
         try {
             $posts = Post::where('status', PostStatusType::PENDING)
                 ->whereDate('created_at', '<=', now())
-                ->get(['id', 'status']);
+                ->get(['id', 'status', 'highlight_position_scheduled', 'highlight_position']);
 
             if ($posts->count()) {
-                Log::info('Notícias encontrados: '.$posts);
+                Log::channel('publish_pending_posts')->info('Notícias encontradas: '.$posts);
             }
 
             foreach ($posts as $post) {
-                $post->status = PostStatusType::PUBLISHED;
-                $post->save();
+                    Log::channel('publish_pending_posts')->info('Post atual: '.$post->id);
 
-                Log::info('A notícia de id: '.$post->id.' foi marcada como publicada');
+                $post->status = PostStatusType::PUBLISHED;
+                Log::channel('publish_pending_posts')->info('A notica de id: '.$post->id.' foi publicada');
+
+                if ($post->highlight_position_scheduled) {
+
+                    Log::channel('publish_pending_posts')->info('A noticia de id: '. $post->id.' tem uma posição de destaque agendada');
+
+                    $featuredPosts = Post::where('highlight_position', $post->highlight_position_scheduled)->get();
+
+                    Log::channel('publish_pending_posts')->info('As seguintes noticias tinham a posição de destaque: '.$post->highlight_position_scheduled. ' serão marcados como NULL');
+
+                    foreach ($featuredPosts as $featuredPost) {
+
+                        Log::channel('publish_pending_posts')->info('A notícia de id: '.$featuredPost->id.' teve sua posição de destaque marcada como null');
+                        $featuredPost->highlight_position = null;
+                        $featuredPost->save();
+                    }
+
+//                    Log::channel('post_save')->info('Posts encontrados: '.$featuredPost);
+
+                    $post->highlight_position = $post->highlight_position_scheduled;
+
+                    $post->highlight_position_scheduled = null;
+
+                    $this->HighLightPositionHasChange = true;
+
+                    $post->save();
+                }
+
+
+                if ($this->HighLightPositionHasChange) {
+                    Log::channel('publish_pending_posts')->info('A notícia de id: '.$post->id.' foi marcada como publicada e destaque '.$post->highlight_position);
+                } else{
+                    Log::channel('publish_pending_posts')->info('A notícia de id: '.$post->id.' foi marcada como publicada');
+                }
             }
         }catch (\Exception $exception) {
-            Log::info('Falha ao rodar command:publishpendingposts: '.$exception->getMessage());
+            Log::channel('publish_pending_posts')->info('Falha ao rodar command:publishpendingposts: '.$exception->getMessage());
         }
     }
 }

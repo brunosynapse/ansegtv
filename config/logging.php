@@ -41,6 +41,18 @@ return [
             'ignore_exceptions' => false,
         ],
 
+        'post_save' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/'.date('Y-m-d').'-post-save.log'),
+            'level' => 'debug',
+        ],
+
+        'publish_pending_posts' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/'.date('Y-m-d').'-publish-pending-posts.log'),
+            'level' => 'debug',
+        ],
+
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
