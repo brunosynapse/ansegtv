@@ -1,6 +1,7 @@
 @extends('site/layouts.app')
 
 @section('content')
+    <div class="sharethis-inline-share-buttons" data-url="http://sharethis.com" data-title="Sharing is great!"></div>
     <section id="news-body" class="mt-5">
         <div class="container">
             <div class="row">
@@ -65,7 +66,6 @@
     </section>
 @endsection
 
-
 @push('scripts')
     <script type="text/javascript">
         $('.carousel').carousel({
@@ -94,5 +94,6 @@
             });
         }
     </script>
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5fd0e060463b820018e6f76a&product=sop' async='async'></script>
 @endpush
 
