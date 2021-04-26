@@ -1192,6 +1192,12 @@ text#label_state_mt {
     text-transform: uppercase;
     color:var(--marrom-primario);
     text-decoration: none;
+
+}
+
+.all-news-link h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .all-news-link:hover{

@@ -19,7 +19,7 @@
                                     <input type="hidden" value="{{$category->id}}" name="id">
                                 @endif
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nome da Categoria</label>
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nome da categoria</label>
                                     <div class="col-sm-12 col-md-7">
                                         <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $edition ? $category->name : old('name') }}">
                                         @error('name')
@@ -32,7 +32,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                     <div class="col-sm-12 col-md-7">
-                                        <button type="submit" class="btn btn-success">Salvar Categoria</button>
+                                        <button type="submit" class="btn btn-success">Salvar categoria</button>
                                     </div>
                                 </div>
                             </form>

@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>{{ $edition ? 'Editar' : 'Criar' }} Notícia</h1>
+            <h1>{{ $edition ? 'Editar' : 'Criar' }} notícia</h1>
         </div>
         <div class="section-body">
             <form action="{{ $edition ? route('admin.posts.update', $post->id) : route('admin.posts.store')}}"
@@ -21,11 +21,11 @@
                                 <div class="card-body">
                                     <div class="card-body">
 
-                                        <div class="section-title mt-0">Título da Notícia</div>
+                                        <div class="section-title mt-0">Título da notícia</div>
                                         <div class="form-group">
                                             <input type="text" class="form-control @error('title') is-invalid @enderror"
                                                    name="title" value="{{ $edition ? $post->title : old('title') }}"
-                                                   autocomplete="title" placeholder="Título da Notícia">
+                                                   autocomplete="title" placeholder="Título da notícia">
                                             @error('title')
                                             <span class="invalid-feedback" role="alert">
                                             {{ $message }}
@@ -33,7 +33,7 @@
                                             @enderror
                                         </div>
 
-                                        <div class="section-title mt-0">Imagem Principal</div>
+                                        <div class="section-title mt-0">Imagem principal</div>
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <div class="form-group">
@@ -66,7 +66,7 @@
                                                         </span>
                                                     </div>
                                                 @else
-                                                    <h5 class="pt-2"><small class="text-danger">Essa Notícia não tem uma
+                                                    <h5 class="pt-2"><small class="text-danger">Essa notícia não tem uma
                                                             imagem definida!</small></h5>
                                                 @endif
                                             </div>
@@ -84,7 +84,7 @@
                                             @enderror
                                         </div>
 
-                                        <div class="section-title mt-0">Descrição da Notícia</div>
+                                        <div class="section-title mt-0">Descrição da notícia</div>
                                         <div class="form-group">
                                             <textarea
                                                 class="form-control h-100 @error('description') is-invalid @enderror"
@@ -97,7 +97,7 @@
                                             @enderror
                                         </div>
 
-                                        <div class="section-title mt-0">Conteúdo</div>
+                                        <div class="section-title mt-0">Conteúdo da notícia</div>
                                         <div class="form-group">
                                             <textarea id="content" name="content" rows="10" cols="80">
                                                 {{ $edition ? $post->content : old('content') }}
@@ -106,7 +106,7 @@
                                         <div class="form-group">
                                             <div class="row justify-content-end">
                                                 <div class="p-3">
-                                                    <button type="submit" class="btn btn-success">Salvar Notícia
+                                                    <button type="submit" class="btn btn-success">Salvar notícia
                                                     </button>
                                                 </div>
                                             </div>
@@ -121,7 +121,7 @@
                             <div class="form-group">
                                 <div class="card-header mb-3">
                                     <h4 class="text-dark">Posição de
-                                        Destaque {{$edition ? $post->highlight_position ? 'Atual: '.$post->highlight_position: '' : ''}}</h4>
+                                        destaque {{$edition ? $post->highlight_position ? 'Atual: '.$post->highlight_position: '' : ''}}</h4>
                                 </div>
                                 <div class="custom-switches-stacked">
                                     @foreach($positionType as $key => $value)
@@ -161,7 +161,7 @@
 
                             <div class="form-group">
                                 <div class="card-header mb-3">
-                                    <h4 class="text-dark">Situação da Publicação</h4>
+                                    <h4 class="text-dark">Situação da publicação</h4>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-10">
@@ -188,7 +188,7 @@
 
                             <div class="form-group">
                                 <div class="card-header mb-3">
-                                    <h4 class="text-dark">Data da Publicação</h4>
+                                    <h4 class="text-dark">Data da publicação</h4>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-10">

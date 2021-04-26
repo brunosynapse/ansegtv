@@ -73,7 +73,7 @@
                                         <button class="btn {{request()->get('highlight') ? 'btn-primary' : 'btn-outline-primary'}} dropdown-toggle hidden w-100" type="button"
                                                 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">
-                                            Notícias em Destaques
+                                            Notícias em destaques
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" style="">
                                             <form>
@@ -110,11 +110,11 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Título da Notícia</th>
+                                        <th>Título da notícia</th>
                                         <th>Categoria</th>
                                         <th>Slug</th>
                                         <th>Autor</th>
-                                        <th>Data de Criação</th>
+                                        <th>Data de criação</th>
                                         <th>Status</th>
                                     </tr>
                                     </thead>

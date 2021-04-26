@@ -32,7 +32,7 @@
                         @hasrole('admin')
                             <div class="card-header d-flex justify-content-end">
                                 <a href="{{ route('admin.users.create') }}" class="btn btn-primary">
-                                    Criar Usuário
+                                    Criar usuário
                                 </a>
                             </div>
                         @endhasrole
@@ -75,9 +75,9 @@
                                                         </form>
                                                         <a class="dropdown-item" href="javascript:;" onclick="$('#roleUserForm{{$user->id}}').submit()">
                                                             @if($user->hasrole($types['ADMIN']->value))
-                                                                <i class="fas fa-user-shield"></i> Definir Usuário
+                                                                <i class="fas fa-user-shield"></i> Definir usuário
                                                             @else
-                                                                <i class="fas fa-user"></i> Definir Administrador
+                                                                <i class="fas fa-user"></i> Definir administrador
                                                             @endif
                                                         </a>
                                                         @endrole

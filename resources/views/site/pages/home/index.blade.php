@@ -67,7 +67,7 @@
             <div class="col-12 col-md-4 sidebar">
                 <div class="col-12 mais-lidas">
                     <div class="title-headers">
-                        <h3 class="super-title">Mais Lidas</h3>
+                        <h3 class="super-title">Mais lidas</h3>
                         <hr>
                     </div>
                     <div class="col">

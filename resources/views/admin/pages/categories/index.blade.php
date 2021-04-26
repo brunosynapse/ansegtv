@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-end">
                             <a href="{{ route('admin.categories.create') }}" class="btn btn-primary no-shadow">
-                                Criar Categoria
+                                Criar categoria
                             </a>
                         </div>
                         <div class="card-body p-0">
