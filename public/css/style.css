@@ -998,9 +998,7 @@ text#label_state_mt {
 
 
 
-    .main-news{ margin-left:20px !important; }
-
-    .sidebar-news{ margin-left:-30px !important; }
+    .main-news{ margin-left:0px !important; }
 
     .left-most-recents{
         margin-left:30px;
@@ -1044,7 +1042,7 @@ text#label_state_mt {
     margin-bottom:20px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: inherit;
+    background-position: center center;
 
 }
 
@@ -1163,7 +1161,7 @@ text#label_state_mt {
     right:10px !important;
 }
 .date-style{
-    font-size:12px;
+    font-size:13px;
     text-align:left;
     line-height: 23px;
 }
@@ -1236,7 +1234,7 @@ text#label_state_mt {
     font-weight: bold;
 }
 .desc-recents{
-    font-size:12px;
+    font-size:14px;
     line-height: 15px;
     color:#707070;
     text-align: justify !important;
