@@ -61,11 +61,14 @@ class PostController extends Controller
     {
         $data = $request->all();
 
-        if ($data['status'] == PostStatusType::PENDING && now() >= Carbon::parse($data['created_at'])) {
-            $data['status'] = PostStatusType::DRAFT;
+        if (isset($data['status'])) {
+            if ($data['status'] == PostStatusType::PENDING && now() >= Carbon::parse($data['created_at'])) {
+                $data['status'] = PostStatusType::DRAFT;
+            }
+
         }
 
-        if(now() < Carbon::parse($data['created_at']) && $data['status'] != PostStatusType::DRAFT) {
+        if(now() < Carbon::parse($data['created_at']) && isset($data['status']) && $data['status'] != PostStatusType::DRAFT) {
             $data['status'] = PostStatusType::PENDING;
 
             Log::channel('post_save')->info('A notícia: '.$data['path'].' foi agendada pelo usuário de id: '.Auth::id());
@@ -144,11 +147,14 @@ class PostController extends Controller
     {
         $data = $request->all();
 
-        if ($data['status'] == PostStatusType::PENDING && now() >= Carbon::parse($data['created_at'])) {
-            $data['status'] = PostStatusType::DRAFT;
+        if(isset($data['status'])) {
+            if ($data['status'] == PostStatusType::PENDING && now() >= Carbon::parse($data['created_at'])) {
+                $data['status'] = PostStatusType::DRAFT;
+            }
         }
 
-        if(now() < Carbon::parse($data['created_at']) && $data['status'] != PostStatusType::DRAFT) {
+
+        if(now() < Carbon::parse($data['created_at']) && isset($data['status']) && $data['status'] != PostStatusType::DRAFT) {
             $data['status'] = PostStatusType::PENDING;
 
             Log::channel('post_save')->info('A notícia de id: '.$post->id . ' foi agendada pelo usuário de id: '.Auth::id());
