@@ -9,7 +9,7 @@
                     <div class="info-news-container py-3">
                         <a href="#" class="link-path">{{$post->formatted_date}}</a> <a href="#" class="link-path">{{ $post->formatted_category_name }}</a>
                     </div>
-                    <h1 class="font-lato super-title text-left">{{$post->title}}</h1>
+                    <h2 class="font-lato super-title text-left">{{$post->title}}</h2>
 
                     @if($post->image)
                         <div class="single-image-container" style="background-image: url(' {{asset("storage/".$post->image)}} ');">
@@ -23,7 +23,9 @@
                     <div class="py-3"></div>
 
                     {!! $post->content !!}
-                    <div class="mt-4 sharethis-inline-share-buttons" data-url="http://sharethis.com" data-title="Sharing is great!"></div>
+                    <hr class="my-3">
+                    <p class="pt-1 mt-5-mb-4 mr-2 pull-left d-inline-block">COMPARTILHE:</p>
+                    <div class="my-4 sharethis-inline-share-buttons" data-url="http://sharethis.com" data-title="Sharing is great!"></div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="col-12 pesquisar my-2 mb-4">
@@ -43,7 +45,7 @@
 
             <div class="row">
                 <div class="col-12 col-md-12">
-                    <h3 class="super-title">notícias <br>relacionadas</h3>
+                    <h3 class="super-title">notícias relacionadas</h3>
                 </div>
                 @foreach($relatedPosts as $relatedPost)
                     <div class="col-12 col-md-3">

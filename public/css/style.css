@@ -1060,7 +1060,7 @@ text#label_state_mt {
 .info-news-container a{
     border-right:var(--marrom-primario) solid 3px;
     padding-right: 10px;
-    padding-left: 10px;
+    margin-right: 10px;
 }
 .info-news-container a:last-child{
     border-right:transparent solid 3px;
