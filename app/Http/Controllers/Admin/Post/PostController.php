@@ -71,13 +71,13 @@ class PostController extends Controller
         if(now() < Carbon::parse($data['created_at']) && isset($data['status']) && $data['status'] != PostStatusType::DRAFT) {
             $data['status'] = PostStatusType::PENDING;
 
-            Log::channel('post_save')->info('A notícia: '.$data['path'].' foi agendada pelo usuário de id: '.Auth::id());
+            Log::channel('post_save')->info('Uma notícia: foi agendada pelo usuário de id: '.Auth::id());
 
 
             if ($position = $request->highlight_position) {
                 $data['highlight_position_scheduled'] = $position;
 
-                Log::channel('post_save')->info('A notícia: '.$data['path'].' foi agendada com a posição de destaque: '. $position.' pelo usuário de id: '.Auth::id());
+                Log::channel('post_save')->info('Uma notícia foi agendada com a posição de destaque: '. $position.' pelo usuário de id: '.Auth::id());
                 $data['highlight_position'] = null;
             }
         } else {
