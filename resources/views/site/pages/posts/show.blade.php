@@ -1,7 +1,7 @@
 @extends('site/layouts.app')
 
 @section('content')
-    <div class="sharethis-inline-share-buttons" data-url="http://sharethis.com" data-title="Sharing is great!"></div>
+    
     <section id="news-body" class="mt-5">
         <div class="container">
             <div class="row">
@@ -23,9 +23,7 @@
                     <div class="py-3"></div>
 
                     {!! $post->content !!}
-
-                    <br>
-                    <br>
+                    <div class="mt-4 sharethis-inline-share-buttons" data-url="http://sharethis.com" data-title="Sharing is great!"></div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="col-12 pesquisar my-2 mb-4">
